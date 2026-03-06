@@ -15,7 +15,7 @@ func _ready() -> void:
 func  _physics_process(delta: float) -> void:
 	rotation_degrees += Vector3(0,0,0)
 	position += Vector3(0,0,0) * delta
-	#scale += Vector3(0.001,0.001,0.001)
+	scale += Vector3(0.001,0.001,0.001)
 	mesh.radius += 0.1 * delta
 	mesh.height += 0.9 * delta
 # Called every frame. 'delta' is the elapsed time since the previous frame.

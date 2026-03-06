@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://dd2sdvs7c8wwg"]
 
-[ext_resource type="Script" uid="uid://cl6k2b3igeb8t" path="res://tempscripts/mesh_instance_3d_2.gd" id="1_2q6dc"]
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rd3vj"]
 sky_top_color = Color(0.25409985, 0.5937322, 0.70472217, 1)
 sky_horizon_color = Color(0.69890904, 0.77606714, 0.7948147, 1)
@@ -17,14 +15,6 @@ sky = SubResource("Sky_2q6dc")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2r41h"]
-albedo_color = Color(1, 0.14117648, 0.24705882, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_klq6b"]
-material = SubResource("StandardMaterial3D_2r41h")
-radius = 2.145
-height = 8.554
-
 [node name="level" type="Node3D" unique_id=44627815]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=965562256]
@@ -34,11 +24,6 @@ environment = SubResource("Environment_w7c3h")
 transform = Transform3D(-0.94721013, 0.1324468, -0.29197735, 0, 0.91068363, 0.41310444, 0.32061335, 0.3912967, -0.8626088, 0, 0, 0)
 light_energy = 1.2
 shadow_enabled = true
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1112684770]
-transform = Transform3D(0.385, 0, 0, 0, 0.385, 0, 0, 0, 0.856, 0.31614637, 11.440641, -0.5114355)
-mesh = SubResource("CapsuleMesh_klq6b")
-script = ExtResource("1_2q6dc")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1704270894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1591148, 11.911725, 6.2482934)
