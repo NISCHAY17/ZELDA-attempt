@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://djiwkvp0jt3va"]
 
+[ext_resource type="Script" uid="uid://ddqh2jy1gvl70" path="res://ENTITIES/player/player.gd" id="1_7ufme"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sy3jy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ufme"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1080306268]
+script = ExtResource("1_7ufme")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=793067392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
