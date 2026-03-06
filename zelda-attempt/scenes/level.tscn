@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dd2sdvs7c8wwg"]
+
+[ext_resource type="Texture2D" uid="uid://c36yvunt10jd3" path="res://graphics/grid/Light/texture_07.png" id="1_w7c3h"]
+[ext_resource type="Texture2D" uid="uid://f5628rviiqbd" path="res://graphics/icon.png" id="2_w8frs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mx8sn"]
+albedo_color = Color(0.28753573, 0.28753573, 0.28753573, 1)
+albedo_texture = ExtResource("1_w7c3h")
+metallic_specular = 0.0
+roughness = 0.21
+uv1_scale = Vector3(0.945, 0.945, 0.945)
+uv1_offset = Vector3(3.65, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ppgk2"]
+material = SubResource("StandardMaterial3D_mx8sn")
+size = Vector3(1.96, 1.47, 2.765)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2r41h"]
+albedo_color = Color(1, 0.14117648, 0.24705882, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_klq6b"]
+material = SubResource("StandardMaterial3D_2r41h")
+
+[node name="level" type="Node3D" unique_id=44627815]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=676535789]
+visible = false
+mesh = SubResource("BoxMesh_ppgk2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1484560557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30822992, 3.844451, 2.0768163)
+visible = false
+light_color = Color(0.42352942, 1, 1, 1)
+light_energy = 9.317
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=636479749]
+visible = false
+radius = 3.562
+radial_segments = 4
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1304734699]
+texture = ExtResource("2_w8frs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1112684770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31614637, 1.6562827, 0)
+mesh = SubResource("CapsuleMesh_klq6b")
