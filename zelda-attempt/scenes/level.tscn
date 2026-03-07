@@ -33,6 +33,8 @@ shadow_enabled = true
 [node name="Player" type="Node3D" parent="." unique_id=2007095133]
 
 [node name="Player" parent="Player" unique_id=1080306268 instance=ExtResource("1_2q6dc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014201164, 0, 0.022721767)
+base_speed = 4.0
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 
