@@ -33,6 +33,6 @@ transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90
 min_limit_x = -0.8
 max_limit_x = -0.2
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1147003793]
+[node name="beanglasses" type="MeshInstance3D" parent="." unique_id=1147003793]
 transform = Transform3D(0.54095703, 0, 0, 0, -0.18947363, 0, 0, 0, 0.21082523, 0.018862486, 1.4991171, -0.42205817)
 mesh = SubResource("BoxMesh_6mcbg")
