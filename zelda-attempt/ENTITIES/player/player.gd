@@ -24,13 +24,11 @@ func jump_logic(delta) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_velocity
-		else:
-			$godetteSkin.set_move_state('Jump')
+	else:
+		$godetteSkin.set_move_state('Jump')
 
-	# apply gravity
 	var gravity = jump_gravity if velocity.y > 0 else fall_gravity
 	velocity.y -= gravity * delta
-	
 
 
 func _physics_process(delta: float) -> void:
