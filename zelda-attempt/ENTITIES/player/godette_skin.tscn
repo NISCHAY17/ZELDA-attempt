@@ -2,6 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bctcp65yp8t3f" path="res://graphics/characters/godette/godette.glb" id="1_qjput"]
 [ext_resource type="Script" uid="uid://hrgw8cyv3otl" path="res://ENTITIES/player/godette_skin.gd" id="2_8ttg5"]
+[ext_resource type="PackedScene" uid="uid://cp757r6txb0j6" path="res://graphics/weapons/sword_1handed.gltf" id="3_o6ovr"]
+[ext_resource type="Texture2D" uid="uid://cbf5176yt1e2d" path="res://graphics/weapons/barbarian_texture.png" id="4_oyxc5"]
+[ext_resource type="PackedScene" uid="uid://dydnnq3ww2uyk" path="res://graphics/weapons/shield.gltf.glb" id="5_c4ebk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u83d"]
+albedo_texture = ExtResource("4_oyxc5")
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oyxc5"]
 animation = &"1H_Melee_Attack_Chop"
@@ -63,6 +69,23 @@ node_connections = [&"output", 0, &"AttackOneShot", &"AttackOneShot", 0, &"MOVES
 [node name="godetteSkin" unique_id=1466323966 instance=ExtResource("1_qjput")]
 script = ExtResource("2_8ttg5")
 
+[node name="RightHandSlot" type="BoneAttachment3D" parent="Rig/Skeleton3D" parent_id_path=PackedInt32Array(482605095) index="6" unique_id=1321584929]
+transform = Transform3D(-0.999999, 4.6839318e-07, 4.5731028e-07, 3.9779994e-07, -5.8875344e-07, 0.99999946, 3.9761645e-07, 0.99999946, 5.358822e-07, -0.8831323, 1.0492611, -7.2759536e-07)
+bone_name = "handslot.r"
+bone_idx = 13
+
+[node name="sword_1handed2" parent="Rig/Skeleton3D/RightHandSlot" index="0" unique_id=1630970368 instance=ExtResource("3_o6ovr")]
+
+[node name="sword_1handed" parent="Rig/Skeleton3D/RightHandSlot/sword_1handed2" index="0" unique_id=215326886]
+surface_material_override/0 = SubResource("StandardMaterial3D_5u83d")
+
+[node name="LeftHandSlot" type="BoneAttachment3D" parent="Rig/Skeleton3D" parent_id_path=PackedInt32Array(482605095) index="7" unique_id=111330520]
+transform = Transform3D(-0.99999887, -3.9761176e-07, -3.6790345e-07, -4.658428e-07, -5.3096744e-07, 0.99999934, -4.758466e-07, 0.99999934, 6.2344856e-07, 0.88313216, 1.0492611, -6.8114986e-07)
+bone_name = "handslot.l"
+bone_idx = 8
+
+[node name="shield_gltf" parent="Rig/Skeleton3D/LeftHandSlot" index="0" unique_id=735260094 instance=ExtResource("5_c4ebk")]
+
 [node name="AnimationPlayer" parent="." index="1" unique_id=1557225759]
 autoplay = &"Idle"
 
@@ -72,3 +95,5 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/AttackOneShot/active = false
 parameters/AttackOneShot/internal_active = false
 parameters/AttackOneShot/request = 0
+
+[editable path="Rig/Skeleton3D/RightHandSlot/sword_1handed2"]
