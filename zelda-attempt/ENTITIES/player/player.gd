@@ -70,8 +70,11 @@ func move_logic(delta) -> void:
 
 		velocity.x = vel_2d.x
 		velocity.z = vel_2d.y
-		var target_angle = movement_input.angle()
-		$godetteSkin.rotation.y = target_angle
+		var target_angle = -movement_input.angle() * PI/2
+		$godetteSkin.rotation.y = rotate_toward($godetteSkin.rotation.y, target_angle, 6.0 * delta)
+		
+		
+	
 	else:
 		# slow down when no input
 		vel_2d = vel_2d.move_toward(Vector2.ZERO, base_speed * 4 * delta)
