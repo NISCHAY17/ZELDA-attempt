@@ -30,9 +30,9 @@ transform = Transform3D(-0.94721013, 0.1324468, -0.29197735, 0, 0.91068363, 0.41
 light_energy = 1.2
 shadow_enabled = true
 
-[node name="Node3D" type="Node3D" parent="." unique_id=2007095133]
+[node name="Player" type="Node3D" parent="." unique_id=2007095133]
 
-[node name="Player" parent="Node3D" unique_id=1080306268 instance=ExtResource("1_2q6dc")]
+[node name="Player" parent="Player" unique_id=1080306268 instance=ExtResource("1_2q6dc")]
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 
