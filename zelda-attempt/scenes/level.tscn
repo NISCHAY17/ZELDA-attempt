@@ -20,6 +20,12 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7c3h"]
 size = Vector3(40, 0.5, 40)
 
+[sub_resource type="BoxMesh" id="BoxMesh_2q6dc"]
+size = Vector3(10, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8frs"]
+size = Vector3(10, 10, 1)
+
 [node name="level" type="Node3D" unique_id=44627815]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=965562256]
@@ -34,7 +40,6 @@ shadow_enabled = true
 
 [node name="Player" parent="Player" unique_id=1080306268 instance=ExtResource("1_2q6dc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014201164, 0, 0.022721767)
-base_speed = 4.0
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 
@@ -46,3 +51,14 @@ size = Vector3(40, 0.5, 40)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="envrionment/StaticBody3D" unique_id=1804821836]
 shape = SubResource("BoxShape3D_w7c3h")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="envrionment" unique_id=1614772758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17790651, 0.20331573, 5.7945213)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="envrionment/StaticBody3D2" unique_id=1629779170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8055854, 0, 0)
+mesh = SubResource("BoxMesh_2q6dc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="envrionment/StaticBody3D2" unique_id=901904293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6866755, -0.11220169, 0.016023636)
+shape = SubResource("BoxShape3D_w8frs")

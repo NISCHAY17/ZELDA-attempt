@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://db02niwjf5ks6" path="res://ENTITIES/player/camera_controller.gd" id="1_0xcen"]
 
-[node name="CAMERA CONTROLLER" type="Node3D" unique_id=363107289]
+[sub_resource type="SphereShape3D" id="SphereShape3D_0xcen"]
+
+[node name="CAMERA CONTROLLER" type="SpringArm3D" unique_id=931761905]
+shape = SubResource("SphereShape3D_0xcen")
+spring_length = 6.5
 script = ExtResource("1_0xcen")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=752216915]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.98113775, 0.19330975, 0, -0.19330975, 0.98113775, 0.22744223, 3.1202168, 4.46516)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+current = true
