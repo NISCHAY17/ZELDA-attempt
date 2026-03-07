@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	move_logic(delta)
 	jump_logic(delta)
 	move_and_slide()
+	ability_logic()
 
 	
 
@@ -82,3 +83,8 @@ func move_logic(delta) -> void:
 		velocity.z = vel_2d.y
 		# walk anim
 		$godetteSkin.set_move_state('Idle')
+
+
+func ability_logic() -> void:
+	if Input.is_action_just_pressed("ability"):
+		$godetteSkin.attack()
