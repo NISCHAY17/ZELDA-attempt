@@ -15,3 +15,5 @@ func defend(forward: bool) -> void:
 func _defend_chnage(value: float) -> void:
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
 	
+	
+	

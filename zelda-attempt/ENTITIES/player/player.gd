@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var skin = $godetteSkin
 
 # jump settings
 @export var jump_height : float = 2.25
@@ -17,8 +18,13 @@ extends CharacterBody3D
 
 # movement direction input
 var movement_input := Vector2.ZERO
-
-
+var defend :=  false:
+	set(value):
+		if not defend and value:
+			skin.defend(true)
+		if defend and not value:
+			skin.defend(false)
+		defend = value
 
 func jump_logic(delta) -> void:
 	if is_on_floor():
@@ -88,3 +94,5 @@ func move_logic(delta) -> void:
 func ability_logic() -> void:
 	if Input.is_action_just_pressed("ability"):
 		$godetteSkin.attack()
+	defend = Input.is_action_just_pressed("block")
+	
