@@ -7,3 +7,11 @@ func set_move_state(state_name: String) -> void:
 
 func attack():
 	$AnimationTree.set("parameters/AttackOneShot/request",AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
+func defend(forward: bool) -> void:
+	var tween = create_tween()
+	tween.tween_method(_defend_chnage,1.0 - float(forward),float(forward)      , 0.25     )
+	
+func _defend_chnage(value: float) -> void:
+	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
+	
