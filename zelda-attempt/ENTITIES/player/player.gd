@@ -24,6 +24,8 @@ func jump_logic(delta) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_velocity
+		else:
+			$godetteSkin.set_move_state('Jump')
 
 	# apply gravity
 	var gravity = jump_gravity if velocity.y > 0 else fall_gravity
@@ -64,7 +66,7 @@ func move_logic(delta) -> void:
 		#print(speed)
 
 		# run anim
-		$godetteSkin/AnimationPlayer.current_animation = 'Running_B'
+		$godetteSkin.set_move_state('Running')
 		vel_2d += movement_input * speed * delta
 		vel_2d = vel_2d.limit_length(speed)
 
@@ -81,4 +83,4 @@ func move_logic(delta) -> void:
 		velocity.x = vel_2d.x
 		velocity.z = vel_2d.y
 		# walk anim
-		$godetteSkin/AnimationPlayer.current_animation = 'Idle'
+		$godetteSkin.set_move_state('Idle')
