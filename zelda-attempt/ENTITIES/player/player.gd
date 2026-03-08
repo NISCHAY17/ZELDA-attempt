@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 
 	
 
-	
+	 
 
 func move_logic(delta) -> void:
 	movement_input = Input.get_vector("left","right","forward","backward").rotated(-camera_3d.global_rotation.y)
