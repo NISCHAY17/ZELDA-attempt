@@ -94,5 +94,8 @@ func move_logic(delta) -> void:
 func ability_logic() -> void:
 	if Input.is_action_just_pressed("ability"):
 		$godetteSkin.attack()
-	defend = Input.is_action_just_pressed("block")
+	# defend = Input.is_action_just_pressed("block") 
+	# What i fixed  Fix: block animation flickering
+	# Cause: used is_action_just_pressed() so defend toggled true→false every frame; switched to is_action_pressed()
+	defend = Input.is_action_pressed("block")
 	

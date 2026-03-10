@@ -10,9 +10,11 @@ func attack():
 	
 func defend(forward: bool) -> void:
 	var tween = create_tween()
-	tween.tween_method(_defend_chnage,1.0 - float(forward),float(forward)      , 0.25     )
-	
-func _defend_chnage(value: float) -> void:
+	tween.tween_method(_defend_change, 1.0 - float(forward), float(forward), 0.25)
+
+
+func _defend_change(value: float) -> void:
+	print("Shield blend:", value)
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
 	
 	
