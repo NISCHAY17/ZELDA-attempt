@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var move_state_machine =  $AnimationTree.get("parameters/MOVEStateMachine/playback")
+@onready var attack_state_machine =  $AnimationTree.get("parameters/AttackStateMachine/playback")
 
 var attacking := false
 
@@ -13,6 +14,7 @@ func set_move_state(state_name: String) -> void:
 
 func attack():
 	if not attacking:
+		attack_state_machine.travel('Slice' if $SecondHandTimer.time_left else 'Chop')
 		$AnimationTree.set("parameters/AttackOneShot/request",AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 func attack_toggle(value: bool):
 	attacking = value

@@ -18,8 +18,10 @@ extends CharacterBody3D
 @export var defend_speed := 2.0
 # movement direction input
 var movement_input := Vector2.ZERO
-var defend :=  false:
+var defend := false:
 	set(value):
+		if defend == value:
+			return  # add this - exit if nothing changed
 		if not defend and value:
 			skin.defend(true)
 		if defend and not value:
@@ -48,6 +50,7 @@ func _physics_process(delta: float) -> void:
 	jump_logic(delta)
 	move_and_slide()
 	ability_logic()
+	
 
 	
 
