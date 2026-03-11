@@ -14,7 +14,7 @@ func defend(forward: bool) -> void:
 
 
 func _defend_change(value: float) -> void:
-	print("Shield blend:", value)
+	# print("Shield blend:", value) used for testing click value 
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
 	
 	
