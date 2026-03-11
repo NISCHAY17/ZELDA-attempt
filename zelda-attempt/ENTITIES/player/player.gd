@@ -15,7 +15,7 @@ extends CharacterBody3D
 @export var base_speed := 6.0
 @export var run_speed := 25.0
 @onready var camera_3d: Node3D = $"CAMERA CONTROLLER"
-
+@export var defend_speed := 2.0
 # movement direction input
 var movement_input := Vector2.ZERO
 var defend :=  false:
@@ -68,6 +68,7 @@ func move_logic(delta) -> void:
 	if movement_input != Vector2.ZERO:
 		# choose speed depending on run key
 		var speed = run_speed if is_running else base_speed
+		speed = defend_speed if defend else speed
 		#print(speed)
 
 		# run anim
