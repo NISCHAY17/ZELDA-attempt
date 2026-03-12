@@ -28,7 +28,9 @@ func switch(weapon_active: bool) -> void:
 	else:
 		$Rig/Skeleton3D/RightHandSlot/sword_1handed2.hide()
 		$Rig/Skeleton3D/RightHandSlot/wand2.show()
-
+func Cast_spell() -> void:
+	if not attacking:
+		$AnimationTree.set("parameters/ExtraOneshot/active" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)  
 func _defend_change(value: float) -> void:
 	# print("Shield blend:", value) used for testing click value 
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
