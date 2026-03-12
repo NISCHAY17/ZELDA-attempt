@@ -24,8 +24,10 @@ func defend(forward: bool) -> void:
 func switch(weapon_active: bool) -> void:
 	if weapon_active:
 		$Rig/Skeleton3D/RightHandSlot/sword_1handed2.show()
+		$Rig/Skeleton3D/RightHandSlot/wand2.hide()
 	else:
 		$Rig/Skeleton3D/RightHandSlot/sword_1handed2.hide()
+		$Rig/Skeleton3D/RightHandSlot/wand2.show()
 
 func _defend_change(value: float) -> void:
 	# print("Shield blend:", value) used for testing click value 
