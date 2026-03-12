@@ -21,11 +21,13 @@ func attack_toggle(value: bool):
 func defend(forward: bool) -> void:
 	var tween = create_tween()
 	tween.tween_method(_defend_change, 1.0 - float(forward), float(forward), 0.25)
-
+func switch(weapon_active: bool) -> void:
+	if weapon_active:
+		$Rig/Skeleton3D/RightHandSlot/sword_1handed2.show()
+	else:
+		$Rig/Skeleton3D/RightHandSlot/sword_1handed2.hide()
 
 func _defend_change(value: float) -> void:
 	# print("Shield blend:", value) used for testing click value 
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
-	
-	
 	

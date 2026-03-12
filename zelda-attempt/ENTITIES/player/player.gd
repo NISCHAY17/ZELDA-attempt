@@ -28,6 +28,8 @@ var defend := false:
 			skin.defend(false)
 		defend = value
 
+var weapon_active := false
+
 func jump_logic(delta) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
@@ -96,6 +98,9 @@ func move_logic(delta) -> void:
 
 
 func ability_logic() -> void:
+	
+	# worked on attack
+	
 	if Input.is_action_just_pressed("ability"):
 		$godetteSkin.attack()
 	# defend = Input.is_action_just_pressed("block") 
@@ -103,3 +108,7 @@ func ability_logic() -> void:
 	# Cause: used is_action_just_pressed() so defend toggled true→false every frame; switched to is_action_pressed()
 	defend = Input.is_action_pressed("block")
 	
+	# switch between weapon and magic
+	if Input.is_action_just_pressed("switch") and not skin.attacking:
+		weapon_active = not weapon_active
+		skin.switch(weapon_active)
