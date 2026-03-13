@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	ability_logic()
 	if Input.is_action_just_pressed('ui_accept'):
-		skin.hit()
+		hit()
 	
 
 	
@@ -80,7 +80,7 @@ func move_logic(delta) -> void:
 
 		# run anim
 		$godetteSkin.set_move_state('Running')
-		vel_2d += movement_input * speed * delta
+		vel_2d += movement_input * speed * delta * 8.0
 		vel_2d = vel_2d.limit_length(speed) * speed_modifier
 
 		velocity.x = vel_2d.x
@@ -129,3 +129,7 @@ func stop_movement(start_duration: float , end_duration: float):
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )
 	
 	tween.tween_property(self, "speed_modifier", 1.0, end_duration      )
+
+func hit():
+	skin.hit()
+	stop_movement(0.3,0.667)
