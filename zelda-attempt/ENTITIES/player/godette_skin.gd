@@ -8,7 +8,6 @@ var squash_and_streach := 1.0:
 		squash_and_streach = value
 		var negative = 1.0 + (1.0 - squash_and_streach )
 		scale = Vector3(negative,squash_and_streach,negative)
-		
 func set_move_state(state_name: String) -> void:
 	move_state_machine.travel(state_name)
 func hit() -> void:
@@ -39,8 +38,6 @@ func cast_spell() -> void:
 		extra_animation.animation = 'Spellcast_Shoot'
 		attacking = false
 		$AnimationTree.set("parameters/ExtraOneshot/request" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)  
-	
 func _defend_change(value: float) -> void:
 	# print("Shield blend:", value) used for testing click value 
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
-	

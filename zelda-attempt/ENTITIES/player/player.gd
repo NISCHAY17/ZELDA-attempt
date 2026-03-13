@@ -1,16 +1,12 @@
 extends CharacterBody3D
-
 @onready var skin = $godetteSkin
-
 # jump settings
-@export var jump_height : float = 1.1
+@export var jump_height : float = 10.1
 @export var jump_time_to_peak : float = 0.4
 @export var jump_time_to_descent : float = 0.3
-
 @onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
-
 # movement speeds
 @export var base_speed := 6.0
 @export var run_speed := 25.0
@@ -29,7 +25,6 @@ var defend := false:
 		defend = value
 var speed_modifier := 1.0
 var weapon_active := false
-
 func jump_logic(delta) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
@@ -37,30 +32,19 @@ func jump_logic(delta) -> void:
 			do_squash_and_streach(1.2,0.167)
 	else:
 		$godetteSkin.set_move_state('Jump')
-
 	var gravity = jump_gravity if velocity.y > 0 else fall_gravity
 	velocity.y -= gravity * delta
-
-
 func _physics_process(delta: float) -> void:
 	# read input relative to camera
 	# old move code
 	# movement_input = Input.get_vector("left","right","forward","backward").rotated(-camera_3d.global_rotation.y)
-	
 	#velocity = Vector3(movement_input.x,0,movement_input.y) * base_speed
-	
 	move_logic(delta)
 	jump_logic(delta)
 	move_and_slide()
 	ability_logic()
 	if Input.is_action_just_pressed('ui_accept'):
 		hit()
-	
-
-	
-
-	 
-
 func move_logic(delta) -> void:
 	movement_input = Input.get_vector("left","right","forward","backward").rotated(-camera_3d.global_rotation.y)
 	
@@ -98,12 +82,8 @@ func move_logic(delta) -> void:
 		velocity.z = vel_2d.y
 		# walk anim
 		$godetteSkin.set_move_state('Idle')
-
-
 func ability_logic() -> void:
-	
 	# worked on attack
-	
 	if Input.is_action_just_pressed("ability"):
 		if weapon_active:
 			$godetteSkin.attack()
@@ -112,29 +92,22 @@ func ability_logic() -> void:
 			stop_movement(0.3, 0.67)
 			# didnt use () in cast spell
 			# fixed ability trigger was calling Skin.cast_spell instead of node instance $godetteSkin.
-
-
 	# defend = Input.is_action_just_pressed("block") 
 	# What i fixed  Fix: block animation flickering
 	# Cause: used is_action_just_pressed() so defend toggled true→false every frame; switched to is_action_pressed()
 	defend = Input.is_action_pressed("block")
-	
 	# switch between weapon and magic
 	if Input.is_action_just_pressed("switch") and not skin.attacking:
 		weapon_active = not weapon_active
 		skin.switch(weapon_active)
-
-
 func stop_movement(start_duration: float , end_duration: float):
 	var tween = create_tween()
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )
 	
 	tween.tween_property(self, "speed_modifier", 1.0, end_duration      )
-
 func hit():
 	skin.hit()
 	stop_movement(0.3,0.667)
-
 func do_squash_and_streach(value: float, duration: float = 0.1):
 	var tween = create_tween()
 	tween.tween_property(skin, "squash_and_streach", value, duration)
