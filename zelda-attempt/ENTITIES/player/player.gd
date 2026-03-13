@@ -105,7 +105,7 @@ func ability_logic() -> void:
 		if weapon_active:
 			$godetteSkin.attack()
 		else:
-			Skin.Cast_spell
+			$godetteSkin.cast_spell
 	# defend = Input.is_action_just_pressed("block") 
 	# What i fixed  Fix: block animation flickering
 	# Cause: used is_action_just_pressed() so defend toggled true→false every frame; switched to is_action_pressed()
