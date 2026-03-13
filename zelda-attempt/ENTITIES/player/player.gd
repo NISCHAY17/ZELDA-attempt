@@ -27,7 +27,7 @@ var defend := false:
 		if defend and not value:
 			skin.defend(false)
 		defend = value
-
+var speed_modifier := 1.0
 var weapon_active := false
 
 func jump_logic(delta) -> void:
@@ -52,6 +52,8 @@ func _physics_process(delta: float) -> void:
 	jump_logic(delta)
 	move_and_slide()
 	ability_logic()
+	if Input.is_action_just_pressed('ui_accept'):
+		skin.hit()
 	
 
 	
@@ -79,7 +81,7 @@ func move_logic(delta) -> void:
 		# run anim
 		$godetteSkin.set_move_state('Running')
 		vel_2d += movement_input * speed * delta
-		vel_2d = vel_2d.limit_length(speed)
+		vel_2d = vel_2d.limit_length(speed) * speed_modifier
 
 		velocity.x = vel_2d.x
 		velocity.z = vel_2d.y
@@ -105,7 +107,12 @@ func ability_logic() -> void:
 		if weapon_active:
 			$godetteSkin.attack()
 		else:
-			$godetteSkin.cast_spell
+			$godetteSkin.cast_spell()
+			stop_movement(0.3, 0.67)
+			# didnt use () in cast spell
+			# fixed ability trigger was calling Skin.cast_spell instead of node instance $godetteSkin.
+
+
 	# defend = Input.is_action_just_pressed("block") 
 	# What i fixed  Fix: block animation flickering
 	# Cause: used is_action_just_pressed() so defend toggled true→false every frame; switched to is_action_pressed()
@@ -115,3 +122,10 @@ func ability_logic() -> void:
 	if Input.is_action_just_pressed("switch") and not skin.attacking:
 		weapon_active = not weapon_active
 		skin.switch(weapon_active)
+
+
+func stop_movement(start_duration: float , end_duration: float):
+	var tween = create_tween()
+	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )
+	
+	tween.tween_property(self, "speed_modifier", 1.0, end_duration      )

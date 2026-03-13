@@ -1,17 +1,16 @@
 extends Node3D
-
 @onready var move_state_machine =  $AnimationTree.get("parameters/MOVEStateMachine/playback")
 @onready var attack_state_machine =  $AnimationTree.get("parameters/AttackStateMachine/playback")
-
+@onready var extra_animation = $AnimationTree.get_tree_root().get_node('ExtraAnimation')
 var attacking := false
-
-
 func set_move_state(state_name: String) -> void:
 	move_state_machine.travel(state_name)
-
-
-
-
+func hit() -> void:
+	# chnage the anim to hit_A
+	extra_animation.animation = 'Hit_A'
+	# Fix ExtraOneshot trigger: used "request" instead of invalid "active"
+	$AnimationTree.set("parameters/ExtraOneshot/request" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)  
+	$AnimationTree.set('parameters/AttackOneShot/request', AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
 func attack():
 	if not attacking:
 		attack_state_machine.travel('Slice' if $SecondHandTimer.time_left else 'Chop')
@@ -30,7 +29,11 @@ func switch(weapon_active: bool) -> void:
 		$Rig/Skeleton3D/RightHandSlot/wand2.show()
 func cast_spell() -> void:
 	if not attacking:
-		$AnimationTree.set("parameters/ExtraOneshot/active" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)  
+		# anim to spellcast 
+		extra_animation.animation = 'Spellcast_Shoot'
+		attacking = false
+		$AnimationTree.set("parameters/ExtraOneshot/request" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)  
+	
 func _defend_change(value: float) -> void:
 	# print("Shield blend:", value) used for testing click value 
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)

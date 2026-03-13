@@ -43,9 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014201164, 0, 0.022721767)
 jump_height = 50.0
 jump_time_to_peak = 0.6
 jump_time_to_descent = 0.7
-base_speed = null
-run_speed = null
-defend_speed = null
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 
