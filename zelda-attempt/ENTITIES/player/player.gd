@@ -1,7 +1,7 @@
 extends CharacterBody3D
 @onready var skin = $godetteSkin
 # jump settings
-@export var jump_height : float = 10.1
+@export var jump_height : float = 100.1
 @export var jump_time_to_peak : float = 0.4
 @export var jump_time_to_descent : float = 0.3
 @onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
@@ -30,6 +30,7 @@ func jump_logic(delta) -> void:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_velocity
 			do_squash_and_streach(1.2,0.167)
+			
 	else:
 		$godetteSkin.set_move_state('Jump')
 	var gravity = jump_gravity if velocity.y > 0 else fall_gravity
@@ -43,6 +44,7 @@ func _physics_process(delta: float) -> void:
 	jump_logic(delta)
 	move_and_slide()
 	ability_logic()
+	print("velY:", velocity.y)
 	if Input.is_action_just_pressed('ui_accept'):
 		hit()
 func move_logic(delta) -> void:
