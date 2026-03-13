@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var skin = $godetteSkin
 
 # jump settings
-@export var jump_height : float = 2.25
+@export var jump_height : float = 1.1
 @export var jump_time_to_peak : float = 0.4
 @export var jump_time_to_descent : float = 0.3
 
@@ -34,6 +34,7 @@ func jump_logic(delta) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_velocity
+			do_squash_and_streach(1.2,0.167)
 	else:
 		$godetteSkin.set_move_state('Jump')
 
@@ -133,3 +134,9 @@ func stop_movement(start_duration: float , end_duration: float):
 func hit():
 	skin.hit()
 	stop_movement(0.3,0.667)
+
+func do_squash_and_streach(value: float, duration: float = 0.1):
+	var tween = create_tween()
+	tween.tween_property(skin, "squash_and_streach", value, duration)
+	tween.tween_property(skin, "squash_and_streach", 1.0, duration * 1.8 ).set_ease(Tween.EASE_OUT)
+	print("u just got squash_and_streached ")

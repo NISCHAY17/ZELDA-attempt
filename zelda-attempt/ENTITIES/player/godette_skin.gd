@@ -3,10 +3,11 @@ extends Node3D
 @onready var attack_state_machine =  $AnimationTree.get("parameters/AttackStateMachine/playback")
 @onready var extra_animation = $AnimationTree.get_tree_root().get_node('ExtraAnimation')
 var attacking := false
-var squash_and_streach  := 1.0:
+var squash_and_streach := 1.0:
 	set(value):
 		squash_and_streach = value
-		scale = Vector3(1,squash_and_streach,1)
+		var negative = 1.0 + (1.0 - squash_and_streach )
+		scale = Vector3(negative,squash_and_streach,negative)
 		
 func set_move_state(state_name: String) -> void:
 	move_state_machine.travel(state_name)
