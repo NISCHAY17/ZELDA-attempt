@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ddd2c86fjpchk"]
+
+[ext_resource type="PackedScene" uid="uid://duycfml3rq1vi" path="res://ENTITIES/enemys/enemy.tscn" id="1_xotl2"]
+[ext_resource type="PackedScene" uid="uid://bt4il726k8d8x" path="res://graphics/characters/nagonford/Nagonford_Animated.glb" id="2_ltfqv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ltfqv"]
+radius = 3.9208984
+height = 7.841797
+
+[node name="Boss" unique_id=1098040870 instance=ExtResource("1_xotl2")]
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1839130851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2290802, 3.9707232, 0)
+shape = SubResource("CapsuleShape3D_ltfqv")
+
+[node name="skin" parent="." index="1" unique_id=1754797109 instance=ExtResource("2_ltfqv")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.1393784, 1.4170628, 0)
