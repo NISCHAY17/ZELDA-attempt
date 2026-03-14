@@ -10,3 +10,7 @@ script = ExtResource("1_q0rv4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1839130851]
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=342061427]
+
+[node name="Timers" type="Node" parent="." unique_id=787015010]
+
+[node name="AttackTimer" type="Timer" parent="Timers" unique_id=481125819]

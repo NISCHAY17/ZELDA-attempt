@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var notice_radius := 30.0
 @export var attack_radius := 3.0
 @export var walk_speed := 2
+var rng = RandomNumberGenerator.new()
 func move_to_player(delta):
 	if position.distance_to(player.position) < notice_radius:
 		var target_dir = ( player.position - position ).normalized()
