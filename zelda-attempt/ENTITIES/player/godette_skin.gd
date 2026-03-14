@@ -4,6 +4,7 @@ extends Node3D
 @onready var extra_animation = $AnimationTree.get_tree_root().get_node('ExtraAnimation')
 @onready var face_material: StandardMaterial3D = $Rig/Skeleton3D/Godette_Head.get_surface_override_material(0)
 var attacking := false
+var rng = RandomNumberGenerator.new()
 var squash_and_streach := 1.0:
 	
 	set(value):
@@ -48,8 +49,9 @@ func _defend_change(value: float) -> void:
 	# print("Shield blend:", value) used for testing click value 
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
 func change_face(expression):
-	face_material.uv1_offset = faces(expression)
-	
-
+	face_material.uv1_offset = faces[expression]
 func _on_blink_timer_timeout() -> void:
-	pass # Replace with function body.
+	change_face('blink')
+	await get_tree().create_timer(0.2).timeout
+	change_face('default')
+	$BlinkTimer.wait_time = rng.randf_range(1.5,3.0)
