@@ -21,11 +21,15 @@ var jump_gravity : float = 0.0
 var fall_gravity : float = 0.0
 
 func _ready():
-	print("jump_height from inspector:", jump_height)
+	
+	#print("SCENE PATH:", get_tree().current_scene.scene_file_path)
+	#print("NODE PATH:", get_path())
+	#print("jump_height from inspector:", jump_height)
+	
 	jump_velocity = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 	jump_gravity  = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 	fall_gravity  = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
-	print("jump_velocity computed as:", jump_velocity)
+	#print("jump_velocity computed as:", jump_velocity)
 	
 	
 
@@ -61,8 +65,8 @@ func _physics_process(delta: float) -> void:
 	jump_logic(delta)
 	move_and_slide()
 	ability_logic()
-	print("jump_height NOW:", jump_height, " jv:", jump_velocity)
-	print("on_floor:", is_on_floor(), " | jump_pressed:", Input.is_action_just_pressed("jump"), " | jv:", jump_velocity)
+	#print("jump_height NOW:", jump_height, " jv:", jump_velocity)
+	#print("on_floor:", is_on_floor(), "jump_pressed:", Input.is_action_just_pressed("jump"), " jv:", jump_velocity)
 	if Input.is_action_just_pressed('ui_accept'):
 		hit()
 func move_logic(delta) -> void:
