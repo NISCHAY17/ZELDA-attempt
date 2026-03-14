@@ -1,3 +1,5 @@
 extends Enemy
+
 func _ready() -> void:
-	print(player)
+	await super._ready()  # wait 
+	print(player)    
