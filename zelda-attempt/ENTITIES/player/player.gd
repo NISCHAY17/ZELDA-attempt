@@ -7,32 +7,22 @@ extends CharacterBody3D
 #@onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 #@onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 #@onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
-
-
-
 # movement speeds
 @export var base_speed := 6.0
 @export var run_speed := 25.0
 @onready var camera_3d: Node3D = $"CAMERA CONTROLLER"
 @export var defend_speed := 2.0
-
 var jump_velocity : float = 0.0
 var jump_gravity : float = 0.0
 var fall_gravity : float = 0.0
-
 func _ready():
-	
 	#print("SCENE PATH:", get_tree().current_scene.scene_file_path)
 	#print("NODE PATH:", get_path())
 	#print("jump_height from inspector:", jump_height)
-	
 	jump_velocity = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 	jump_gravity  = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 	fall_gravity  = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 	#print("jump_velocity computed as:", jump_velocity)
-	
-	
-
 # movement direction input
 var movement_input := Vector2.ZERO
 var defend := false:
@@ -124,6 +114,7 @@ func ability_logic() -> void:
 	if Input.is_action_just_pressed("switch") and not skin.attacking:
 		weapon_active = not weapon_active
 		skin.switch(weapon_active)
+		do_squash_and_streach(1.2,0.16)
 func stop_movement(start_duration: float , end_duration: float):
 	var tween = create_tween()
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )

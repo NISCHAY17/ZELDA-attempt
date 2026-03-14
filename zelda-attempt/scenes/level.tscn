@@ -40,9 +40,6 @@ shadow_enabled = true
 
 [node name="Player" parent="Player" unique_id=1080306268 instance=ExtResource("1_2q6dc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014201164, 0, 0.022721767)
-jump_height = 10.0
-jump_time_to_peak = 0.6
-jump_time_to_descent = 0.7
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 
