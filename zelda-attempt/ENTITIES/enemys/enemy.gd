@@ -8,6 +8,8 @@ extends CharacterBody3D
 func move_to_player(delta):
 	var target_dir = ( player.position - position ).normalized()
 	var target_vec2 = Vector2(target_dir.x, target_dir.z   )
+	var target_angle = -target_vec2.angle() + PI/2
+	rotation.y = rotate_toward(rotation.y, target_angle, delta * 6.7)
 	velocity = Vector3(target_vec2.x, 0 , target_vec2.y) * walk_speed
 	move_and_slide()
 	
