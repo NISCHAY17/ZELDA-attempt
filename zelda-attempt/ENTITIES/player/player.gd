@@ -1,17 +1,34 @@
 extends CharacterBody3D
 @onready var skin = $godetteSkin
 # jump settings
-@export var jump_height : float = 100.1
+@export var jump_height : float = 10.1
 @export var jump_time_to_peak : float = 0.4
 @export var jump_time_to_descent : float = 0.3
-@onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
-@onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
-@onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
+#@onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
+#@onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
+#@onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
+
+
+
 # movement speeds
 @export var base_speed := 6.0
 @export var run_speed := 25.0
 @onready var camera_3d: Node3D = $"CAMERA CONTROLLER"
 @export var defend_speed := 2.0
+
+var jump_velocity : float = 0.0
+var jump_gravity : float = 0.0
+var fall_gravity : float = 0.0
+
+func _ready():
+	print("jump_height from inspector:", jump_height)
+	jump_velocity = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
+	jump_gravity  = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
+	fall_gravity  = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
+	print("jump_velocity computed as:", jump_velocity)
+	
+	
+
 # movement direction input
 var movement_input := Vector2.ZERO
 var defend := false:
@@ -29,7 +46,7 @@ func jump_logic(delta) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_velocity
-			do_squash_and_streach(1.2,0.167)
+			do_squash_and_streach(1.2,0.16)
 			
 	else:
 		$godetteSkin.set_move_state('Jump')
@@ -44,7 +61,8 @@ func _physics_process(delta: float) -> void:
 	jump_logic(delta)
 	move_and_slide()
 	ability_logic()
-	print("velY:", velocity.y)
+	print("jump_height NOW:", jump_height, " jv:", jump_velocity)
+	print("on_floor:", is_on_floor(), " | jump_pressed:", Input.is_action_just_pressed("jump"), " | jv:", jump_velocity)
 	if Input.is_action_just_pressed('ui_accept'):
 		hit()
 func move_logic(delta) -> void:
