@@ -16,6 +16,11 @@ func _on_attack_timer_timeout() -> void:
 	# 4 anim
 	# 2 melee attacks
 	# 2 range attacks
+	
+func range_attack_animation():
+	attack_animation.animation = simple_attacks['range']
+	$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
 func melee_attack_animation():
 	attack_animation.animation = simple_attacks['slice' if rng.randi() % 2 else 'spin']
 	$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)

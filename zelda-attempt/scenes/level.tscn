@@ -44,9 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.586273, 0, 18.246874)
 
 [node name="Boss" parent="entity" unique_id=1098040870 instance=ExtResource("1_w7c3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.687553, 0, -19.229832)
-notice_radius = 30.0
-attack_radius = 3.0
-walk_speed = 2
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 
