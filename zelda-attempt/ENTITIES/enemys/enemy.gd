@@ -7,6 +7,8 @@ extends CharacterBody3D
 @export var notice_radius := 30.0
 @export var attack_radius := 3.0
 @export var walk_speed := 2
+var speed = walk_speed
+var speed_modifier := 1.0 
 var rng = RandomNumberGenerator.new()
 func move_to_player(delta):
 	if position.distance_to(player.position) < notice_radius:
@@ -15,10 +17,14 @@ func move_to_player(delta):
 		var target_angle = -target_vec2.angle() + PI/2
 		rotation.y = rotate_toward(rotation.y, target_angle, delta * 6.7)
 		if position.distance_to(player.position) > attack_radius:
-			velocity = Vector3(target_vec2.x, 0 , target_vec2.y) * walk_speed
+			velocity = Vector3(target_vec2.x, 0 , target_vec2.y) * speed * speed_modifier
 			move_state_machine.travel('walk')
 		else:
 			velocity = Vector3.ZERO
 			move_state_machine.travel('idle')
 		move_and_slide()
+func stop_movement(start_duration: float , end_duration: float):
+	var tween = create_tween()
+	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )
 	
+	tween.tween_property(self, "speed_modifier", 1.0, end_duration      )
