@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b3puaxwtgni40"]
+
+[ext_resource type="PackedScene" uid="uid://duycfml3rq1vi" path="res://ENTITIES/enemys/enemy.tscn" id="1_yodk6"]
+[ext_resource type="PackedScene" uid="uid://bks0ynvp57mq1" path="res://audio/Skeleton_Warrior.glb" id="2_ilbe0"]
+
+[node name="SkeletonWarrior" unique_id=1098040870 instance=ExtResource("1_yodk6")]
+
+[node name="Skeleton_Warrior" parent="." index="0" unique_id=781195234 instance=ExtResource("2_ilbe0")]
