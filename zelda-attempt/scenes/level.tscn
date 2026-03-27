@@ -47,8 +47,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7203026, 0, 1.0088577)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.063482)
 attack_radius = 1.5
 
-[node name="SkeletonMage" parent="entity" unique_id=324175810 instance=ExtResource("3_mx8sn")]
+[node name="SkeletonMage" parent="entity" unique_id=2018522034 instance=ExtResource("3_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.835253, 0, 0)
+attack_radius = 10.0
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 
