@@ -5,6 +5,7 @@ extends Node3D
 @onready var face_material: StandardMaterial3D = $Rig/Skeleton3D/Godette_Head.get_surface_override_material(0)
 var attacking := false
 var rng = RandomNumberGenerator.new()
+
 var squash_and_streach := 1.0:
 	
 	set(value):
@@ -32,7 +33,7 @@ func attack_toggle(value: bool):
 func defend(forward: bool) -> void:
 	var tween = create_tween()
 	tween.tween_method(_defend_change, 1.0 - float(forward), float(forward), 0.25)
-func switch(weapon_active: bool) -> void:
+func switch_weapon(weapon_active: bool) -> void:
 	if weapon_active:
 		$Rig/Skeleton3D/RightHandSlot/Sword.show()
 		$Rig/Skeleton3D/RightHandSlot/wand2.hide()
@@ -55,3 +56,5 @@ func _on_blink_timer_timeout() -> void:
 	await get_tree().create_timer(0.2).timeout
 	change_face('default')
 	$BlinkTimer.wait_time = rng.randf_range(1.5,3.0)
+func can_damage(value: bool):
+	$Rig/Skeleton3D/RightHandSlot/Sword.can_damage = value

@@ -19,6 +19,8 @@ func _ready():
 	#print("SCENE PATH:", get_tree().current_scene.scene_file_path)
 	#print("NODE PATH:", get_path())
 	#print("jump_height from inspector:", jump_height)
+	
+	skin.switch_weapon(weapon_active)
 	jump_velocity = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 	jump_gravity  = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 	fall_gravity  = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
@@ -35,7 +37,7 @@ var defend := false:
 			skin.defend(false)
 		defend = value
 var speed_modifier := 1.0
-var weapon_active := false
+var weapon_active := true
 func jump_logic(delta) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
@@ -118,7 +120,6 @@ func ability_logic() -> void:
 func stop_movement(start_duration: float , end_duration: float):
 	var tween = create_tween()
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )
-	
 	tween.tween_property(self, "speed_modifier", 1.0, end_duration      )
 func hit():
 	skin.hit()
