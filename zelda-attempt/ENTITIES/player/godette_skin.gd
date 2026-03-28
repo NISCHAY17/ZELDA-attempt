@@ -34,10 +34,10 @@ func defend(forward: bool) -> void:
 	tween.tween_method(_defend_change, 1.0 - float(forward), float(forward), 0.25)
 func switch(weapon_active: bool) -> void:
 	if weapon_active:
-		$Rig/Skeleton3D/RightHandSlot/sword_1handed2.show()
+		$Rig/Skeleton3D/RightHandSlot/Sword.show()
 		$Rig/Skeleton3D/RightHandSlot/wand2.hide()
 	else:
-		$Rig/Skeleton3D/RightHandSlot/sword_1handed2.hide()
+		$Rig/Skeleton3D/RightHandSlot/Sword.hide()
 		$Rig/Skeleton3D/RightHandSlot/wand2.show()
 func cast_spell() -> void:
 	if not attacking:
