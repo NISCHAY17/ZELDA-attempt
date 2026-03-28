@@ -115,7 +115,7 @@ func ability_logic() -> void:
 	# switch between weapon and magic
 	if Input.is_action_just_pressed("switch") and not skin.attacking:
 		weapon_active = not weapon_active
-		skin.switch(weapon_active)
+		skin.switch_weapon(weapon_active)
 		do_squash_and_streach(1.2,0.16)
 func stop_movement(start_duration: float , end_duration: float):
 	var tween = create_tween()

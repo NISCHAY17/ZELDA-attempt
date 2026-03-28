@@ -6,6 +6,9 @@ const simple_attacks = {
 }
 @export var spin_speed = 6
 var spinning := false
+var can_damage_toggle := false
+func _process(delta: float) -> void:
+	attack_logic()
 func  _physics_process(delta: float) -> void:
 	move_to_player(delta)
 func _on_attack_timer_timeout() -> void:
@@ -47,3 +50,10 @@ func hit():
 	if not $Timers/InvulTimer.time_left:
 		print(" boss was hit ") 
 		$Timers/InvulTimer.start()
+func can_damage(value: bool) -> void:
+	can_damage_toggle = value 
+func attack_logic() -> void:
+	if can_damage_toggle:
+		var collider = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D.get_collider()
+		if collider and 'hit' in collider:
+			collider.hit()

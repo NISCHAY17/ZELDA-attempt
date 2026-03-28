@@ -75,35 +75,35 @@ spin_speed = 6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08788872, 3.9707232, 0.056477427)
 shape = SubResource("CapsuleShape3D_ltfqv")
 
-[node name="skin" parent="." index="1" unique_id=758617294 instance=ExtResource("2_ltfqv")]
+[node name="skin" parent="." index="1" unique_id=344240664 instance=ExtResource("2_ltfqv")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.1393784, 1.4170628, 0)
 
-[node name="Skeleton3D" parent="skin/Rig" parent_id_path=PackedInt32Array(758617294, 1947029925) index="0" unique_id=1800177111]
-bones/1/position = Vector3(0.008410764, 0.37666336, 1.2184853e-10)
+[node name="Skeleton3D" parent="skin/Rig" parent_id_path=PackedInt32Array(344240664, 675698115) index="0" unique_id=262346599]
+bones/1/position = Vector3(0.008410764, 0.3780459, 1.2184853e-10)
 bones/2/rotation = Quaternion(-0.060599465, -0.13028215, -0.007978079, 0.9895912)
-bones/3/rotation = Quaternion(0.0026534915, 8.675643e-05, -0.0007056873, 0.99999624)
+bones/3/rotation = Quaternion(-2.220446e-16, -3.57567e-09, -2.8574743e-10, 1)
 bones/4/position = Vector3(0.24804358, 0.110857, 0.0825816)
-bones/4/rotation = Quaternion(-0.57882226, -0.24887982, -0.73299956, 0.25638905)
-bones/5/rotation = Quaternion(1.0112627e-08, -4.946073e-08, -0.5557573, 0.83134454)
-bones/7/rotation = Quaternion(-0.19120926, -0.67508334, -0.052947, 0.7105619)
+bones/4/rotation = Quaternion(-0.57771325, -0.24936369, -0.7347098, 0.25350907)
+bones/5/rotation = Quaternion(4.471198e-08, -6.884851e-08, -0.5502458, 0.8350027)
+bones/7/rotation = Quaternion(-0.19524248, -0.67253554, -0.053165175, 0.71186364)
 bones/8/position = Vector3(5.1384585e-10, 0.09612511, -0.057500035)
 bones/8/rotation = Quaternion(-6.2219203e-09, 4.3147903e-09, -0.7071068, 0.7071067)
 bones/9/position = Vector3(-0.17668214, 0.11170339, 0.0891542)
-bones/9/rotation = Quaternion(-0.24945194, 0.34554297, 0.8406333, 0.3342297)
-bones/10/rotation = Quaternion(-6.8429267e-09, 6.74914e-08, 0.5701251, 0.8215579)
-bones/12/rotation = Quaternion(-0.23787248, 0.22077417, -0.1096132, 0.9395001)
+bones/9/rotation = Quaternion(-0.24831918, 0.34150407, 0.8421738, 0.33534458)
+bones/10/rotation = Quaternion(-1.770311e-08, 3.610951e-08, 0.5730907, 0.8194921)
+bones/12/rotation = Quaternion(-0.2345841, 0.22342958, -0.11361769, 0.9392234)
 bones/13/position = Vector3(-5.138494e-10, 0.096125126, -0.057500005)
 bones/13/rotation = Quaternion(0.15571052, -0.18945536, 0.6702893, 0.7004093)
-bones/15/rotation = Quaternion(0.083716735, 0.1304498, 0.005805947, 0.98789716)
+bones/15/rotation = Quaternion(0.085426524, 0.1304414, 0.0047045117, 0.9877577)
 bones/17/position = Vector3(0.17094505, 0.11358726, 1.3923275e-08)
-bones/17/rotation = Quaternion(0.993415, 0.07354201, 0.0394136, 0.07851647)
-bones/18/rotation = Quaternion(0.3601322, 6.358848e-08, -2.519298e-07, 0.9329014)
-bones/19/rotation = Quaternion(-0.59731436, -0.21308348, 0.055592228, 0.7711813)
-bones/20/rotation = Quaternion(3.254792e-05, 0.92014617, -0.3915752, -7.3443116e-06)
-bones/21/rotation = Quaternion(0.9907215, -0.03936788, -0.011867115, 0.12953891)
-bones/22/rotation = Quaternion(0.3979681, -6.636565e-08, 2.7163782e-07, 0.9173993)
-bones/23/rotation = Quaternion(-0.60767716, 0.1118892, -0.028930072, 0.7857305)
-bones/24/rotation = Quaternion(-1.7592496e-05, 0.9201513, -0.39156303, 4.222639e-06)
+bones/17/rotation = Quaternion(0.9937275, 0.073376656, 0.03918678, 0.074738935)
+bones/18/rotation = Quaternion(0.35023814, 6.2982224e-08, -2.455358e-07, 0.93666077)
+bones/19/rotation = Quaternion(-0.5921314, -0.21350107, 0.05383669, 0.77517706)
+bones/20/rotation = Quaternion(4.918048e-05, 0.9201605, -0.39154145, -1.10608835e-05)
+bones/21/rotation = Quaternion(0.9911832, -0.039242405, -0.011746347, 0.12600762)
+bones/22/rotation = Quaternion(0.3890353, -6.293627e-08, 2.6850148e-07, 0.92122287)
+bones/23/rotation = Quaternion(-0.6028573, 0.112086624, -0.028075764, 0.7894374)
+bones/24/rotation = Quaternion(-2.5614221e-05, 0.92016506, -0.39153066, 5.960156e-06)
 bones/25/rotation = Quaternion(0.7071068, -2.2930234e-07, -4.605517e-08, 0.7071068)
 bones/26/rotation = Quaternion(-0.7071068, -7.052851e-08, -7.0528486e-08, 0.7071068)
 bones/27/position = Vector3(0.030839492, 0.38245776, -2.8668688e-15)
@@ -121,18 +121,22 @@ bones/36/position = Vector3(-6.3112755e-09, 0.16565004, 2.7069498e-09)
 bones/37/rotation = Quaternion(1, 3.7652574e-09, 1.9487908e-07, 7.4505815e-09)
 bones/39/position = Vector3(0.8398419, 0.7198659, -0.44755834)
 bones/39/rotation = Quaternion(-0.7071068, -7.279511e-08, -7.279509e-08, 0.7071068)
-bones/40/position = Vector3(0.34004632, 0.816713, 0.41131586)
-bones/40/rotation = Quaternion(0.6133891, 0.064975984, 0.46246824, 0.6369106)
+bones/40/position = Vector3(0.3397288, 0.81840146, 0.41280472)
+bones/40/rotation = Quaternion(0.61184645, 0.064047195, 0.46529883, 0.63642675)
 bones/41/position = Vector3(-0.87740976, 1.0355499, -0.44755882)
 bones/41/rotation = Quaternion(-0.7071068, -7.279511e-08, -7.279509e-08, 0.7071068)
-bones/42/position = Vector3(-0.3372189, 0.8251151, 0.27594697)
-bones/42/rotation = Quaternion(-0.32769424, 0.2246663, 0.9044398, -0.15533942)
+bones/42/position = Vector3(-0.33500427, 0.82588017, 0.2744581)
+bones/42/rotation = Quaternion(-0.33075312, 0.22468758, 0.90319014, -0.15609434)
 
-[node name="Nagonford_Axe" parent="skin/Rig/Skeleton3D" index="0" unique_id=1762842035]
-transform = Transform3D(0.21829405, 0.76630217, 0.60425764, 0.61692935, 0.37140128, -0.69387186, -0.7561376, 0.52425265, -0.39168006, -0.28032678, 0.6904061, 0.34998378)
+[node name="Nagonford_Axe" parent="skin/Rig/Skeleton3D" index="0" unique_id=825604845]
+transform = Transform3D(0.2209191, 0.76197183, 0.60876316, 0.61750615, 0.37385672, -0.6920376, -0.7549033, 0.52879965, -0.3879307, -0.27730587, 0.69131327, 0.34875277)
 
-[node name="Nagonford_Cape" parent="skin/Rig/Skeleton3D" index="1" unique_id=1000869399]
-transform = Transform3D(0.9659258, 0.031580128, -0.25688514, -0.0014220115, 0.9931606, 0.11674702, 0.25881514, -0.112403676, 0.9593644, 0.027919859, 1.182408, -0.071541205)
+[node name="RayCast3D" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" parent_id_path=PackedInt32Array(344240664, 1216280917) index="0" unique_id=135761099]
+target_position = Vector3(0, 1.455, 0)
+collision_mask = 2
+
+[node name="Nagonford_Cape" parent="skin/Rig/Skeleton3D" index="1" unique_id=2043253121]
+transform = Transform3D(0.9659258, 0.031580124, -0.25688517, -1.645845e-08, 0.992528, 0.12201618, 0.25881904, -0.11785857, 0.9587085, 0.027919859, 1.1836367, -0.07286809)
 
 [node name="AnimationTree" parent="." index="2" unique_id=342061427]
 root_node = NodePath("../skin")
