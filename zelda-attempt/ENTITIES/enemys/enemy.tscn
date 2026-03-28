@@ -14,3 +14,7 @@ script = ExtResource("1_q0rv4")
 [node name="Timers" type="Node" parent="." unique_id=787015010]
 
 [node name="AttackTimer" type="Timer" parent="Timers" unique_id=481125819]
+
+[node name="InvulTimer" type="Timer" parent="Timers" unique_id=1806729294]
+wait_time = 0.8
+one_shot = true

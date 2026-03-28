@@ -28,3 +28,17 @@ func stop_movement(start_duration: float , end_duration: float):
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )
 	
 	tween.tween_property(self, "speed_modifier", 1.0, end_duration      )
+var squash_and_streach := 1.0:
+	set(value):
+		squash_and_streach = value
+		var negative = 1.0 + (1.0 - squash_and_streach )
+		skin.scale = Vector3(negative,squash_and_streach,negative)
+func hit() -> void:
+	if not $Timers/InvulTimer.time_left:
+		do_squash_and_streach(1.0,0.15)
+		$Timers/InvulTimer.start()
+func do_squash_and_streach(value: float, duration: float = 0.1):
+	var tween = create_tween()
+	tween.tween_property(self, "squash_and_streach", value, duration)
+	tween.tween_property(self, "squash_and_streach", 1.0, duration * 1.8 ).set_ease(Tween.EASE_OUT)
+	print("u just got squash_and_streached ")
