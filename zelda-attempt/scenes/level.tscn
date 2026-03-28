@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dd2sdvs7c8wwg"]
 
 [ext_resource type="PackedScene" uid="uid://djiwkvp0jt3va" path="res://ENTITIES/player/player.tscn" id="1_2q6dc"]
-[ext_resource type="PackedScene" uid="uid://doi62gu77lag" path="res://ENTITIES/enemys/skeleton_mage.tscn" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://b3puaxwtgni40" path="res://ENTITIES/enemys/skeleton_warrior.tscn" id="3_w8frs"]
-[ext_resource type="PackedScene" uid="uid://ddd2c86fjpchk" path="res://ENTITIES/enemys/boss.tscn" id="4_mx8sn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rd3vj"]
 sky_top_color = Color(0.538346, 0.72019506, 0.8280812, 1)
@@ -44,15 +42,8 @@ shadow_enabled = true
 [node name="Player" parent="entity" unique_id=1080306268 instance=ExtResource("1_2q6dc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7203026, 0, 1.0088577)
 
-[node name="SkeletonMage" parent="entity" unique_id=2018522034 instance=ExtResource("3_mx8sn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.521572, 0, 0)
-attack_radius = 10.0
-
 [node name="SkeletonWarrior" parent="entity" unique_id=1098040870 instance=ExtResource("3_w8frs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.284015)
-
-[node name="Boss" parent="entity" unique_id=1520519042 instance=ExtResource("4_mx8sn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.343789, 0, 0)
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 

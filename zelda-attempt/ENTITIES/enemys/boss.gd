@@ -45,5 +45,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		$Timers/AttackTimer.start()
 func hit():
 	if not $Timers/InvulTimer.time_left:
-		print("boss was hit") 
+		print(" boss was hit ") 
 		$Timers/InvulTimer.start()
