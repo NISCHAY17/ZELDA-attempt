@@ -43,7 +43,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.016581, 0, -7.5039024)
 
 [node name="Boss" parent="entity" unique_id=1521622091 instance=ExtResource("3_mx8sn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.75002, 0, -13.352303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.75002, 0, -10.440439)
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 

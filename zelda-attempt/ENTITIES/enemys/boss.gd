@@ -63,5 +63,4 @@ func attack_logic() -> void:
 		var collider = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D.get_collider()
 		#print(collider)
 		if collider and collider.has_method("hit"):
-			#print(collider)
 			collider.hit()

@@ -45,7 +45,9 @@ func cast_spell() -> void:
 		# anim to spellcast 
 		extra_animation.animation = 'Spellcast_Shoot'
 		attacking = false
-		$AnimationTree.set("parameters/ExtraOneshot/request" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)  
+		$AnimationTree.set("parameters/ExtraOneshot/request" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE) 
+func shoot_fireball() -> void:
+	print("shoot fire")
 func _defend_change(value: float) -> void:
 	# print("Shield blend:", value) used for testing click value 
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)
