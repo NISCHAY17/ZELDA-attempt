@@ -14,4 +14,5 @@ func _on_attack_timer_timeout() -> void:
 		$AnimationTree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE   )
 
 func shoot_fireball() -> void:
-	cast_spell.emit('fireball')
+	cast_spell.emit('fireball', $skin/Rig/Skeleton3D/BoneAttachment3D/wand2/Marker3D, global_position, Vector2.RIGHT, 1.0)
+ 
