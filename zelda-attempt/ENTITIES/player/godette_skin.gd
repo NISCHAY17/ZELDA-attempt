@@ -48,7 +48,7 @@ func cast_spell() -> void:
 		$AnimationTree.set("parameters/ExtraOneshot/request" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE) 
 func shoot_fireball() -> void:
 	get_parent().shoot_fireball($Rig/Skeleton3D/RightHandSlot/wand2/Marker3D.global_position)
-
+	#print($Rig/Skeleton3D/RightHandSlot/wand2/Marker3D.global_position)
 func _defend_change(value: float) -> void:
 	# print("Shield blend:", value) used for testing click value 
 	$AnimationTree.set("parameters/ShieldBlend/blend_amount", value)

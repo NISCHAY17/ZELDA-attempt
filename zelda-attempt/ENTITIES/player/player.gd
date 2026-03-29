@@ -52,6 +52,7 @@ func jump_logic(delta) -> void:
 	var gravity = jump_gravity if velocity.y > 0 else fall_gravity
 	velocity.y -= gravity * delta
 func _physics_process(delta: float) -> void:
+	
 	# read input relative to camera
 	# old move code
 	# movement_input = Input.get_vector("left","right","forward","backward").rotated(-camera_3d.global_rotation.y)
@@ -103,7 +104,7 @@ func move_logic(delta) -> void:
 		$godetteSkin.set_move_state('Idle')
 		
 	if movement_input:
-			last_movement_input = movement_input
+			last_movement_input = movement_input.normalized()
 		
 func ability_logic() -> void:
 	# worked on attack
@@ -138,3 +139,4 @@ func do_squash_and_streach(value: float, duration: float = 0.1):
 	print("u just got squash_and_streached ")
 func shoot_fireball(pos: Vector3) -> void:
 	cast_spell.emit('fireball', pos,last_movement_input, 1.0)
+	
