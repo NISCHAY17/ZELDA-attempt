@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bgu4acrodqw8g" path="res://ENTITIES/player/godette_skin.tscn" id="3_ptkms"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ufme"]
+radius = 0.8408203
+height = 3.2977295
 
 [node name="Player" type="CharacterBody3D" unique_id=1080306268 groups=["Player"]]
 collision_layer = 2
@@ -12,11 +14,11 @@ collision_mask = 29
 script = ExtResource("1_7ufme")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1022681645]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3447492, 0)
 shape = SubResource("CapsuleShape3D_7ufme")
 
 [node name="CAMERA CONTROLLER" parent="." unique_id=363107289 instance=ExtResource("2_ylu7f")]
-transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 1.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0584266, 0.45569542, 0, -0.49355248, 0.97724193, 0, 1.4, 0)
 min_limit_x = -0.8
 max_limit_x = -0.2
 
