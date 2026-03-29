@@ -15,6 +15,8 @@ extends CharacterBody3D
 var jump_velocity : float = 0.0
 var jump_gravity : float = 0.0
 var fall_gravity : float = 0.0
+
+signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
 func _ready():
 	#print("SCENE PATH:", get_tree().current_scene.scene_file_path)
 	#print("NODE PATH:", get_path())
@@ -129,3 +131,5 @@ func do_squash_and_streach(value: float, duration: float = 0.1):
 	tween.tween_property(skin, "squash_and_streach", value, duration)
 	tween.tween_property(skin, "squash_and_streach", 1.0, duration * 1.8 ).set_ease(Tween.EASE_OUT)
 	print("u just got squash_and_streached ")
+func shoot_fireball(pos: Vector3) -> void:
+	cast_spell.emit('fireball', pos,Vector2(0,1), 1.0)
