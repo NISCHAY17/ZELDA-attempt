@@ -4,9 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bt4il726k8d8x" path="res://graphics/characters/nagonford/Nagonford_Animated.glb" id="2_ltfqv"]
 [ext_resource type="Script" uid="uid://dfwe63bbiyeii" path="res://ENTITIES/enemys/boss.gd" id="2_y0v5g"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ltfqv"]
-radius = 2.348755
-height = 7.5592346
+[sub_resource type="BoxShape3D" id="BoxShape3D_y0v5g"]
+size = Vector3(1.7265625, 1, 1.8555756)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fcqv0"]
 animation = &"2H_Melee_Attack_Spinning"
@@ -71,8 +70,8 @@ script = ExtResource("2_y0v5g")
 spin_speed = 6
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=1839130851]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08788872, 3.529992, -0.6369528)
-shape = SubResource("CapsuleShape3D_ltfqv")
+transform = Transform3D(2.378938, 0, 0, 0, 5.7834587, 0, 0, 0, 1.71, -0.5529595, 3.615, 0.6705788)
+shape = SubResource("BoxShape3D_y0v5g")
 
 [node name="skin" parent="." index="1" unique_id=344240664 instance=ExtResource("2_ltfqv")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.1393784, 1.4170628, 0)
@@ -133,7 +132,7 @@ bones/42/rotation = Quaternion(-0.7766757, 0.167737, 0.606399, -0.030325945)
 transform = Transform3D(0.87840945, -0.1853764, 0.4404896, 0.4752626, 0.2420067, -0.84590584, 0.050209597, 0.9524008, 0.30068317, -0.23563616, 0.69000113, 0.18577738)
 
 [node name="Nagonford_Axe" parent="skin/Rig/Skeleton3D/Nagonford_Axe" index="0" unique_id=1216280917]
-transform = Transform3D(0.99990976, -0.012983501, -0.0034224093, 0.013073236, 0.9995314, 0.027669981, 0.0030615628, -0.027712092, 0.9996114, -0.023667693, 0.044907197, -0.02789861)
+transform = Transform3D(0.9999099, -0.012983501, -0.0034224465, 0.013073232, 0.99953127, 0.027669966, 0.0030615665, -0.027712137, 0.9996114, -0.017615937, 0.15970004, 0.008342743)
 
 [node name="RayCast3D" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="0" unique_id=135761099]
 transform = Transform3D(0.99998474, -0.0053440034, -0.0013615489, 0.0053589344, 0.99992096, 0.011371836, 0.0013007224, -0.01137872, 0.9999342, 0.02177748, 0.082451165, 0.055828333)
@@ -143,7 +142,26 @@ debug_shape_custom_color = Color(0, 0.8666667, 0, 1)
 debug_shape_thickness = 5
 
 [node name="RayCast3D2" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="1" unique_id=346455144]
-transform = Transform3D(0.004881505, -0.99996865, -0.005912075, -0.9993856, -0.0050835013, 0.034671396, -0.034700096, 0.0057391413, -0.99938035, -0.54531187, 1.0071902, -0.03918296)
+transform = Transform3D(0.004881516, -0.9999683, -0.005912034, -0.99938524, -0.005083479, 0.034671485, -0.034700006, 0.0057390276, -0.99938, -0.74445015, 1.0094895, -0.007073045)
+target_position = Vector3(0, -1.465, 0)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5
+
+[node name="RayCast3D3" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="2" unique_id=338562390]
+transform = Transform3D(0.0048814937, -0.99996823, -0.00591198, -0.9993853, -0.0050834715, 0.034671485, -0.034700006, 0.00573902, -0.99938, -0.7598492, 0.78109026, -0.086215496)
+target_position = Vector3(0, -1.465, 0)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5
+
+[node name="RayCast3D5" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="3" unique_id=994865088]
+transform = Transform3D(0.0048814714, -0.99996823, -0.00591195, -0.9993853, -0.0050834566, 0.034671485, -0.034699976, 0.005739026, -0.99938, -0.7514797, 0.9052268, -0.04320109)
+target_position = Vector3(0, -1.465, 0)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5
+
+[node name="RayCast3D4" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="4" unique_id=51599116]
+transform = Transform3D(0.0048814714, -0.99996823, -0.00591195, -0.9993853, -0.0050834566, 0.034671485, -0.034699976, 0.005739026, -0.99938, -0.7275565, 1.260055, 0.07975006)
+target_position = Vector3(0, -1.465, 0)
 debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 5
 

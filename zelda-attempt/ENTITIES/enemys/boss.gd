@@ -53,10 +53,34 @@ func hit():
 		$Timers/InvulTimer.start()
 func can_damage(value: bool) -> void:
 	can_damage_toggle = value 
+	
 func attack_logic() -> void:
+	# the shittest code i have ever wrote btw 
+	# even ai cant fix me now 
+	# i am so dumb vro 
 	if can_damage_toggle:
 		var collider = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D.get_collider()
+		var collider2 = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D2.get_collider()
+		var collider3 = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D3.get_collider()
+		var collider4 = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D4.get_collider()
+		var collider5 = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D5.get_collider()
 		print(collider)
 		if collider and 'hit' in collider:
+			collider.hit()
+			print("boss hit you ")
+			
+		if collider2 and 'hit' in collider2:
+			collider.hit()
+			print("boss hit you ")
+
+		if collider3 and 'hit' in collider3:
+			collider.hit()
+			print("boss hit you ")
+			
+		if collider4 and 'hit' in collider4:
+			collider.hit()
+			print("boss hit you ")
+			
+		if collider5 and 'hit' in collider5:
 			collider.hit()
 			print("boss hit you ")
