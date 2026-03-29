@@ -61,7 +61,7 @@ func attack_logic() -> void:
 	# had to fix the geometry of player but now it works yayy
 	if can_damage_toggle:
 		var collider = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D.get_collider()
-		print(collider)
+		#print(collider)
 		if collider and collider.has_method("hit"):
-			print(collider)
+			#print(collider)
 			collider.hit()
