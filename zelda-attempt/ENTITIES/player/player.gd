@@ -1,3 +1,4 @@
+#player.gd
 extends CharacterBody3D
 @onready var skin = $godetteSkin
 # jump settings

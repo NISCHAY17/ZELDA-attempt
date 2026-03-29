@@ -8,7 +8,7 @@ const simple_attacks = {
 var spinning := false
 var can_damage_toggle := false
 func _process(delta: float) -> void:
-	attack_logic()
+	attack_logic()    
 func  _physics_process(delta: float) -> void:
 	move_to_player(delta)
 func _on_attack_timer_timeout() -> void:
@@ -32,11 +32,13 @@ func spin_attack_animation():
 	spinning = true
 func _spin_transition(value: float) -> void:
 	$AnimationTree.set("parameters/SpinBlend/blend_amount", value)
-	can_damage_toggle = true
+	can_damage_toggle = trues
 func range_attack_animation():
 	stop_movement(1.5,1.5)
 	attack_animation.animation = simple_attacks['range']
 	$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+func shoot_fireball() -> void:
+	
 func melee_attack_animation():
 	attack_animation.animation = simple_attacks['slice' if rng.randi() % 2 else 'spin']
 	$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)

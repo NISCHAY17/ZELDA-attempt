@@ -1,3 +1,4 @@
+#godotte_skin.gd
 extends Node3D
 @onready var move_state_machine =  $AnimationTree.get("parameters/MOVEStateMachine/playback")
 @onready var attack_state_machine =  $AnimationTree.get("parameters/AttackStateMachine/playback")
@@ -21,6 +22,7 @@ func set_move_state(state_name: String) -> void:
 func hit() -> void:
 	# chnage the anim to hit_A
 	extra_animation.animation = 'Hit_A'
+	attacking = false # hit() wasn't clearing 'attacking', so getting hit mid-combo soft-locked attack and weapon switching 
 	# Fix ExtraOneshot trigger: used "request" instead of invalid "active"
 	$AnimationTree.set("parameters/ExtraOneshot/request" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)  
 	$AnimationTree.set('parameters/AttackOneShot/request', AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
