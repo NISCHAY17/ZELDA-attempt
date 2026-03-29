@@ -1,5 +1,5 @@
 extends Enemy
-signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
+#signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
 
 func _ready() -> void:
 	attack_radius = 10.5

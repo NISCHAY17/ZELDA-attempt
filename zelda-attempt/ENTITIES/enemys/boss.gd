@@ -23,7 +23,6 @@ func _on_attack_timer_timeout() -> void:
 		# 4 anim          
 		# 2 melee attacks
 		# 2 range attacks
-		
 func spin_attack_animation():
 	var tween = create_tween()
 	tween.tween_property(self,"speed",spin_speed,0.5 )
@@ -32,13 +31,16 @@ func spin_attack_animation():
 	spinning = true
 func _spin_transition(value: float) -> void:
 	$AnimationTree.set("parameters/SpinBlend/blend_amount", value)
-	can_damage_toggle = trues
+	can_damage_toggle = true
 func range_attack_animation():
 	stop_movement(1.5,1.5)
 	attack_animation.animation = simple_attacks['range']
 	$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 func shoot_fireball() -> void:
-	
+	var direction = (player.position - position).normalized()
+	var dir_2d = Vector2(direction.x, direction.z)
+	var pos = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/Marker3D.global_position
+	cast_spell.emit('fireball', pos, dir_2d, 1.0)
 func melee_attack_animation():
 	attack_animation.animation = simple_attacks['slice' if rng.randi() % 2 else 'spin']
 	$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
@@ -57,8 +59,6 @@ func hit():
 		$Timers/InvulTimer.start()
 func can_damage(value: bool) -> void:
 	can_damage_toggle = value 
-	
-	
 func attack_logic() -> void:
 	# had to fix the geometry of player but now it works yayy
 	if can_damage_toggle:

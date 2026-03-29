@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var notice_radius := 30.0
 @export var attack_radius := 3.0
 @export var walk_speed := 2
+signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
 var squash_and_streach := 1.0:
 	set(value):
 		squash_and_streach = value
