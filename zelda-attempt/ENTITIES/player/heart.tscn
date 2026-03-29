@@ -2,8 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://c1bbbjkvgcdml" path="res://graphics/ui/heart.png" id="1_1jpwr"]
 [ext_resource type="Shader" uid="uid://b478jtckv54dk" path="res://ENTITIES/player/heart.gdshader" id="1_lgukj"]
+[ext_resource type="Script" uid="uid://ku7rvblc433w" path="res://ENTITIES/player/heart.gd" id="3_2204j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2204j"]
+resource_local_to_scene = true
 shader = ExtResource("1_lgukj")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/progress = 0.0
@@ -16,3 +18,4 @@ offset_bottom = 40.0
 texture = ExtResource("1_1jpwr")
 expand_mode = 2
 stretch_mode = 4
+script = ExtResource("3_2204j")

@@ -12,16 +12,18 @@ extends CharacterBody3D
 @export var base_speed := 6.0
 @export var run_speed := 25.0
 @onready var camera_3d: Node3D = $"CAMERA CONTROLLER"
+@onready var ui = $UI
 @export var defend_speed := 2.0
 var jump_velocity : float = 0.0
 var jump_gravity : float = 0.0
 var fall_gravity : float = 0.0
-
+var health = 5  
 signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
 func _ready():
 	#print("SCENE PATH:", get_tree().current_scene.scene_file_path)
 	#print("NODE PATH:", get_path())
 	#print("jump_height from inspector:", jump_height)
+	ui.setup(health)
 	
 	skin.switch_weapon(weapon_active)
 	jump_velocity = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
@@ -42,6 +44,7 @@ var defend := false:
 		defend = value
 var speed_modifier := 1.0
 var weapon_active := true
+
 func jump_logic(delta) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
