@@ -20,9 +20,10 @@ func _on_attack_timer_timeout() -> void:
 			range_attack_animation()
 		else:
 			spin_attack_animation()
-		# 4 anim
+		# 4 anim          
 		# 2 melee attacks
 		# 2 range attacks
+		
 func spin_attack_animation():
 	var tween = create_tween()
 	tween.tween_property(self,"speed",spin_speed,0.5 )
@@ -55,5 +56,7 @@ func can_damage(value: bool) -> void:
 func attack_logic() -> void:
 	if can_damage_toggle:
 		var collider = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D.get_collider()
+		print(collider)
 		if collider and 'hit' in collider:
 			collider.hit()
+			print("boss hit you ")
