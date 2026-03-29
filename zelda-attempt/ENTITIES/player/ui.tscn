@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dtnldvd6wf3v1"]
+
+[ext_resource type="PackedScene" uid="uid://b25vhpkmhgc1s" path="res://ENTITIES/player/heart.tscn" id="1_iwraf"]
+
+[node name="UI" type="Control" unique_id=847037512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="." unique_id=1264520759]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1683838853]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1699695182]
+layout_mode = 2
+
+[node name="Heart" parent="Control/MarginContainer/HBoxContainer" unique_id=917588686 instance=ExtResource("1_iwraf")]
+layout_mode = 2

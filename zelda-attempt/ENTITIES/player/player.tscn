@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ddqh2jy1gvl70" path="res://ENTITIES/player/player.gd" id="1_7ufme"]
 [ext_resource type="PackedScene" uid="uid://bvkd85coruw2v" path="res://ENTITIES/player/camera_controller.tscn" id="2_ylu7f"]
 [ext_resource type="PackedScene" uid="uid://bgu4acrodqw8g" path="res://ENTITIES/player/godette_skin.tscn" id="3_ptkms"]
+[ext_resource type="PackedScene" uid="uid://dtnldvd6wf3v1" path="res://ENTITIES/player/ui.tscn" id="4_6mcbg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ufme"]
 radius = 0.8408203
@@ -23,3 +24,5 @@ min_limit_x = -0.8
 max_limit_x = -0.2
 
 [node name="godetteSkin" parent="." unique_id=686334550 instance=ExtResource("3_ptkms")]
+
+[node name="UI" parent="." unique_id=847037512 instance=ExtResource("4_6mcbg")]
