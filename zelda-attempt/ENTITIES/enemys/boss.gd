@@ -19,7 +19,8 @@ func _on_attack_timer_timeout() -> void:
 		if rng.randi() % 2:
 			range_attack_animation()
 		else:
-			spin_attack_animation()
+			#spin_attack_animation()
+			range_attack_animation()
 		# 4 anim          
 		# 2 melee attacks
 		# 2 range attacks
@@ -40,7 +41,7 @@ func shoot_fireball() -> void:
 	var direction = (player.position - position).normalized()
 	var dir_2d = Vector2(direction.x, direction.z)
 	var pos = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/Marker3D.global_position
-	cast_spell.emit('fireball', pos, dir_2d, 1.0)
+	cast_spell.emit('fireball', pos, dir_2d, 4.0)
 func melee_attack_animation():
 	attack_animation.animation = simple_attacks['slice' if rng.randi() % 2 else 'spin']
 	$AnimationTree.set("parameters/AttackOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
@@ -55,7 +56,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		$Timers/AttackTimer.start()
 func hit():
 	if not $Timers/InvulTimer.time_left:
-		print(" boss was hit ") 
+		#print(" boss was hit ") 
 		$Timers/InvulTimer.start()
 func can_damage(value: bool) -> void:
 	can_damage_toggle = value 
