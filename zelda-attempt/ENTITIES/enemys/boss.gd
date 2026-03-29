@@ -32,6 +32,7 @@ func spin_attack_animation():
 	spinning = true
 func _spin_transition(value: float) -> void:
 	$AnimationTree.set("parameters/SpinBlend/blend_amount", value)
+	can_damage_toggle = true
 func range_attack_animation():
 	stop_movement(1.5,1.5)
 	attack_animation.animation = simple_attacks['range']
@@ -46,6 +47,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		tween.tween_property(self,"speed",walk_speed,0.5 )
 		tween.tween_method(_spin_transition, 1.0, 0.0, 0.3 )
 		spinning = false
+		can_damage_toggle = false
 		$Timers/AttackTimer.start()
 func hit():
 	if not $Timers/InvulTimer.time_left:
@@ -54,33 +56,11 @@ func hit():
 func can_damage(value: bool) -> void:
 	can_damage_toggle = value 
 	
+	
 func attack_logic() -> void:
-	# the shittest code i have ever wrote btw 
-	# even ai cant fix me now 
-	# i am so dumb vro 
 	if can_damage_toggle:
-		var collider = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D.get_collider()
-		var collider2 = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D2.get_collider()
-		var collider3 = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D3.get_collider()
-		var collider4 = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D4.get_collider()
-		var collider5 = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D5.get_collider()
+		var collider = $skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe/RayCast3D
 		print(collider)
 		if collider and 'hit' in collider:
+			print(collider)
 			collider.hit()
-			print("boss hit you ")
-			
-		if collider2 and 'hit' in collider2:
-			collider.hit()
-			print("boss hit you ")
-
-		if collider3 and 'hit' in collider3:
-			collider.hit()
-			print("boss hit you ")
-			
-		if collider4 and 'hit' in collider4:
-			collider.hit()
-			print("boss hit you ")
-			
-		if collider5 and 'hit' in collider5:
-			collider.hit()
-			print("boss hit you ")

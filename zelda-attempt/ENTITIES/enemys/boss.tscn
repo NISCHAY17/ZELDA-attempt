@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dfwe63bbiyeii" path="res://ENTITIES/enemys/boss.gd" id="2_y0v5g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y0v5g"]
-size = Vector3(1.7265625, 1, 1.8555756)
+size = Vector3(0.8930664, 0.9946289, 1.3966599)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fcqv0"]
 animation = &"2H_Melee_Attack_Spinning"
@@ -14,6 +14,7 @@ animation = &"2H_Melee_Attack_Spinning"
 animation = &"1H_Melee_Attack_Slice_Horizontal"
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_fcqv0"]
+filters = [".."]
 fadein_time = 0.2
 fadeout_time = 0.3
 
@@ -43,10 +44,12 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-263.45728, 0)
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_p8vdm"]
+filters = [".."]
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_p8vdm"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_y0v5g"]
+graph_offset = Vector2(-176.63672, 42.792248)
 nodes/output/position = Vector2(1008, 320)
 nodes/MoveStateMachine/node = SubResource("AnimationNodeStateMachine_y0v5g")
 nodes/MoveStateMachine/position = Vector2(-352, 144)
@@ -70,42 +73,41 @@ script = ExtResource("2_y0v5g")
 spin_speed = 6
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=1839130851]
-transform = Transform3D(2.378938, 0, 0, 0, 5.7834587, 0, 0, 0, 1.71, -0.5529595, 3.615, 0.6705788)
+transform = Transform3D(2.378938, 0, 0, 0, 5.7834587, 0, 0, 0, 1.71, 0.43845826, 3.6305318, 0.27820584)
 shape = SubResource("BoxShape3D_y0v5g")
 
 [node name="skin" parent="." index="1" unique_id=344240664 instance=ExtResource("2_ltfqv")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.1393784, 1.4170628, 0)
 
 [node name="Skeleton3D" parent="skin/Rig" parent_id_path=PackedInt32Array(344240664, 675698115) index="0" unique_id=262346599]
-bones/1/position = Vector3(0.09449039, 0.37585235, 0.039640043)
-bones/1/rotation = Quaternion(0.0836106, -0.31889686, 0.044980984, 0.94302225)
-bones/2/rotation = Quaternion(-0.061093003, -0.22832552, -0.0018946519, 0.9716643)
-bones/3/rotation = Quaternion(-2.220446e-16, -3.57567e-09, -2.8574743e-10, 1)
+bones/1/position = Vector3(0.008410764, 0.37512827, 1.2184853e-10)
+bones/2/rotation = Quaternion(-0.060599465, -0.13028215, -0.007978079, 0.9895912)
+bones/3/rotation = Quaternion(0.0055999844, 0.00018308838, -0.0014893002, 0.99998325)
 bones/4/position = Vector3(0.24804358, 0.110857, 0.0825816)
-bones/4/rotation = Quaternion(-0.7942194, 0.17617057, -0.57413864, 0.09243613)
-bones/5/rotation = Quaternion(5.318715e-08, -3.295214e-08, -0.8004594, 0.5993871)
-bones/7/rotation = Quaternion(-0.33580443, -0.27012685, 0.24823739, 0.86755127)
+bones/4/rotation = Quaternion(-0.580049, -0.24835679, -0.73109245, 0.25954983)
+bones/5/rotation = Quaternion(4.2863462e-08, -3.1145042e-08, -0.56177366, 0.82729095)
+bones/7/rotation = Quaternion(-0.18675363, -0.67787874, -0.05274816, 0.7090989)
 bones/8/position = Vector3(5.1384585e-10, 0.09612511, -0.057500035)
 bones/8/rotation = Quaternion(-6.2219203e-09, 4.3147903e-09, -0.7071068, 0.7071067)
 bones/9/position = Vector3(-0.17668214, 0.11170339, 0.0891542)
-bones/9/rotation = Quaternion(-0.0040355027, 0.46013492, 0.7691418, 0.44348678)
-bones/10/rotation = Quaternion(3.6603367e-08, 4.6679503e-08, 0.80641925, 0.59134436)
-bones/12/rotation = Quaternion(0.025023412, 0.59851074, -0.34467423, 0.7227437)
+bones/9/rotation = Quaternion(-0.25068358, 0.3500196, 0.8389174, 0.3329589)
+bones/10/rotation = Quaternion(2.8625326e-08, 4.9069243e-08, 0.5667713, 0.82387525)
+bones/12/rotation = Quaternion(-0.24149203, 0.21780127, -0.105124846, 0.93978345)
 bones/13/position = Vector3(-5.138494e-10, 0.096125126, -0.057500005)
-bones/13/rotation = Quaternion(0.28384808, -0.32283387, 0.6268683, 0.6498036)
-bones/15/rotation = Quaternion(0.074665, 0.32498395, -0.019746402, 0.9425607)
+bones/13/rotation = Quaternion(0.15571052, -0.18945536, 0.6702893, 0.7004093)
+bones/15/rotation = Quaternion(0.08181781, 0.1304585, 0.0070289313, 0.9880471)
 bones/17/position = Vector3(0.17094505, 0.11358726, 1.3923275e-08)
-bones/17/rotation = Quaternion(0.9560441, -0.0072311647, -0.26319426, 0.1290589)
-bones/18/rotation = Quaternion(0.35160497, 6.7700526e-08, -3.1579086e-07, 0.93614846)
-bones/19/rotation = Quaternion(-0.6167174, -0.23496795, 0.0022940356, 0.75129527)
-bones/20/rotation = Quaternion(4.6810004e-05, 0.92016816, -0.3915234, -1.0511321e-05)
-bones/21/rotation = Quaternion(0.90397656, -0.12889841, -0.2870849, 0.28947154)
-bones/22/rotation = Quaternion(0.36033988, -4.5406306e-08, 1.901442e-07, 0.9328211)
-bones/23/rotation = Quaternion(-0.50255626, 0.21962564, -0.10012431, 0.8301669)
-bones/24/rotation = Quaternion(7.607508e-06, 0.9202806, -0.39125922, -1.5870785e-06)
+bones/17/rotation = Quaternion(0.9930619, 0.07373298, 0.039657142, 0.08257644)
+bones/18/rotation = Quaternion(0.37077624, 6.487556e-08, -2.6170855e-07, 0.9287223)
+bones/19/rotation = Quaternion(-0.60289705, -0.21261363, 0.057501685, 0.76681435)
+bones/20/rotation = Quaternion(2.4017283e-05, 0.9201388, -0.39159247, -5.438129e-06)
+bones/21/rotation = Quaternion(0.99020743, -0.03950948, -0.011998223, 0.13335809)
+bones/22/rotation = Quaternion(0.40762717, -6.449918e-08, 2.8159812e-07, 0.9131485)
+bones/23/rotation = Quaternion(-0.6128964, 0.111666456, -0.029863482, 0.7816628)
+bones/24/rotation = Quaternion(-1.347825e-05, 0.92014426, -0.3915796, 3.3314864e-06)
 bones/25/rotation = Quaternion(0.7071068, -2.2930234e-07, -4.605517e-08, 0.7071068)
 bones/26/rotation = Quaternion(-0.7071068, -7.052851e-08, -7.0528486e-08, 0.7071068)
-bones/27/position = Vector3(0.030839492, 0.24178052, -2.8668688e-15)
+bones/27/position = Vector3(0.030839492, 0.38245776, -2.8668688e-15)
 bones/27/rotation = Quaternion(1.0013814e-08, 1.91522e-09, 0.9846389, -0.1746031)
 bones/28/position = Vector3(3.752948e-09, 0.21343613, -1.0342986e-08)
 bones/28/rotation = Quaternion(-9.998893e-08, 0.39108434, 0.92035484, -3.3950656e-08)
@@ -113,23 +115,22 @@ bones/29/position = Vector3(2.3491044e-08, 0.16565004, -5.091363e-09)
 bones/30/rotation = Quaternion(1, 2.3026052e-09, 1.9333544e-07, -4.398443e-16)
 bones/32/rotation = Quaternion(0.7071068, -3.8238497e-08, 1.4500867e-07, 0.7071068)
 bones/33/rotation = Quaternion(-0.7071068, -7.0528515e-08, -7.05285e-08, 0.7071068)
-bones/34/position = Vector3(0.059344076, 0.3678159, -7.4505793e-09)
-bones/34/rotation = Quaternion(-1.7552736e-08, 3.2546268e-09, 0.96996874, 0.24322984)
+bones/34/rotation = Quaternion(-5.8358944e-09, 6.4383693e-10, 0.9948094, 0.10175614)
 bones/35/position = Vector3(-1.114822e-08, 0.21343614, -2.5094192e-15)
 bones/35/rotation = Quaternion(-1.05795515e-07, 0.39108434, 0.92035484, -2.5864264e-08)
 bones/36/position = Vector3(-6.3112755e-09, 0.16565004, 2.7069498e-09)
 bones/37/rotation = Quaternion(1, 3.7652574e-09, 1.9487908e-07, 7.4505815e-09)
 bones/39/position = Vector3(0.8398419, 0.7198659, -0.44755834)
 bones/39/rotation = Quaternion(-0.7071068, -7.279511e-08, -7.279509e-08, 0.7071068)
-bones/40/position = Vector3(-0.031856894, 0.77396256, 0.44094896)
-bones/40/rotation = Quaternion(0.33007526, -0.28989545, 0.75103724, 0.49290377)
+bones/40/position = Vector3(0.34039888, 0.8148382, 0.40966278)
+bones/40/rotation = Quaternion(0.6150939, 0.06600658, 0.45931873, 0.6374394)
 bones/41/position = Vector3(-0.87740976, 1.0355499, -0.44755882)
 bones/41/rotation = Quaternion(-0.7071068, -7.279511e-08, -7.279509e-08, 0.7071068)
-bones/42/position = Vector3(-0.279589, 0.83741593, 0.091473475)
-bones/42/rotation = Quaternion(-0.7766757, 0.167737, 0.606399, -0.030325945)
+bones/42/position = Vector3(-0.33967787, 0.82426554, 0.27760005)
+bones/42/rotation = Quaternion(-0.32429302, 0.22463968, 0.90581524, -0.1544989)
 
 [node name="Nagonford_Axe" parent="skin/Rig/Skeleton3D" index="0" unique_id=825604845]
-transform = Transform3D(0.87840945, -0.1853764, 0.4404896, 0.4752626, 0.2420067, -0.84590584, 0.050209597, 0.9524008, 0.30068317, -0.23563616, 0.69000113, 0.18577738)
+transform = Transform3D(0.21536745, 0.77106977, 0.5992218, 0.6162997, 0.36865923, -0.69589055, -0.75748885, 0.5191727, -0.3958134, -0.2836865, 0.68940324, 0.35134768)
 
 [node name="Nagonford_Axe" parent="skin/Rig/Skeleton3D/Nagonford_Axe" index="0" unique_id=1216280917]
 transform = Transform3D(0.9999099, -0.012983501, -0.0034224465, 0.013073232, 0.99953127, 0.027669966, 0.0030615665, -0.027712137, 0.9996114, -0.017615937, 0.15970004, 0.008342743)
@@ -138,35 +139,12 @@ transform = Transform3D(0.9999099, -0.012983501, -0.0034224465, 0.013073232, 0.9
 transform = Transform3D(0.99998474, -0.0053440034, -0.0013615489, 0.0053589344, 0.99992096, 0.011371836, 0.0013007224, -0.01137872, 0.9999342, 0.02177748, 0.082451165, 0.055828333)
 target_position = Vector3(-0.045, 1.865, 0)
 collision_mask = 2
+hit_from_inside = true
 debug_shape_custom_color = Color(0, 0.8666667, 0, 1)
 debug_shape_thickness = 5
 
-[node name="RayCast3D2" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="1" unique_id=346455144]
-transform = Transform3D(0.004881516, -0.9999683, -0.005912034, -0.99938524, -0.005083479, 0.034671485, -0.034700006, 0.0057390276, -0.99938, -0.74445015, 1.0094895, -0.007073045)
-target_position = Vector3(0, -1.465, 0)
-debug_shape_custom_color = Color(1, 0, 0, 1)
-debug_shape_thickness = 5
-
-[node name="RayCast3D3" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="2" unique_id=338562390]
-transform = Transform3D(0.0048814937, -0.99996823, -0.00591198, -0.9993853, -0.0050834715, 0.034671485, -0.034700006, 0.00573902, -0.99938, -0.7598492, 0.78109026, -0.086215496)
-target_position = Vector3(0, -1.465, 0)
-debug_shape_custom_color = Color(1, 0, 0, 1)
-debug_shape_thickness = 5
-
-[node name="RayCast3D5" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="3" unique_id=994865088]
-transform = Transform3D(0.0048814714, -0.99996823, -0.00591195, -0.9993853, -0.0050834566, 0.034671485, -0.034699976, 0.005739026, -0.99938, -0.7514797, 0.9052268, -0.04320109)
-target_position = Vector3(0, -1.465, 0)
-debug_shape_custom_color = Color(1, 0, 0, 1)
-debug_shape_thickness = 5
-
-[node name="RayCast3D4" type="RayCast3D" parent="skin/Rig/Skeleton3D/Nagonford_Axe/Nagonford_Axe" index="4" unique_id=51599116]
-transform = Transform3D(0.0048814714, -0.99996823, -0.00591195, -0.9993853, -0.0050834566, 0.034671485, -0.034699976, 0.005739026, -0.99938, -0.7275565, 1.260055, 0.07975006)
-target_position = Vector3(0, -1.465, 0)
-debug_shape_custom_color = Color(1, 0, 0, 1)
-debug_shape_thickness = 5
-
 [node name="Nagonford_Cape" parent="skin/Rig/Skeleton3D" index="1" unique_id=2043253121]
-transform = Transform3D(0.4429033, -0.04210088, -0.8955803, -0.030739024, 0.9975965, -0.0620984, 0.8960422, 0.05503283, 0.4405447, 0.041931488, 1.1811161, 0.098415345)
+transform = Transform3D(0.9659258, 0.031580124, -0.25688517, -0.00300099, 0.9938278, 0.11089188, 0.25880164, -0.10634241, 0.9600588, 0.027919859, 1.1810353, -0.07006684)
 
 [node name="AnimationTree" parent="." index="2" unique_id=342061427]
 root_node = NodePath("../skin")
