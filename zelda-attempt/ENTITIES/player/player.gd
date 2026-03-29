@@ -29,6 +29,7 @@ func _ready():
 	#print("jump_velocity computed as:", jump_velocity)
 # movement direction input
 var movement_input := Vector2.ZERO
+var last_movement_input := Vector2(0,1)
 var defend := false:
 	set(value):
 		if defend == value:
@@ -100,6 +101,10 @@ func move_logic(delta) -> void:
 		velocity.z = vel_2d.y
 		# walk anim
 		$godetteSkin.set_move_state('Idle')
+		
+	if movement_input:
+			last_movement_input = movement_input
+		
 func ability_logic() -> void:
 	# worked on attack
 	if Input.is_action_just_pressed("ability"):
@@ -132,4 +137,4 @@ func do_squash_and_streach(value: float, duration: float = 0.1):
 	tween.tween_property(skin, "squash_and_streach", 1.0, duration * 1.8 ).set_ease(Tween.EASE_OUT)
 	print("u just got squash_and_streached ")
 func shoot_fireball(pos: Vector3) -> void:
-	cast_spell.emit('fireball', pos,Vector2(0,1), 1.0)
+	cast_spell.emit('fireball', pos,last_movement_input, 1.0)
