@@ -17,7 +17,10 @@ extends CharacterBody3D
 var jump_velocity : float = 0.0
 var jump_gravity : float = 0.0
 var fall_gravity : float = 0.0
-var health = 5  
+var health = 5:
+	set(value):
+		ui.update_health(value, value - health)
+		health = value
 signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
 func _ready():
 	#print("SCENE PATH:", get_tree().current_scene.scene_file_path)
@@ -134,8 +137,12 @@ func stop_movement(start_duration: float , end_duration: float):
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )
 	tween.tween_property(self, "speed_modifier", 1.0, end_duration      )
 func hit():
-	skin.hit()
-	stop_movement(0.3,0.667)
+	if not $Timers/InvulTimer.time_left:
+		
+		skin.hit()
+		stop_movement(0.3,0.667)
+		health -= 1
+		$Timers/InvulTimer.start()
 func do_squash_and_streach(value: float, duration: float = 0.1):
 	var tween = create_tween()
 	tween.tween_property(skin, "squash_and_streach", value, duration)
