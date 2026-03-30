@@ -17,6 +17,8 @@ extends CharacterBody3D
 var jump_velocity : float = 0.0
 var jump_gravity : float = 0.0
 var fall_gravity : float = 0.0
+enum  spells {FIREBALL, HEAL}
+var current_spell = spells.FIREBALL
 var health = 5:
 	set(value):
 		ui.update_health(value, value - health)
@@ -27,6 +29,8 @@ func _ready():
 	#print("NODE PATH:", get_path())
 	#print("jump_height from inspector:", jump_height)
 	ui.setup(health)
+	weapon_active = true
+
 	
 	skin.switch_weapon(weapon_active)
 	jump_velocity = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
@@ -46,7 +50,13 @@ var defend := false:
 			skin.defend(false)
 		defend = value
 var speed_modifier := 1.0
-var weapon_active := true
+var weapon_active := true:
+	set(value):
+		weapon_active = value
+		if weapon_active:
+			ui.get_node("Spells").hide()
+		else:
+			ui.get_node("Spells").show()
 
 func jump_logic(delta) -> void:
 	if is_on_floor():
@@ -132,6 +142,9 @@ func ability_logic() -> void:
 		weapon_active = not weapon_active
 		skin.switch_weapon(weapon_active)
 		do_squash_and_streach(1.2,0.16)
+	if Input.is_action_just_pressed("spell switch") and not skin.attacking:
+		current_spell = spells[spells.keys()[(int(current_spell) + 1) % len(spells)]]
+		ui.update_spell(spells, current_spell)
 func stop_movement(start_duration: float , end_duration: float):
 	var tween = create_tween()
 	tween.tween_property(self, "speed_modifier", 0.0, start_duration      )

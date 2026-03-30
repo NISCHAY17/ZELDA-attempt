@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dtnldvd6wf3v1"]
 
 [ext_resource type="Script" uid="uid://b0dxa3sy427dk" path="res://ENTITIES/player/ui.gd" id="1_iwraf"]
+[ext_resource type="Texture2D" uid="uid://3vh0pug1ilge" path="res://graphics/ui/fire.png" id="2_fbfej"]
 
 [node name="UI" type="Control" unique_id=847037512]
 layout_mode = 3
@@ -11,17 +12,39 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwraf")
 
-[node name="Control" type="Control" parent="." unique_id=1264520759]
+[node name="Spells" type="Control" parent="." unique_id=126501526]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Spells" unique_id=1084202560]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="Spells/MarginContainer" unique_id=575976440]
+layout_mode = 2
+texture = ExtResource("2_fbfej")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Hearts" type="Control" parent="." unique_id=1264520759]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1683838853]
+[node name="MarginContainer" type="MarginContainer" parent="Hearts" unique_id=1683838853]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1699695182]
+[node name="HBoxContainer" type="HBoxContainer" parent="Hearts/MarginContainer" unique_id=1699695182]
 layout_mode = 2

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://djiwkvp0jt3va" path="res://ENTITIES/player/player.tscn" id="1_2q6dc"]
 [ext_resource type="Script" uid="uid://mx8rwar4fyfn" path="res://scenes/level.gd" id="1_w8frs"]
-[ext_resource type="PackedScene" uid="uid://ddd2c86fjpchk" path="res://ENTITIES/enemys/boss.tscn" id="4_ppgk2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rd3vj"]
 sky_top_color = Color(0.538346, 0.72019506, 0.8280812, 1)
@@ -43,9 +42,6 @@ shadow_enabled = true
 
 [node name="Player" parent="entity" unique_id=1080306268 instance=ExtResource("1_2q6dc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.016581, 0, 8.405697)
-
-[node name="Boss" parent="entity" unique_id=895401054 instance=ExtResource("4_ppgk2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.637457)
 
 [node name="envrionment" type="Node3D" parent="." unique_id=624035515]
 
