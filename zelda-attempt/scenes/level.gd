@@ -6,7 +6,7 @@ func _ready() -> void:
 	for entity in $entity.get_children():
 		if entity.has_signal("cast_spell"):
 			entity.connect("cast_spell", create_fireball)
-func create_fireball(type: String, pos: Vector3, direction: Vector2, size: float):
+func create_fireball(_type: String, pos: Vector3, direction: Vector2, size: float):
 	#print('shoot fireball')
 	
 	var fireball = fireball_scene.instantiate()

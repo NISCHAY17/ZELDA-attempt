@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djiwkvp0jt3va" path="res://ENTITIES/player/player.tscn" id="1_2q6dc"]
 [ext_resource type="Script" uid="uid://mx8rwar4fyfn" path="res://scenes/level.gd" id="1_w8frs"]
+[ext_resource type="Texture2D" uid="uid://fumrtrsuwiyf" path="res://graphics/grid/Dark/texture_09.png" id="3_w8frs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rd3vj"]
 sky_top_color = Color(0.538346, 0.72019506, 0.8280812, 1)
@@ -18,6 +19,9 @@ sky = SubResource("Sky_2q6dc")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mx8sn"]
+albedo_texture = ExtResource("3_w8frs")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7c3h"]
 size = Vector3(40, 0.5, 40)
 
@@ -26,6 +30,8 @@ size = Vector3(10, 10, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w8frs"]
 size = Vector3(10, 10, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_w8frs"]
 
 [node name="level" type="Node3D" unique_id=44627815]
 script = ExtResource("1_w8frs")
@@ -51,6 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 [node name="CSGBox3D" type="CSGBox3D" parent="envrionment/StaticBody3D" unique_id=2128577709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0128694475, 0)
 size = Vector3(40, 0.5, 40)
+material = SubResource("StandardMaterial3D_mx8sn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="envrionment/StaticBody3D" unique_id=1804821836]
 shape = SubResource("BoxShape3D_w7c3h")
@@ -65,6 +72,21 @@ mesh = SubResource("BoxMesh_2q6dc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="envrionment/StaticBody3D2" unique_id=901904293]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6866755, -0.11220169, 0.016023636)
 shape = SubResource("BoxShape3D_w8frs")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="envrionment" unique_id=308990235]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="envrionment/StaticBody3D3" unique_id=155212596]
+shape = SubResource("WorldBoundaryShape3D_w8frs")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="envrionment" unique_id=1865351195]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="envrionment/CSGCombiner3D" unique_id=1477223540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.326416, 0.6244782, 0)
+size = Vector3(3.652832, 1, 1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="envrionment/CSGCombiner3D" unique_id=922154414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.680748, 0)
 
 [node name="Projectiles" type="Node3D" parent="." unique_id=1513956382]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.016581, 0, -7.5039024)

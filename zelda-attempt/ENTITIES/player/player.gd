@@ -23,16 +23,20 @@ var health = 5:
 	set(value):
 		ui.update_health(value, value - health)
 		health = value
+		if health <= 0:
+			get_tree().quit()
 var energy = 100:
-	
-
 	set(value):
-		energy = min(100,value)
+		energy = min(100,value)	
 		ui.update_energy(energy)
 		
 var stamina = 100:
 	set(value):
 		ui.update_stamina(stamina,value)
+		if stamina == 100 and value < 100:
+			ui.change_stamina_alpha(1.0)
+		if value == 100:
+			ui.change_stamina_alpha(0.0)
 		stamina = clamp(value,0,100)
 signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
 func _ready():
@@ -183,3 +187,7 @@ func shoot_magic(pos: Vector3) -> void:
 
 func _on_energy_recovery_timer_timeout() -> void:
 	energy += 1
+
+
+func _on_stamina_recovery_timer_timeout() -> void:
+	stamina += 1

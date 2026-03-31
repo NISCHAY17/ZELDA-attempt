@@ -7,6 +7,12 @@ extends CharacterBody3D
 @export var notice_radius := 30.0
 @export var attack_radius := 3.0
 @export var walk_speed := 2
+var health = 5:
+	set(value):
+		health = value 
+		if health <= 0:
+			queue_free()
+@warning_ignore("unused_signal")
 signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
 var squash_and_streach := 1.0:
 	set(value):
@@ -42,3 +48,4 @@ func hit() -> void:
 	if not $Timers/InvulTimer.time_left:
 		do_squash_and_streach(0.567,0.1567) # ficed the error    where the first value was 1 
 		$Timers/InvulTimer.start()
+		health -= 1

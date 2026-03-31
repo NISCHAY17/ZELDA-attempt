@@ -94,7 +94,9 @@ theme_override_constants/margin_left = 320
 theme_override_constants/margin_bottom = 300
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="StaminaBar/CenterContainer/MarginContainer" unique_id=128362549]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+value = 100.0
 fill_mode = 4
 texture_under = ExtResource("4_bca70")
 texture_progress = ExtResource("4_bca70")
