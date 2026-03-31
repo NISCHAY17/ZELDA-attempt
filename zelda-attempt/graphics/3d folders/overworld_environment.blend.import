@@ -2,14 +2,14 @@
 
 importer="antonWetzel.importHelper.blender.PackedScene"
 type="PackedScene"
-uid="uid://diax174w45ojd"
+uid="uid://oqr7nvabhd3d"
 valid=false
 
 [deps]
 
-source_file="res://Tiles.blend"
+source_file="res://graphics/3d folders/overworld_environment.blend"
 
 [params]
 
-open_editor=1
+open_editor=0
 apply_modifiers=true
