@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b0dxa3sy427dk" path="res://ENTITIES/player/ui.gd" id="1_iwraf"]
 [ext_resource type="Texture2D" uid="uid://3vh0pug1ilge" path="res://graphics/ui/fire.png" id="2_fbfej"]
+[ext_resource type="Texture2D" uid="uid://gi44t0kmhjr8" path="res://graphics/ui/bar_color.png" id="2_i0a2k"]
+[ext_resource type="Texture2D" uid="uid://ca408dm1c5imy" path="res://graphics/ui/circle.png" id="4_bca70"]
 
 [node name="UI" type="Control" unique_id=847037512]
 layout_mode = 3
@@ -11,6 +13,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwraf")
+
+[node name="EnergyBar" type="Control" parent="." unique_id=1747371058]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="EnergyBar" unique_id=1241859068]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 50
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="EnergyBar/MarginContainer" unique_id=518944756]
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("2_i0a2k")
+texture_progress = ExtResource("2_i0a2k")
+tint_under = Color(0.25502014, 0.25502014, 0.25502014, 1)
+tint_progress = Color(0.2, 0.53333336, 0.4, 1)
 
 [node name="Spells" type="Control" parent="." unique_id=126501526]
 layout_mode = 1
@@ -48,3 +71,32 @@ theme_override_constants/margin_top = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hearts/MarginContainer" unique_id=1699695182]
 layout_mode = 2
+
+[node name="StaminaBar" type="Control" parent="." unique_id=952064134]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="StaminaBar" unique_id=1995865565]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="StaminaBar/CenterContainer" unique_id=1136566836]
+layout_mode = 2
+theme_override_constants/margin_left = 320
+theme_override_constants/margin_bottom = 300
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="StaminaBar/CenterContainer/MarginContainer" unique_id=128362549]
+layout_mode = 2
+fill_mode = 4
+texture_under = ExtResource("4_bca70")
+texture_progress = ExtResource("4_bca70")
+tint_under = Color(0.14901961, 0.14901961, 0.14901961, 1)
+tint_progress = Color(0.38039216, 1, 0.2901961, 1)

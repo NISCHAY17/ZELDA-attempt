@@ -23,6 +23,17 @@ var health = 5:
 	set(value):
 		ui.update_health(value, value - health)
 		health = value
+var energy = 100:
+	
+
+	set(value):
+		energy = min(100,value)
+		ui.update_energy(energy)
+		
+var stamina = 100:
+	set(value):
+		ui.update_stamina(stamina,value)
+		stamina = clamp(value,0,100)
 signal cast_spell(type: String, pos: Vector3, direction: Vector2, size: float)
 func _ready():
 	#print("SCENE PATH:", get_tree().current_scene.scene_file_path)
@@ -60,10 +71,10 @@ var weapon_active := true:
 
 func jump_logic(delta) -> void:
 	if is_on_floor():
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("jump") and stamina >= 20:
 			velocity.y = -jump_velocity
 			do_squash_and_streach(1.2,0.16)
-			
+			stamina -= 20
 	else:
 		$godetteSkin.set_move_state('Jump')
 	var gravity = jump_gravity if velocity.y > 0 else fall_gravity
@@ -129,8 +140,10 @@ func ability_logic() -> void:
 		if weapon_active:
 			$godetteSkin.attack()
 		else:
-			$godetteSkin.cast_spell()
-			stop_movement(0.3, 0.67)
+			if energy >= 20:
+				$godetteSkin.cast_spell()
+				stop_movement(0.3, 0.67)
+				energy -= 20
 			# didnt use () in cast spell
 			# fixed ability trigger was calling Skin.cast_spell instead of node instance $godetteSkin.
 	# defend = Input.is_action_just_pressed("block") 
@@ -161,6 +174,12 @@ func do_squash_and_streach(value: float, duration: float = 0.1):
 	tween.tween_property(skin, "squash_and_streach", value, duration)
 	tween.tween_property(skin, "squash_and_streach", 1.0, duration * 1.8 ).set_ease(Tween.EASE_OUT)
 	print("u just got squash_and_streached ")
-func shoot_fireball(pos: Vector3) -> void:
-	cast_spell.emit('fireball', pos,last_movement_input, 1.0)
-	
+func shoot_magic(pos: Vector3) -> void:
+	if current_spell == spells.FIREBALL:
+		cast_spell.emit('fireball', pos,last_movement_input, 1.0)
+	if current_spell == spells.HEAL:
+		health += 1
+
+
+func _on_energy_recovery_timer_timeout() -> void:
+	energy += 1

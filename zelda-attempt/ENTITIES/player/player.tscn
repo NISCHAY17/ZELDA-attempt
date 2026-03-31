@@ -32,3 +32,11 @@ max_limit_x = -0.2
 [node name="InvulTimer" type="Timer" parent="Timers" unique_id=128143693]
 wait_time = 0.867
 one_shot = true
+
+[node name="EnergyRecoveryTimer" type="Timer" parent="Timers" unique_id=645194438]
+wait_time = 0.267
+autostart = true
+
+[node name="Timer" type="Timer" parent="Timers" unique_id=118999905]
+
+[connection signal="timeout" from="Timers/EnergyRecoveryTimer" to="." method="_on_energy_recovery_timer_timeout"]
