@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dd2sdvs7c8wwg" path="res://scenes/level.tscn" id="1_m1b5j"]
 [ext_resource type="PackedScene" uid="uid://ea0mku4gnfva" path="res://scenes/overworld_skin.tscn" id="2_16ktt"]
+[ext_resource type="PackedScene" uid="uid://crbb8scv3stc0" path="res://graphics/environment/objects/fence_post.glb" id="3_356oe"]
+[ext_resource type="PackedScene" uid="uid://cefax5g013mud" path="res://graphics/environment/objects/fence_middle.glb" id="4_3gvrs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ktt"]
 albedo_color = Color(0, 0.40392157, 1, 1)
@@ -20,3 +22,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56768703, 14.299009, -98.67
 [node name="MeshInstance3D" type="MeshInstance3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="1" unique_id=664073676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.57834, -50.48681, 196.28564)
 mesh = SubResource("PlaneMesh_u2ss0")
+
+[node name="Fences" type="Node3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="2" unique_id=1082162171]
+
+[node name="fence group 1" type="Node3D" parent="envrionment/Fences" index="0" unique_id=157569615]
+
+[node name="fence_post" parent="envrionment/Fences/fence group 1" index="0" unique_id=1214026943 instance=ExtResource("3_356oe")]
+transform = Transform3D(0.7686632, 0, -0.6396537, 0, 1, 0, 0.6396537, 0, 0.7686632, -23.6866, 13.469631, -93.80605)
+
+[node name="fence_middle" parent="envrionment/Fences/fence group 1" index="1" unique_id=1653955730 instance=ExtResource("4_3gvrs")]
+transform = Transform3D(0.7686632, 0, -0.6396537, 0, 1, 0, 0.6396537, 0, 0.7686632, -23.641006, 13.379412, -91.612465)
+
+[node name="fence_post2" parent="envrionment/Fences/fence group 1" index="2" unique_id=1831574681 instance=ExtResource("3_356oe")]
+transform = Transform3D(0.99492294, 0, -0.10063961, 0, 1, 0, 0.10063961, 0, 0.99492294, -23.765306, 13.469631, -89.4414)
+
+[node name="fence_middle2" parent="envrionment/Fences/fence group 1" index="3" unique_id=1083545120 instance=ExtResource("4_3gvrs")]
+transform = Transform3D(0.95725906, 0, -0.2892324, 0, 1, 0, 0.2892324, 0, 0.95725906, -22.982243, 13.379412, -87.64811)
+
+[node name="fence_post3" parent="envrionment/Fences/fence group 1" index="4" unique_id=1247582468 instance=ExtResource("3_356oe")]
+transform = Transform3D(0.99492306, 0, -0.10063963, -0.0045688227, 0.99896896, -0.04516737, 0.10053586, 0.045397863, 0.99389726, -22.127192, 13.357652, -85.681595)
+
+[node name="fence_post4" parent="envrionment/Fences/fence group 1" index="5" unique_id=569767955 instance=ExtResource("3_356oe")]
+transform = Transform3D(0.99492306, 0, -0.10063963, -0.0045688227, 0.99896896, -0.04516737, 0.10053586, 0.045397863, 0.99389726, -19.60291, 13.357652, -82.26181)
+
+[node name="fence_middle3" parent="envrionment/Fences/fence group 1" index="6" unique_id=704469034 instance=ExtResource("4_3gvrs")]
+transform = Transform3D(0.99492294, 0, -0.10063961, 0, 1, 0, 0.10063961, 0, 0.99492294, -20.923874, 13.379412, -83.946686)
+
+[node name="fence_post5" parent="envrionment/Fences/fence group 1" index="7" unique_id=1163119953 instance=ExtResource("3_356oe")]
+transform = Transform3D(0.98912394, 0, -0.14708441, 0, 1, 0, 0.14708441, 0, 0.98912394, -18.288582, 13.664921, -79.94993)
+
+[node name="fence_middle4" parent="envrionment/Fences/fence group 1" index="8" unique_id=1735000455 instance=ExtResource("4_3gvrs")]
+transform = Transform3D(0.98912394, 0, -0.14708441, 0, 1, 0, 0.14708441, 0, 0.98912394, -17.109756, 13.574701, -78.09944)
+
+[node name="fence_post6" parent="envrionment/Fences/fence group 1" index="9" unique_id=418276034 instance=ExtResource("3_356oe")]
+transform = Transform3D(0.9023448, 0, 0.43101513, 0, 1, 0, -0.43101513, 0, 0.9023448, -16.087788, 13.664921, -76.179924)
+
+[node name="fence_middle5" parent="envrionment/Fences/fence group 1" index="10" unique_id=433290376 instance=ExtResource("4_3gvrs")]
+transform = Transform3D(0.96816546, 0, 0.2503124, 0, 1, 0, -0.2503124, 0, 0.96816546, -14.486885, 13.574701, -75.05468)
+
+[node name="fence_post7" parent="envrionment/Fences/fence group 1" index="11" unique_id=1220163991 instance=ExtResource("3_356oe")]
+transform = Transform3D(0.902291, 0.023590475, 0.4304821, -0.004568826, 0.9989689, -0.045167375, -0.4311038, 0.038787317, 0.90146834, -12.7344675, 13.552941, -73.81883)
+
+[node name="fence_post8" parent="envrionment/Fences/fence group 1" index="12" unique_id=623629653 instance=ExtResource("3_356oe")]
+transform = Transform3D(0.902291, 0.023590475, 0.4304821, -0.004568826, 0.9989689, -0.045167375, -0.4311038, 0.038787317, 0.90146834, -8.800701, 13.552941, -72.208725)
+
+[node name="fence_middle6" parent="envrionment/Fences/fence group 1" index="13" unique_id=1355484581 instance=ExtResource("4_3gvrs")]
+transform = Transform3D(0.9023448, 0, 0.43101513, 0, 1, 0, -0.43101513, 0, 0.9023448, -10.804844, 13.574701, -72.96184)
+
+[node name="fence_middle7" parent="envrionment/Fences/fence group 1" index="14" unique_id=569917608 instance=ExtResource("4_3gvrs")]
+transform = Transform3D(0.54040194, 0, -0.84140706, 0, 1, 0, 0.84140706, 0, 0.54040194, -20.109268, 13.453229, -80.29761)
