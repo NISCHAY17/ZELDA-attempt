@@ -95,8 +95,8 @@ func _physics_process(delta: float) -> void:
 	ability_logic()
 	#print("jump_height NOW:", jump_height, " jv:", jump_velocity)
 	#print("on_floor:", is_on_floor(), "jump_pressed:", Input.is_action_just_pressed("jump"), " jv:", jump_velocity)
-	if Input.is_action_just_pressed('ui_accept'):
-		hit()
+	#if Input.is_action_just_pressed('ui_accept'):
+		#hit()
 func move_logic(delta) -> void:
 	movement_input = Input.get_vector("left","right","forward","backward").rotated(-camera_3d.global_rotation.y)
 	
