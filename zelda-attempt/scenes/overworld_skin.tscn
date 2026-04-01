@@ -3,6 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://daovb46045rrx" path="res://graphics/environment/overworld_environment.blend" id="1_sb3em"]
 
 [node name="overworld_environment" unique_id=1655881674 instance=ExtResource("1_sb3em")]
-
-[node name="Sun" parent="." index="0" unique_id=367448299]
-visible = false

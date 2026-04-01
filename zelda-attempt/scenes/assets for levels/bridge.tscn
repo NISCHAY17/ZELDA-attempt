@@ -7,6 +7,7 @@ data = PackedVector3Array(3.0001, 3.1239, -1.425, 3.0001, 3.5772998, -0.07499999
 
 [node name="bridge" unique_id=135645790 instance=ExtResource("1_i02i1")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=307901248]
-transform = Transform3D(0.89692295, 0, 0.44218686, 0, 1, 0, -0.44218686, 0, 0.89692295, 0, 0, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_214" parent_id_path=PackedInt32Array(1549312241) index="0" unique_id=218423566]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_214/StaticBody3D" index="0" unique_id=307901248]
 shape = SubResource("ConcavePolygonShape3D_jhv2j")

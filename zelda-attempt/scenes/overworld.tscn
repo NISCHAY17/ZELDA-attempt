@@ -10,6 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://dxvaiymlygd8b" path="res://graphics/environment/objects/camp.glb" id="7_e184d"]
 [ext_resource type="PackedScene" uid="uid://b4rhqen2u7u1d" path="res://graphics/environment/objects/campfire.glb" id="8_nesqq"]
 [ext_resource type="PackedScene" uid="uid://imck4d7hxfo2" path="res://scenes/assets for levels/bridge.tscn" id="9_nesqq"]
+[ext_resource type="PackedScene" uid="uid://b7fri258q6w5x" path="res://graphics/environment/objects/rocks4.glb" id="10_pss1p"]
+[ext_resource type="PackedScene" uid="uid://cl6jdraxnqkty" path="res://graphics/environment/objects/rocks1.glb" id="11_255p0"]
+[ext_resource type="PackedScene" uid="uid://lforr8lmeko6" path="res://graphics/environment/objects/rock5.glb" id="11_ha27p"]
+[ext_resource type="PackedScene" uid="uid://cw8b2woh0hlrx" path="res://graphics/environment/objects/rocks3.glb" id="12_2jxyl"]
+[ext_resource type="PackedScene" uid="uid://cj0l2q4u7m6ly" path="res://graphics/environment/objects/rocks2.glb" id="12_rklxl"]
+[ext_resource type="PackedScene" uid="uid://ml08shfcjeyy" path="res://graphics/environment/objects/shrine.glb" id="13_rklxl"]
+[ext_resource type="PackedScene" uid="uid://slk1ga1hqhs2" path="res://graphics/environment/objects/box.glb" id="17_5rnle"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ktt"]
 albedo_color = Color(0, 0.40392157, 1, 1)
@@ -161,10 +168,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.45398, -33.383537, 116.322
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.674944, -33.9469, 172.15091)
 
 [node name="bridge" parent="envrionment/camps" index="6" unique_id=135645790 instance=ExtResource("9_nesqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11014557, -42.01184, 261.38837)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11014557, -43.60463, 261.38837)
 
-[node name="lantern" parent="." index="5" unique_id=840778241 instance=ExtResource("5_3gvrs")]
+[node name="other stuff" type="Node3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="5" unique_id=1152592932]
+
+[node name="rocks4" parent="envrionment/other stuff" index="0" unique_id=1508489918 instance=ExtResource("10_pss1p")]
+transform = Transform3D(0.48758543, 0, 0.8730753, 0, 1, 0, -0.8730753, 0, 0.48758543, -116.75661, -55.96646, 231.5557)
+
+[node name="rocks5" parent="envrionment/other stuff" index="1" unique_id=913642742 instance=ExtResource("10_pss1p")]
+transform = Transform3D(0.8354431, 0, -0.54957706, 0, 1, 0, 0.54957706, 0, 0.8354431, -69.64583, -58.366245, 268.14224)
+
+[node name="rock5" parent="envrionment/other stuff" index="2" unique_id=1717487167 instance=ExtResource("11_ha27p")]
+transform = Transform3D(-0.028235659, 0, 0.9996013, 0, 1, 0, -0.9996013, 0, -0.028235659, 116.72795, -43.41902, 194.83049)
+
+[node name="rocks6" parent="envrionment/other stuff" index="3" unique_id=1454268477 instance=ExtResource("12_2jxyl")]
+transform = Transform3D(0.44308683, 0, 0.8964787, 0, 1, 0, -0.8964787, 0, 0.44308683, 87.23565, -33.984898, 95.97259)
+
+[node name="lantern" parent="envrionment/other stuff" index="4" unique_id=840778241 instance=ExtResource("5_3gvrs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.768449, 12.614222, -91.21294)
 
-[node name="lantern2" parent="." index="6" unique_id=1843240856 instance=ExtResource("5_3gvrs")]
+[node name="lantern2" parent="envrionment/other stuff" index="5" unique_id=1843240856 instance=ExtResource("5_3gvrs")]
 transform = Transform3D(-0.49907765, 0, 0.8665573, 0, 1, 0, -0.8665573, 0, -0.49907765, 12.703718, 12.535285, -89.50357)
+
+[node name="rocks1" parent="envrionment/other stuff" index="6" unique_id=552903162 instance=ExtResource("11_255p0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.464806, -21.799065, 15.1483345)
+
+[node name="rocks2" parent="envrionment/other stuff" index="7" unique_id=444828185 instance=ExtResource("12_rklxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.66864, -34.529602, 110.91973)
+
+[node name="rocks3" parent="envrionment/other stuff" index="8" unique_id=1507241729 instance=ExtResource("12_rklxl")]
+transform = Transform3D(0.34538013, 0, 0.93846285, 0, 1, 0, -0.93846285, 0, 0.34538013, -111.85093, -15.707166, 14.8341255)
+
+[node name="shrine" parent="envrionment/other stuff" index="9" unique_id=557357840 instance=ExtResource("13_rklxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.656633, -45.805153, 236.19104)
+
+[node name="shrine2" parent="envrionment/other stuff" index="10" unique_id=390008163 instance=ExtResource("13_rklxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.447302, -47.586758, 244.49889)
+
+[node name="shrine3" parent="envrionment/other stuff" index="11" unique_id=1390467432 instance=ExtResource("13_rklxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0862494, -39.066467, 290.63068)
+
+[node name="shrine4" parent="envrionment/other stuff" index="12" unique_id=248964056 instance=ExtResource("13_rklxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.033792, -39.414093, 290.63068)
+
+[node name="box2" parent="." index="5" unique_id=1394810889 instance=ExtResource("17_5rnle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.077248, 12.568245, -82.71882)
