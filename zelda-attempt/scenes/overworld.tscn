@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://fxi3picm86d8" path="res://graphics/environment/objects/lantern.glb" id="5_3gvrs"]
 [ext_resource type="PackedScene" uid="uid://bkmfvv8om32xq" path="res://graphics/environment/objects/tree1.glb" id="5_fkyvp"]
 [ext_resource type="PackedScene" uid="uid://ddsvnkbeyypbu" path="res://graphics/environment/objects/tree2.glb" id="6_qjxaj"]
-[ext_resource type="PackedScene" uid="uid://bj0bbwc2avu6u" path="res://graphics/environment/objects/bridge.glb" id="7_qjxaj"]
+[ext_resource type="PackedScene" uid="uid://dxvaiymlygd8b" path="res://graphics/environment/objects/camp.glb" id="7_e184d"]
+[ext_resource type="PackedScene" uid="uid://b4rhqen2u7u1d" path="res://graphics/environment/objects/campfire.glb" id="8_nesqq"]
+[ext_resource type="PackedScene" uid="uid://imck4d7hxfo2" path="res://scenes/assets for levels/bridge.tscn" id="9_nesqq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ktt"]
 albedo_color = Color(0, 0.40392157, 1, 1)
@@ -23,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56768703, 14.299009, -98.67
 
 [node name="overworld_environment" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="0" unique_id=1655881674 instance=ExtResource("2_16ktt")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="1" unique_id=664073676]
+[node name="Water" type="MeshInstance3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="1" unique_id=664073676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.57834, -50.48681, 196.28564)
 mesh = SubResource("PlaneMesh_u2ss0")
 
@@ -130,14 +132,36 @@ transform = Transform3D(-0.8379761, 0, 0.5457073, 0, 1, 0, -0.5457073, 0, -0.837
 [node name="fence_middle7" parent="envrionment/Fences/fence group 1" index="32" unique_id=569917608 instance=ExtResource("4_3gvrs")]
 transform = Transform3D(0.31319696, 0, -0.9496882, 0, 1, 0, 0.9496882, 0, 0.31319696, -20.802187, 13.453229, -80.442894)
 
-[node name="tree1" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="3" unique_id=1366600381 instance=ExtResource("5_fkyvp")]
+[node name="Trees" type="Node3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="3" unique_id=1628149891]
+
+[node name="tree1" parent="envrionment/Trees" index="0" unique_id=1366600381 instance=ExtResource("5_fkyvp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.051926, 11.921933, -85.15399)
 
-[node name="tree2" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="4" unique_id=1449482150 instance=ExtResource("6_qjxaj")]
+[node name="tree2" parent="envrionment/Trees" index="1" unique_id=1449482150 instance=ExtResource("6_qjxaj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.814457, 12.264083, -70.46272)
 
-[node name="bridge" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="5" unique_id=135645790 instance=ExtResource("7_qjxaj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2327037, -44.33663, 257.81836)
+[node name="camps" type="Node3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="4" unique_id=1786249042]
+
+[node name="camp" parent="envrionment/camps" index="0" unique_id=1138378096 instance=ExtResource("7_e184d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.287766, -32.88504, 132.85114)
+
+[node name="camp2" parent="envrionment/camps" index="1" unique_id=1582913344 instance=ExtResource("7_e184d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.64214, -23.085903, 18.47594)
+
+[node name="camp3" parent="envrionment/camps" index="2" unique_id=865667145 instance=ExtResource("7_e184d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.99018, -34.906532, 157.80754)
+
+[node name="campfire" parent="envrionment/camps" index="3" unique_id=423250710 instance=ExtResource("8_nesqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.754654, -35.72564, 184.70015)
+
+[node name="campfire2" parent="envrionment/camps" index="4" unique_id=291744697 instance=ExtResource("8_nesqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.45398, -33.383537, 116.322845)
+
+[node name="campfire3" parent="envrionment/camps" index="5" unique_id=1863401935 instance=ExtResource("8_nesqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.674944, -33.9469, 172.15091)
+
+[node name="bridge" parent="envrionment/camps" index="6" unique_id=135645790 instance=ExtResource("9_nesqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11014557, -42.01184, 261.38837)
 
 [node name="lantern" parent="." index="5" unique_id=840778241 instance=ExtResource("5_3gvrs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.768449, 12.614222, -91.21294)
