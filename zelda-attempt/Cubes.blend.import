@@ -1,15 +1,3 @@
 [remap]
 
-importer="antonWetzel.importHelper.blender.PackedScene"
-type="PackedScene"
-uid="uid://b6y332n0xpsnk"
-valid=false
-
-[deps]
-
-source_file="res://Cubes.blend"
-
-[params]
-
-open_editor=0
-apply_modifiers=true
+importer="keep"

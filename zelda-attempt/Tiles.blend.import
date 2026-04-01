@@ -1,15 +1,3 @@
 [remap]
 
-importer="antonWetzel.importHelper.blender.PackedScene"
-type="PackedScene"
-uid="uid://diax174w45ojd"
-valid=false
-
-[deps]
-
-source_file="res://Tiles.blend"
-
-[params]
-
-open_editor=1
-apply_modifiers=true
+importer="keep"
