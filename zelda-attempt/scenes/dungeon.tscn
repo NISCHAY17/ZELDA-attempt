@@ -2,6 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dd2sdvs7c8wwg" path="res://scenes/level.tscn" id="1_ubp1v"]
 [ext_resource type="MeshLibrary" uid="uid://cgs3jwaqkxd0j" path="res://graphics/environment/dungeon/dungeon_col.tres" id="3_fpimf"]
+[ext_resource type="PackedScene" uid="uid://chw0pqeh5pgfm" path="res://graphics/environment/dungeon objects/stool.glb" id="3_fvacq"]
+[ext_resource type="PackedScene" uid="uid://ben46777uu8eu" path="res://graphics/environment/dungeon objects/table.glb" id="4_ys5p8"]
+[ext_resource type="PackedScene" uid="uid://b7wf3jucxaf1v" path="res://graphics/environment/dungeon objects/torch.glb" id="5_hsn05"]
+[ext_resource type="PackedScene" uid="uid://bhqt5vgwxv68w" path="res://graphics/environment/dungeon objects/pillar.glb" id="6_etlrv"]
+[ext_resource type="PackedScene" uid="uid://b1nbdbe8syhb4" path="res://graphics/environment/dungeon objects/column.glb" id="7_tkjml"]
+[ext_resource type="PackedScene" uid="uid://b3gvqo445vopj" path="res://graphics/environment/dungeon objects/stairs.glb" id="8_5hkx1"]
+[ext_resource type="PackedScene" uid="uid://b4rhqen2u7u1d" path="res://graphics/environment/objects/campfire.glb" id="9_3afjq"]
+[ext_resource type="PackedScene" uid="uid://d2pglgy0w12pg" path="res://graphics/environment/objects/chest.glb" id="10_6nb7m"]
+[ext_resource type="PackedScene" uid="uid://dsvmcf0eee72c" path="res://graphics/environment/objects/crates.glb" id="11_hh3g7"]
+[ext_resource type="PackedScene" uid="uid://fxi3picm86d8" path="res://graphics/environment/objects/lantern.glb" id="12_rfuge"]
+[ext_resource type="PackedScene" uid="uid://017tob8o06v3" path="res://graphics/environment/objects/log.glb" id="13_1o5ds"]
+[ext_resource type="PackedScene" uid="uid://bgkbet728sbnu" path="res://graphics/environment/objects/target.glb" id="14_ea5hl"]
 
 [node name="level" unique_id=44627815 instance=ExtResource("1_ubp1v")]
 
@@ -24,3 +36,49 @@ data = {
 }
 
 [node name="stuff" type="Node3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="2" unique_id=902506599]
+visible = false
+
+[node name="stool" parent="envrionment/stuff" index="0" unique_id=1536307695 instance=ExtResource("3_fvacq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.605744, 1.0200005, 3.7519317)
+
+[node name="table" parent="envrionment/stuff" index="1" unique_id=1113930295 instance=ExtResource("4_ys5p8")]
+transform = Transform3D(0.7836501, 0, 0.62120247, 0, 1, 0, -0.62120247, 0, 0.7836501, 1.9067297, 1.019999, -10.512302)
+
+[node name="torch" parent="envrionment/stuff" index="2" unique_id=1305749097 instance=ExtResource("5_hsn05")]
+transform = Transform3D(1, 0, 0, 0, 0.42052916, 0.907279, 0, -0.907279, 0.42052916, -19.486528, 3.412209, 5.331587)
+
+[node name="torch2" parent="envrionment/stuff" index="3" unique_id=265335322 instance=ExtResource("5_hsn05")]
+transform = Transform3D(1, 0, 0, 0, 0.4210358, -0.90704405, 0, 0.90704405, 0.4210358, -19.486528, 3.412209, -13.424364)
+
+[node name="pillar" parent="envrionment/stuff" index="4" unique_id=1141721300 instance=ExtResource("6_etlrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.482773, 1.0200005, -3.7799735)
+
+[node name="pillar2" parent="envrionment/stuff" index="5" unique_id=1342292068 instance=ExtResource("6_etlrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.875736, 1.0199986, -3.6052423)
+
+[node name="column" parent="envrionment/stuff" index="6" unique_id=1367976698 instance=ExtResource("7_tkjml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.067497, 1.0499992, -12.479636)
+
+[node name="column2" parent="envrionment/stuff" index="7" unique_id=1318029680 instance=ExtResource("7_tkjml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.618973, 1.05, 4.8673854)
+
+[node name="stairs" parent="envrionment/stuff" index="8" unique_id=1089373046 instance=ExtResource("8_5hkx1")]
+transform = Transform3D(-0.016776009, 0, -0.40465245, 0, 0.40500006, 0, 0.40465245, 0, -0.016776009, 9.724743, 1.02, -6.716399)
+
+[node name="campfire" parent="envrionment/stuff" index="9" unique_id=423250710 instance=ExtResource("9_3afjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.926705, 1.2680913, -10.103027)
+
+[node name="chest" parent="envrionment/stuff" index="10" unique_id=294837611 instance=ExtResource("10_6nb7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2685304, 1.0200012, 4.1340294)
+
+[node name="crates" parent="envrionment/stuff" index="11" unique_id=1891680709 instance=ExtResource("11_hh3g7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.527136, 1.0200042, -11.313719)
+
+[node name="lantern" parent="envrionment/stuff" index="12" unique_id=840778241 instance=ExtResource("12_rfuge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.464241, 1.0200005, 4.9080467)
+
+[node name="log" parent="envrionment/stuff" index="13" unique_id=345042734 instance=ExtResource("13_1o5ds")]
+transform = Transform3D(0.689847, 0, 0.7239552, 0, 1, 0, -0.7239552, 0, 0.689847, -28.35239, 1.294577, 3.2978222)
+
+[node name="target" parent="envrionment/stuff" index="14" unique_id=1270140916 instance=ExtResource("14_ea5hl")]
+transform = Transform3D(-0.16933052, 0.23411351, -1.0232499, 0.03996251, 0.9919937, 0.24149004, 0.9985192, 0, -0.1831892, -65.789505, 3.0020955, -3.9400744)
