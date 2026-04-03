@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://nfq4huwpdlbl"]
+
+[ext_resource type="PackedScene" uid="uid://dd2sdvs7c8wwg" path="res://scenes/level.tscn" id="1_ubp1v"]
+[ext_resource type="MeshLibrary" uid="uid://cgs3jwaqkxd0j" path="res://graphics/environment/dungeon/dungeon_col.tres" id="3_fpimf"]
+
+[node name="level" unique_id=44627815 instance=ExtResource("1_ubp1v")]
+
+[node name="Player" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="0" unique_id=1080306268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009070873, 1.0748427, -0.435524)
+
+[node name="FloorGrid" type="GridMap" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="0" unique_id=792330359]
+mesh_library = ExtResource("3_fpimf")
+cell_size = Vector3(4, 2, 4)
+data = {
+"cells": PackedInt32Array(65535, 0, 655360, 65535, 65535, 655360, 65535, 65534, 655360, 0, 65535, 0, 0, 0, 0, 0, 65534, 655360, 1, 0, 655360, 1, 65535, 655360, 1, 65534, 655360, 1, 65533, 655360, 0, 65533, 655360, 2, 65533, 655360, 2, 65534, 655360, 2, 65532, 655360, 2, 65535, 655360, 2, 0, 655360, 1, 1, 655360, 0, 1, 655360, 65535, 1, 655360, 65534, 1, 655360, 1, 65532, 655360, 0, 65532, 655360, 65535, 65532, 655360, 65534, 65532, 655360, 65534, 65533, 655360, 65535, 65533, 655360, 65534, 65534, 655360, 65534, 65535, 655360, 65534, 0, 655360, 65533, 0, 655360, 65533, 65535, 655360, 65533, 1, 655360, 65533, 65534, 655360, 65533, 65533, 655360, 65533, 65532, 655360, 2, 1, 655360, 65532, 1, 655360, 65532, 0, 655360, 65532, 65535, 655360, 65532, 65534, 655360, 65532, 65533, 655360, 65532, 65532, 655360)
+}
+
+[node name="WallGrid" type="GridMap" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="1" unique_id=762700139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh_library = ExtResource("3_fpimf")
+cell_size = Vector3(4, 2, 4)
+data = {
+"cells": PackedInt32Array(65535, 1, 3, 2, 65533, 1048579, 2, 65534, 1048579, 2, 65535, 1048579, 2, 0, 1048579, 2, 65532, 6, 2, 1, 1441798, 1, 65532, 655363, 0, 65532, 655363, 65535, 65532, 655363, 1, 2, 655363, 1, 1, 655363, 0, 1, 655363, 65534, 1, 655363, 65533, 1, 655363)
+}

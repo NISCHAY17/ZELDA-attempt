@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c3r4bhtde7cka"]
+
+[ext_resource type="PackedScene" uid="uid://cm3r62kc088bn" path="res://graphics/environment/dungeon/floor_dirt_large.gltf" id="1_rbhbq"]
+[ext_resource type="PackedScene" uid="uid://b0u32v2ej6ev1" path="res://graphics/environment/dungeon/floor_tile_large.gltf" id="2_vvr1o"]
+[ext_resource type="PackedScene" uid="uid://dbg4nfumtcfba" path="res://graphics/environment/dungeon/floor_tile_large_rocks.gltf" id="3_xiqmp"]
+[ext_resource type="PackedScene" uid="uid://1e75dmkmor6w" path="res://graphics/environment/dungeon/wall.gltf" id="4_83u4l"]
+[ext_resource type="PackedScene" uid="uid://kbev1shlu7a7" path="res://graphics/environment/dungeon/wall_arched.gltf" id="5_mft0a"]
+[ext_resource type="PackedScene" uid="uid://b8cn1i541oywp" path="res://graphics/environment/dungeon/wall_archedwindow_gated.gltf" id="6_iva55"]
+[ext_resource type="PackedScene" uid="uid://dwha6ij2gphnb" path="res://graphics/environment/dungeon/wall_corner.gltf" id="7_g0xe6"]
+[ext_resource type="PackedScene" uid="uid://chdqavgy0113c" path="res://graphics/environment/dungeon/wall_cracked.gltf" id="8_y4wyr"]
+[ext_resource type="PackedScene" uid="uid://bx8tw37fjv0us" path="res://graphics/environment/dungeon/wall_crossing.gltf" id="9_l4w8u"]
+
+[node name="dungeontiles" type="Node3D" unique_id=465470256]
+
+[node name="floor_dirt_large2" parent="." unique_id=1242911523 instance=ExtResource("1_rbhbq")]
+
+[node name="floor_tile_large2" parent="." unique_id=810978909 instance=ExtResource("2_vvr1o")]
+
+[node name="floor_tile_large_rocks2" parent="." unique_id=509755639 instance=ExtResource("3_xiqmp")]
+
+[node name="wall2" parent="." unique_id=1467748521 instance=ExtResource("4_83u4l")]
+
+[node name="wall_arched2" parent="." unique_id=943074010 instance=ExtResource("5_mft0a")]
+
+[node name="wall_archedwindow_gated2" parent="." unique_id=344909394 instance=ExtResource("6_iva55")]
+
+[node name="wall_corner2" parent="." unique_id=1699760683 instance=ExtResource("7_g0xe6")]
+
+[node name="wall_cracked2" parent="." unique_id=1193711537 instance=ExtResource("8_y4wyr")]
+
+[node name="wall_crossing2" parent="." unique_id=731752075 instance=ExtResource("9_l4w8u")]
