@@ -25,6 +25,25 @@
 [ext_resource type="PackedScene" uid="uid://c04ysd6ex0ubs" path="res://graphics/environment/objects/pinetree.glb" id="23_qkc01"]
 [ext_resource type="PackedScene" uid="uid://dwjrrhoj6ltyx" path="res://graphics/environment/castle.blend" id="24_wf4j4"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wf4j4"]
+sky_top_color = Color(0.25409985, 0.5937322, 0.70472217, 1)
+sky_horizon_color = Color(0.69890904, 0.77606714, 0.7948147, 1)
+ground_horizon_color = Color(0.69890904, 0.77606714, 0.7948147, 1)
+energy_multiplier = 0.65
+
+[sub_resource type="Sky" id="Sky_yqb1n"]
+sky_material = SubResource("ProceduralSkyMaterial_wf4j4")
+
+[sub_resource type="Environment" id="Environment_cxwv3"]
+background_mode = 1
+background_color = Color(0.48235294, 0.50980395, 0.9019608, 1)
+sky = SubResource("Sky_yqb1n")
+ambient_light_source = 2
+ambient_light_color = Color(0.96862745, 0.8352941, 0.85882354, 1)
+ambient_light_energy = 0.67
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ktt"]
 albedo_color = Color(0, 0.40392157, 1, 1)
 
@@ -33,6 +52,9 @@ material = SubResource("StandardMaterial3D_16ktt")
 size = Vector2(670.67, 167)
 
 [node name="Overworld" unique_id=44627815 instance=ExtResource("1_m1b5j")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=279066565]
+environment = SubResource("Environment_cxwv3")
 
 [node name="Player" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="0" unique_id=1080306268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56768703, 14.299009, -98.67917)
@@ -433,3 +455,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35537452, 12.8811, -80.7431
 
 [node name="castle" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="6" unique_id=800770622 instance=ExtResource("24_wf4j4")]
 transform = Transform3D(0.17782332, 0, 0.98406243, 0, 1, 0, -0.98406243, 0, 0.17782332, 28.750828, -36.97199, 368.47958)
+
+[node name="Camera3D" type="Camera3D" parent="." index="4" unique_id=1434797684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.342, -66.50023)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="5" unique_id=2042857553]
+light_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+shadow_enabled = true
+shadow_opacity = 0.97
+shadow_blur = 4.67

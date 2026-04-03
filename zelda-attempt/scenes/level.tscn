@@ -3,31 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://djiwkvp0jt3va" path="res://ENTITIES/player/player.tscn" id="1_2q6dc"]
 [ext_resource type="Script" uid="uid://mx8rwar4fyfn" path="res://scenes/level.gd" id="1_w8frs"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rd3vj"]
-sky_top_color = Color(0.538346, 0.72019506, 0.8280812, 1)
-sky_horizon_color = Color(0.69890904, 0.77606714, 0.7948147, 1)
-ground_horizon_color = Color(0.69890904, 0.77606714, 0.7948147, 1)
-energy_multiplier = 0.65
-
-[sub_resource type="Sky" id="Sky_2q6dc"]
-sky_material = SubResource("ProceduralSkyMaterial_rd3vj")
-
-[sub_resource type="Environment" id="Environment_w7c3h"]
-background_mode = 2
-sky = SubResource("Sky_2q6dc")
-tonemap_mode = 2
-glow_enabled = true
-
 [node name="level" type="Node3D" unique_id=44627815]
 script = ExtResource("1_w8frs")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=965562256]
-environment = SubResource("Environment_w7c3h")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=910630373]
-transform = Transform3D(-0.94721013, 0.1324468, -0.29197735, 0, 0.91068363, 0.41310444, 0.32061335, 0.3912967, -0.8626088, 0, 0, 0)
-light_energy = 1.2
-shadow_enabled = true
 
 [node name="entity" type="Node3D" parent="." unique_id=2007095133]
 
