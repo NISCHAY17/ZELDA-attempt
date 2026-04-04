@@ -15,13 +15,58 @@
 [ext_resource type="PackedScene" uid="uid://017tob8o06v3" path="res://graphics/environment/objects/log.glb" id="13_1o5ds"]
 [ext_resource type="PackedScene" uid="uid://bgkbet728sbnu" path="res://graphics/environment/objects/target.glb" id="14_ea5hl"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3afjq"]
+sky_top_color = Color(0.25409985, 0.5937322, 0.70472217, 1)
+sky_horizon_color = Color(0.69890904, 0.77606714, 0.7948147, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.69890904, 0.77606714, 0.7948147, 1)
+energy_multiplier = 0.65
+
+[sub_resource type="Sky" id="Sky_6nb7m"]
+sky_material = SubResource("ProceduralSkyMaterial_3afjq")
+
+[sub_resource type="Environment" id="Environment_hh3g7"]
+background_mode = 2
+background_energy_multiplier = 1.65
+sky = SubResource("Sky_6nb7m")
+ambient_light_color = Color(0.78039217, 0.78039217, 0.78039217, 1)
+ambient_light_energy = 2.36
+tonemap_mode = 2
+ssr_enabled = true
+ssr_depth_tolerance = 0.11
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_energy = 0.15
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0276
+adjustment_enabled = true
+adjustment_brightness = 1.26
+adjustment_contrast = 1.01
+adjustment_saturation = 1.17
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3afjq"]
 albedo_color = Color(0.100832276, 0.00072017853, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6nb7m"]
 material = SubResource("StandardMaterial3D_3afjq")
 
+[sub_resource type="FogMaterial" id="FogMaterial_3afjq"]
+density = 0.967
+height_falloff = 1e-05
+edge_fade = 1.2125732
+
 [node name="level" unique_id=44627815 instance=ExtResource("1_ubp1v")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=1720714575]
+environment = SubResource("Environment_hh3g7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=1645208844]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.4, 0.4, 0.4, 1)
+light_energy = 1.19
+shadow_enabled = true
 
 [node name="Player" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="0" unique_id=1080306268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009070873, 1.0748427, -0.435524)
@@ -83,20 +128,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.527136, 1.0200042, -11.31
 [node name="lantern" parent="envrionment/stuff" index="12" unique_id=840778241 instance=ExtResource("12_rfuge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.464241, 1.0200005, 4.9080467)
 
-[node name="log" parent="envrionment/stuff" index="13" unique_id=345042734 instance=ExtResource("13_1o5ds")]
+[node name="OmniLight3D" type="OmniLight3D" parent="envrionment/stuff/lantern" index="1" unique_id=564191632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7319393, 1.9585061, -0.76482487)
+light_color = Color(1, 1, 0.49803922, 1)
+light_energy = 1.795
+light_volumetric_fog_energy = 0.595
+
+[node name="lantern2" parent="envrionment/stuff" index="13" unique_id=1422780356 instance=ExtResource("12_rfuge")]
+transform = Transform3D(-0.6645263, 0, -0.74726486, 0, 1, 0, 0.74726486, 0, -0.6645263, -41.938217, 1.0200005, -12.220245)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="envrionment/stuff/lantern2" index="1" unique_id=1817856201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7319393, 1.9585061, -0.76482487)
+light_color = Color(1, 1, 0.49803922, 1)
+light_energy = 1.795
+light_volumetric_fog_energy = 0.595
+
+[node name="log" parent="envrionment/stuff" index="14" unique_id=345042734 instance=ExtResource("13_1o5ds")]
 transform = Transform3D(0.689847, 0, 0.7239552, 0, 1, 0, -0.7239552, 0, 0.689847, -28.35239, 1.294577, 3.2978222)
 
-[node name="target" parent="envrionment/stuff" index="14" unique_id=1270140916 instance=ExtResource("14_ea5hl")]
+[node name="target" parent="envrionment/stuff" index="15" unique_id=1270140916 instance=ExtResource("14_ea5hl")]
 transform = Transform3D(-0.16933052, 0.23411351, -1.0232499, 0.03996251, 0.9919937, 0.24149004, 0.9985192, 0, -0.1831892, -65.789505, 3.0020955, -3.9400744)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="envrionment/stuff" index="15" unique_id=1025769740]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="envrionment/stuff" index="16" unique_id=1025769740]
 transform = Transform3D(1.6192081, 0, 0, 0, 3.0674367, 0, 0, 0, 3.813578, 10.456173, 6.6913185, -6.7346945)
 mesh = SubResource("BoxMesh_6nb7m")
 
-[node name="table2" parent="envrionment/stuff" index="16" unique_id=289812418 instance=ExtResource("4_ys5p8")]
+[node name="table2" parent="envrionment/stuff" index="17" unique_id=289812418 instance=ExtResource("4_ys5p8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.09398, 1.050293, 72.84073)
 
-[node name="table3" parent="envrionment/stuff" index="17" unique_id=399316032 instance=ExtResource("4_ys5p8")]
+[node name="table3" parent="envrionment/stuff" index="18" unique_id=399316032 instance=ExtResource("4_ys5p8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.09398, 1.050293, 43.783775)
 
 [node name="GridMap" type="GridMap" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="3" unique_id=581365313]
@@ -118,3 +178,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.23666, 1.0500002, 15.547
 
 [node name="pillar4" parent="." index="8" unique_id=1428176192 instance=ExtResource("6_etlrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.371174, 1.0500002, 51.827152)
+
+[node name="Camera3D" type="Camera3D" parent="." index="9" unique_id=1940518818]
+transform = Transform3D(0.22228038, 0, 0.9749828, 0, 1, 0, -0.9749828, 0, 0.22228038, -19.499691, 4.2360296, -3.5298743)
+
+[node name="FogVolume" type="FogVolume" parent="." index="10" unique_id=513642447]
+transform = Transform3D(1, 0, 0, 0, 1.7730614, 0, 0, 0, 1, -92.93091, 0, 33.799988)
+size = Vector3(215.75854, 2, 174.30334)
+material = SubResource("FogMaterial_3afjq")

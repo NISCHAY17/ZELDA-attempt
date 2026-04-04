@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dsvmcf0eee72c" path="res://graphics/environment/objects/crates.glb" id="22_yqb1n"]
 [ext_resource type="PackedScene" uid="uid://c04ysd6ex0ubs" path="res://graphics/environment/objects/pinetree.glb" id="23_qkc01"]
 [ext_resource type="PackedScene" uid="uid://dwjrrhoj6ltyx" path="res://graphics/environment/castle.blend" id="24_wf4j4"]
+[ext_resource type="PackedScene" uid="uid://dre4weuehooix" path="res://graphics/objects/keg_decorated.gltf" id="25_yqb1n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wf4j4"]
 sky_top_color = Color(0.25409985, 0.5937322, 0.70472217, 1)
@@ -37,12 +38,42 @@ sky_material = SubResource("ProceduralSkyMaterial_wf4j4")
 [sub_resource type="Environment" id="Environment_cxwv3"]
 background_mode = 1
 background_color = Color(0.48235294, 0.50980395, 0.9019608, 1)
+background_energy_multiplier = 0.77
 sky = SubResource("Sky_yqb1n")
 ambient_light_source = 2
 ambient_light_color = Color(0.96862745, 0.8352941, 0.85882354, 1)
 ambient_light_energy = 0.67
-tonemap_mode = 2
+tonemap_exposure = 0.85
+ssao_enabled = true
+ssil_enabled = true
+ssil_radius = 4.67
+sdfgi_enabled = true
 glow_enabled = true
+glow_intensity = 0.67
+glow_bloom = 0.12
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.50980395, 0.8745098, 0.8901961, 1)
+fog_density = 0.0009
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0061
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 1.2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_wf4j4"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 167.0
+dof_blur_far_transition = 267.0
+dof_blur_amount = 0.01
+
+[sub_resource type="Curve3D" id="Curve3D_cxwv3"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -161.85568, 0, 14.090744, 0, 0, 0, 0, 0, 0, 163.42294, 0, 58.4469, 0, 0, 0, 0, 0, 0, 197.02603, 0, 223.7744, 0, 0, 0, 0, 0, 0, 162.07877, 0, 324.5839, 0, 0, 0, 0, 0, 0, 41.107395, 0, 305.76614, 0, 0, 0, 0, 0, 0, -148.4144, 0, 338.02518, 0, 0, 0, 0, 0, 0, -204.8677, 0, 184.79477),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ktt"]
 albedo_color = Color(0, 0.40392157, 1, 1)
@@ -55,9 +86,13 @@ size = Vector2(670.67, 167)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=279066565]
 environment = SubResource("Environment_cxwv3")
+camera_attributes = SubResource("CameraAttributesPractical_wf4j4")
 
 [node name="Player" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="0" unique_id=1080306268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56768703, 14.299009, -98.67917)
+
+[node name="Path3D" type="Path3D" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="1" unique_id=1014792145]
+curve = SubResource("Curve3D_cxwv3")
 
 [node name="overworld_environment" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="0" unique_id=1655881674 instance=ExtResource("2_16ktt")]
 
@@ -299,40 +334,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.77744, -33.645016, 105.20
 [node name="tree43" parent="envrionment/Trees" index="42" unique_id=522926240 instance=ExtResource("6_qjxaj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.975585, -34.31437, 128.4637)
 
-[node name="tree44" parent="envrionment/Trees" index="43" unique_id=1194968392 instance=ExtResource("19_qkc01")]
+[node name="tree45" parent="envrionment/Trees" index="43" unique_id=2138205086 instance=ExtResource("6_qjxaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.84667, -34.31437, 113.75818)
+
+[node name="tree44" parent="envrionment/Trees" index="44" unique_id=1194968392 instance=ExtResource("19_qkc01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662238, -37.534157, 149.65936)
 
-[node name="pinetree" parent="envrionment/Trees" index="44" unique_id=1263153001 instance=ExtResource("23_qkc01")]
+[node name="pinetree" parent="envrionment/Trees" index="45" unique_id=1263153001 instance=ExtResource("23_qkc01")]
 transform = Transform3D(0.9574885, -0.0036457605, -0.28844896, 0.0020036986, 0.99998015, -0.0059878053, 0.288465, 0.0051552923, 0.9574766, 139.31792, -32.043087, 292.1235)
 
-[node name="pinetree2" parent="envrionment/Trees" index="45" unique_id=2059152653 instance=ExtResource("23_qkc01")]
+[node name="pinetree2" parent="envrionment/Trees" index="46" unique_id=2059152653 instance=ExtResource("23_qkc01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.36461, -32.24366, 298.3517)
 
-[node name="pinetree3" parent="envrionment/Trees" index="46" unique_id=1658898573 instance=ExtResource("23_qkc01")]
+[node name="pinetree3" parent="envrionment/Trees" index="47" unique_id=1658898573 instance=ExtResource("23_qkc01")]
 transform = Transform3D(1, 0, 0, 0, 0.9913947, 0.13090688, 0, -0.13090688, 0.9913947, 126.17759, -32.431725, 290.98227)
 
-[node name="pinetree4" parent="envrionment/Trees" index="47" unique_id=1831678869 instance=ExtResource("23_qkc01")]
+[node name="pinetree4" parent="envrionment/Trees" index="48" unique_id=1831678869 instance=ExtResource("23_qkc01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.51768, -32.78306, 280.3652)
 
-[node name="pinetree5" parent="envrionment/Trees" index="48" unique_id=1621092813 instance=ExtResource("23_qkc01")]
+[node name="pinetree5" parent="envrionment/Trees" index="49" unique_id=1621092813 instance=ExtResource("23_qkc01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.05093, -33.92231, 257.03152)
 
-[node name="pinetree6" parent="envrionment/Trees" index="49" unique_id=870541429 instance=ExtResource("23_qkc01")]
+[node name="pinetree6" parent="envrionment/Trees" index="50" unique_id=870541429 instance=ExtResource("23_qkc01")]
 transform = Transform3D(-0.1262682, 0, 0.99199617, 0, 1, 0, -0.99199617, 0, -0.1262682, 146.42677, -32.724453, 271.2983)
 
-[node name="pinetree7" parent="envrionment/Trees" index="50" unique_id=711298349 instance=ExtResource("23_qkc01")]
+[node name="pinetree7" parent="envrionment/Trees" index="51" unique_id=711298349 instance=ExtResource("23_qkc01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.5417, -37.53858, 236.84532)
 
-[node name="pinetree8" parent="envrionment/Trees" index="51" unique_id=467815681 instance=ExtResource("23_qkc01")]
+[node name="pinetree8" parent="envrionment/Trees" index="52" unique_id=467815681 instance=ExtResource("23_qkc01")]
 transform = Transform3D(0.97801584, 0.18043798, 0.10453306, -0.19918735, 0.95671284, 0.2121915, -0.061720684, -0.22834828, 0.97162116, 117.10774, -33.658318, 277.66904)
 
-[node name="pinetree9" parent="envrionment/Trees" index="52" unique_id=189597529 instance=ExtResource("23_qkc01")]
+[node name="pinetree9" parent="envrionment/Trees" index="53" unique_id=189597529 instance=ExtResource("23_qkc01")]
 transform = Transform3D(0.44605726, -0.30803168, 0.8403269, 0, 0.93890816, 0.34416777, -0.8950044, -0.15351853, 0.4188068, 108.35928, -38.021393, 268.94214)
 
-[node name="pinetree10" parent="envrionment/Trees" index="53" unique_id=1610942595 instance=ExtResource("23_qkc01")]
+[node name="pinetree10" parent="envrionment/Trees" index="54" unique_id=1610942595 instance=ExtResource("23_qkc01")]
 transform = Transform3D(0.34433165, 0, 0.9388481, 0, 1, 0, -0.9388481, 0, 0.34433165, 74.24312, -33.26789, 314.01862)
 
-[node name="pinetree11" parent="envrionment/Trees" index="54" unique_id=1969177467 instance=ExtResource("23_qkc01")]
+[node name="pinetree11" parent="envrionment/Trees" index="55" unique_id=1969177467 instance=ExtResource("23_qkc01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.33487, -34.529366, 340.39105)
+
+[node name="pinetree12" parent="envrionment/Trees" index="56" unique_id=377260627 instance=ExtResource("23_qkc01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.445133, -34.529366, 328.00815)
 
 [node name="camps" type="Node3D" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="4" unique_id=1786249042]
@@ -375,8 +416,20 @@ transform = Transform3D(0.44308683, 0, 0.8964787, 0, 1, 0, -0.8964787, 0, 0.4430
 [node name="lantern" parent="envrionment/other stuff" index="4" unique_id=840778241 instance=ExtResource("5_3gvrs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.768449, 12.614222, -91.21294)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="envrionment/other stuff/lantern" index="1" unique_id=797162368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14731693, 1.8677845, -0.79156494)
+light_color = Color(1, 0.70980394, 0.53333336, 1)
+light_energy = 6.951
+light_indirect_energy = 1.67
+
 [node name="lantern2" parent="envrionment/other stuff" index="5" unique_id=1843240856 instance=ExtResource("5_3gvrs")]
 transform = Transform3D(-0.49907765, 0, 0.8665573, 0, 1, 0, -0.8665573, 0, -0.49907765, 12.703718, 12.535285, -89.50357)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="envrionment/other stuff/lantern2" index="1" unique_id=73764714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15796661, 2.109416, -0.94327927)
+light_color = Color(1, 0.70980394, 0.53333336, 1)
+light_energy = 6.951
+light_indirect_energy = 1.67
 
 [node name="rocks1" parent="envrionment/other stuff" index="6" unique_id=552903162 instance=ExtResource("11_255p0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.464806, -21.799065, 15.1483345)
@@ -456,8 +509,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35537452, 12.8811, -80.7431
 [node name="castle" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="6" unique_id=800770622 instance=ExtResource("24_wf4j4")]
 transform = Transform3D(0.17782332, 0, 0.98406243, 0, 1, 0, -0.98406243, 0, 0.17782332, 28.750828, -36.97199, 368.47958)
 
+[node name="keg_decorated2" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="7" unique_id=1002499429 instance=ExtResource("25_yqb1n")]
+transform = Transform3D(0.682496, 0, 0.7308893, 0, 1, 0, -0.7308893, 0, 0.682496, 15.056153, 12.592307, -86.73404)
+
 [node name="Camera3D" type="Camera3D" parent="." index="4" unique_id=1434797684]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.342, -66.50023)
+transform = Transform3D(-0.7731963, 0.14734302, -0.61681265, 0.03053683, 0.9801566, 0.19585904, 0.6334312, 0.13260183, -0.7623527, 0.49158764, 18.342, -66.50023)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="5" unique_id=2042857553]
 light_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
