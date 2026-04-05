@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://nfq4huwpdlbl"]
 
 [ext_resource type="PackedScene" uid="uid://dd2sdvs7c8wwg" path="res://scenes/level.tscn" id="1_ubp1v"]
+[ext_resource type="Script" uid="uid://ddbx0l0q2bdie" path="res://scenes/dungeon.gd" id="2_hh3g7"]
 [ext_resource type="MeshLibrary" uid="uid://cgs3jwaqkxd0j" path="res://graphics/environment/dungeon/dungeon_col.tres" id="3_fpimf"]
 [ext_resource type="PackedScene" uid="uid://chw0pqeh5pgfm" path="res://graphics/environment/dungeon objects/stool.glb" id="3_fvacq"]
 [ext_resource type="PackedScene" uid="uid://ben46777uu8eu" path="res://graphics/environment/dungeon objects/table.glb" id="4_ys5p8"]
@@ -53,6 +54,9 @@ albedo_color = Color(0.100832276, 0.00072017853, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_6nb7m"]
 material = SubResource("StandardMaterial3D_3afjq")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6nb7m"]
+size = Vector3(1.0922852, 1.2401123, 1.185669)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_un0b0"]
 resource_name = "texture"
 albedo_texture = ExtResource("15_6nb7m")
@@ -100,7 +104,8 @@ density = 0.967
 height_falloff = 1e-05
 edge_fade = 1.2125732
 
-[node name="level" unique_id=44627815 instance=ExtResource("1_ubp1v")]
+[node name="Dungon" unique_id=44627815 instance=ExtResource("1_ubp1v")]
+script = ExtResource("2_hh3g7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=1720714575]
 environment = SubResource("Environment_hh3g7")
@@ -192,9 +197,17 @@ transform = Transform3D(0.689847, 0, 0.7239552, 0, 1, 0, -0.7239552, 0, 0.689847
 [node name="target" parent="envrionment/stuff" index="15" unique_id=1270140916 instance=ExtResource("14_ea5hl")]
 transform = Transform3D(-0.16933052, 0.23411351, -1.0232499, 0.03996251, 0.9919937, 0.24149004, 0.9985192, 0, -0.1831892, -65.789505, 3.0020955, -3.9400744)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="envrionment/stuff" index="16" unique_id=1025769740]
+[node name="door" type="MeshInstance3D" parent="envrionment/stuff" index="16" unique_id=1025769740]
 transform = Transform3D(1.6192081, 0, 0, 0, 3.0674367, 0, 0, 0, 3.813578, 10.456173, 6.6913185, -6.7346945)
 mesh = SubResource("BoxMesh_6nb7m")
+
+[node name="doorarea" type="Area3D" parent="envrionment/stuff/door" index="0" unique_id=1566859301]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="envrionment/stuff/door/doorarea" index="0" unique_id=1984700058]
+transform = Transform3D(1.0000005, 0, 0, 0, 1.0000088, 0, 0, 0, 1.0000088, -0.046142578, 0.12005639, 0.09283531)
+shape = SubResource("BoxShape3D_6nb7m")
 
 [node name="table2" parent="envrionment/stuff" index="17" unique_id=289812418 instance=ExtResource("4_ys5p8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.09398, 1.050293, 72.84073)
@@ -248,3 +261,5 @@ transform = Transform3D(0.22228038, 0, 0.9749828, 0, 1, 0, -0.9749828, 0, 0.2222
 transform = Transform3D(1, 0, 0, 0, 1.7730614, 0, 0, 0, 1, -92.93091, 0, 33.799988)
 size = Vector3(215.75854, 2, 174.30334)
 material = SubResource("FogMaterial_3afjq")
+
+[connection signal="body_entered" from="envrionment/stuff/door/doorarea" to="." method="_on_doorarea_body_entered"]
