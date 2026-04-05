@@ -92,6 +92,7 @@ func _physics_process(delta: float) -> void:
 	move_logic(delta)
 	jump_logic(delta)
 	move_and_slide()
+	physics_logic()  
 	ability_logic()
 	#print("jump_height NOW:", jump_height, " jv:", jump_velocity)
 	#print("on_floor:", is_on_floor(), "jump_pressed:", Input.is_action_just_pressed("jump"), " jv:", jump_velocity)
@@ -191,3 +192,8 @@ func _on_energy_recovery_timer_timeout() -> void:
 
 func _on_stamina_recovery_timer_timeout() -> void:
 	stamina += 1
+func physics_logic() -> void:
+	for i in get_slide_collision_count():
+		var collider = get_slide_collision(i).get_collider()
+		if collider is RigidBody3D:
+			collider.apply_central_impulse(-get_slide_collision(i).get_normal() )

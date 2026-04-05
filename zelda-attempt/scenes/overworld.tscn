@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dd2sdvs7c8wwg" path="res://scenes/level.tscn" id="1_m1b5j"]
 [ext_resource type="PackedScene" uid="uid://ea0mku4gnfva" path="res://scenes/overworld_skin.tscn" id="2_16ktt"]
+[ext_resource type="PackedScene" uid="uid://du7btmyksp36i" path="res://ENTITIES/bird.tscn" id="2_cxwv3"]
 [ext_resource type="PackedScene" uid="uid://crbb8scv3stc0" path="res://graphics/environment/objects/fence_post.glb" id="3_356oe"]
 [ext_resource type="PackedScene" uid="uid://cefax5g013mud" path="res://graphics/environment/objects/fence_middle.glb" id="4_3gvrs"]
 [ext_resource type="PackedScene" uid="uid://fxi3picm86d8" path="res://graphics/environment/objects/lantern.glb" id="5_3gvrs"]
@@ -67,13 +68,13 @@ dof_blur_far_distance = 167.0
 dof_blur_far_transition = 267.0
 dof_blur_amount = 0.01
 
-[sub_resource type="Curve3D" id="Curve3D_cxwv3"]
+[sub_resource type="Curve3D" id="Curve3D_yqb1n"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -161.85568, 0, 14.090744, 0, 0, 0, 0, 0, 0, 163.42294, 0, 58.4469, 0, 0, 0, 0, 0, 0, 197.02603, 0, 223.7744, 0, 0, 0, 0, 0, 0, 162.07877, 0, 324.5839, 0, 0, 0, 0, 0, 0, 41.107395, 0, 305.76614, 0, 0, 0, 0, 0, 0, -148.4144, 0, 338.02518, 0, 0, 0, 0, 0, 0, -204.8677, 0, 184.79477),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 124.66594, -0.3078308, 42.72711, 0, 0, 0, 0, 0, 0, 138.43994, -5.5739326, 79.722565, 0, 0, 0, 0, 0, 0, 159.88574, -1.8256531, 119.74188, 0, 0, 0, 0, 0, 0, 178.77066, -3.670288, 207.82167, 0, 0, 0, 0, 0, 0, 145.16931, -5.6319885, 289.08224, 0, 0, 0, 0, 0, 0, 97.093376, -6.823059, 332.02948, 0, 0, 0, 0, 0, 0, 41.045574, -7.196747, 336.0453, 0, 0, 0, 0, 0, 0, -45.58075, -7.710541, 339.35968, 0, 0, 0, 0, 0, 0, -126.9423, -7.8973694, 329.0532, 0, 0, 0, 0, 0, 0, -167.19708, -7.8973694, 319.7593, 0, 0, 0, 0, 0, 0, -187.55609, -7.6171265, 302.34195, 0, 0, 0, 0, 0, 0, -192.50885, -6.799774, 264.1075, 0, 0, 0, 0, 0, 0, -189.40948, -5.3752136, 200.17882, 0, 0, 0, 0, 0, 0, -176.01459, -4.2309265, 151.34401, 0, 0, 0, 0, 0, 0, -165.33005, -3.4602966, 118.83931, 0, 0, 0, 0, 0, 0, -150.85165, -2.4094238, 74.49362, 0, 0, 0, 0, 0, 0, -140.55377, -1.4753113, 34.48143, 0, 0, 0, 0, 0, 0, -124.60505, -0.68133545, 2.1323395, 0, 0, 0, 0, 0, 0, -80.94315, -0.23760986, -7.922287, 0, 0, 0, 0, 0, 0, 49.18878, -0.0040893555, 11.524673, 0, 0, 0, 0, 0, 0, 102.91375, 0.13601685, 17.570023, 0, 0, 0, 0, 0, 0, 78.26547, 29.12239, 93.26507, 0, 0, 0, 0, 0, 0, 68.554504, -26.618969, 89.657166, 0, 0, 0, 0, 0, 0, -31.276264, 35.144413, 93.237885),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 7
+point_count = 24
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ktt"]
 albedo_color = Color(0, 0.40392157, 1, 1)
@@ -91,8 +92,13 @@ camera_attributes = SubResource("CameraAttributesPractical_wf4j4")
 [node name="Player" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="0" unique_id=1080306268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56768703, 14.299009, -98.67917)
 
-[node name="Path3D" type="Path3D" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="1" unique_id=1014792145]
-curve = SubResource("Curve3D_cxwv3")
+[node name="Path3D" type="Path3D" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="1" unique_id=1362696736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.106396, 0)
+curve = SubResource("Curve3D_yqb1n")
+
+[node name="Bird" parent="entity/Path3D" index="0" unique_id=2073378276 instance=ExtResource("2_cxwv3")]
+transform = Transform3D(0.93715304, 0.04613643, 0.34585258, -1.8626447e-09, 0.99121934, -0.13222696, -0.34891722, 0.12391735, 0.9289217, 124.66594, -0.3078308, 42.72711)
+use_model_front = true
 
 [node name="overworld_environment" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="0" unique_id=1655881674 instance=ExtResource("2_16ktt")]
 
