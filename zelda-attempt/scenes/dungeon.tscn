@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ddbx0l0q2bdie" path="res://scenes/dungeon.gd" id="2_hh3g7"]
 [ext_resource type="MeshLibrary" uid="uid://cgs3jwaqkxd0j" path="res://graphics/environment/dungeon/dungeon_col.tres" id="3_fpimf"]
 [ext_resource type="PackedScene" uid="uid://chw0pqeh5pgfm" path="res://graphics/environment/dungeon objects/stool.glb" id="3_fvacq"]
+[ext_resource type="PackedScene" uid="uid://ddd2c86fjpchk" path="res://ENTITIES/enemys/boss.tscn" id="3_rfuge"]
 [ext_resource type="PackedScene" uid="uid://ben46777uu8eu" path="res://graphics/environment/dungeon objects/table.glb" id="4_ys5p8"]
 [ext_resource type="PackedScene" uid="uid://b7wf3jucxaf1v" path="res://graphics/environment/dungeon objects/torch.glb" id="5_hsn05"]
 [ext_resource type="PackedScene" uid="uid://bhqt5vgwxv68w" path="res://graphics/environment/dungeon objects/pillar.glb" id="6_etlrv"]
@@ -118,6 +119,9 @@ shadow_enabled = true
 
 [node name="Player" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="0" unique_id=1080306268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009070873, 1.0748427, -0.435524)
+
+[node name="Boss" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="1" unique_id=1098040870 instance=ExtResource("3_rfuge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.33011, 1.0517783, 66.99153)
 
 [node name="FloorGrid" type="GridMap" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="0" unique_id=792330359]
 mesh_library = ExtResource("3_fpimf")

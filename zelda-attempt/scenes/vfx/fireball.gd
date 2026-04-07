@@ -1,5 +1,5 @@
 extends Area3D
-
+# to fix if i am not running the fireball js goes towards me and player direction and movement
 
 var direction: Vector2
 const speed = 5.0
