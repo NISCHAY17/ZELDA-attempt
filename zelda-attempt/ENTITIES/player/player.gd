@@ -13,6 +13,8 @@ extends CharacterBody3D
 @export var run_speed := 25.0
 @onready var camera_3d: Node3D = $"CAMERA CONTROLLER"
 @onready var ui = $UI
+@onready var run_particles = $RunParticles
+
 @export var defend_speed := 2.0
 var jump_velocity : float = 0.0
 var jump_gravity : float = 0.0
@@ -139,6 +141,7 @@ func move_logic(delta) -> void:
 	if movement_input:
 			last_movement_input = movement_input.normalized()
 		
+	run_particles.emitting = is_on_floor() and is_running and movement_input != Vector2.ZERO
 func ability_logic() -> void:
 	# worked on attack
 	if Input.is_action_just_pressed("ability"):

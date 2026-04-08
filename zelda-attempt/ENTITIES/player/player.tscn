@@ -56,6 +56,9 @@ wait_time = 0.167
 autostart = true
 
 [node name="RunParticles" type="GPUParticles3D" parent="." unique_id=653674557]
+transparency = 0.27
+cast_shadow = 0
+amount = 17
 process_material = SubResource("ParticleProcessMaterial_6mcbg")
 draw_pass_1 = SubResource("SphereMesh_url7a")
 

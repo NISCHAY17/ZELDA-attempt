@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bkatehyr5rg8j"]
+
+[ext_resource type="Shader" uid="uid://cjhg5txryqqtj" path="res://water.tres" id="1_qi1wl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wcun"]
+render_priority = 0
+shader = ExtResource("1_qi1wl")
+shader_parameter/ColorParameter = Color(0.352941, 0.678431, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_seble"]
+material = SubResource("ShaderMaterial_7wcun")
+size = Vector2(500, 500)
+subdivide_width = 100
+subdivide_depth = 100
+
+[node name="Water" type="MeshInstance3D" unique_id=212591777]
+mesh = SubResource("PlaneMesh_seble")
