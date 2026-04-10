@@ -729,7 +729,7 @@ shape = SubResource("BoxShape3D_8vjs8")
 debug_color = Color(2.1331975, 0.5145699, 0.10296655, 0.41960785)
 
 [node name="Water" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="6" unique_id=212591777 instance=ExtResource("29_og2i3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -49.889153, 182.58331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -51.27072, 182.58331)
 
 [node name="Camera3D" type="Camera3D" parent="." index="4" unique_id=1434797684]
 transform = Transform3D(-0.7731963, 0.14734302, -0.61681265, 0.03053683, 0.9801566, 0.19585904, 0.6334312, 0.13260183, -0.7623527, 0.49158764, 18.342, -66.50023)
