@@ -25,6 +25,9 @@ operator = 5
 default_input_values = [0, 0.0, 1, 0.5]
 operator = 2
 
+[sub_resource type="VisualShaderNodeProximityFade" id="VisualShaderNodeProximityFade_sts0n"]
+default_input_values = [0, 3.67]
+
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_sts0n"]
 default_input_values = [0, 0.0, 1, 0.067]
 operator = 2
@@ -44,7 +47,7 @@ input_name = "vertex"
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_y6fc4"]
 noise_type = 2
-frequency = 0.1118
+frequency = 0.0167
 fractal_type = 0
 cellular_distance_function = 1
 
@@ -108,9 +111,11 @@ nodes/fragment/4/position = Vector2(256, 640)
 nodes/fragment/5/node = SubResource("VisualShaderNodeVaryingGetter_sts0n")
 nodes/fragment/5/position = Vector2(-1072, 224)
 nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_y6fc4")
-nodes/fragment/6/position = Vector2(-240, 448)
+nodes/fragment/6/position = Vector2(-176, 416)
 nodes/fragment/7/node = SubResource("VisualShaderNodeFloatOp_4hbtk")
 nodes/fragment/7/position = Vector2(-784, 224)
 nodes/fragment/8/node = SubResource("VisualShaderNodeFloatOp_faptx")
 nodes/fragment/8/position = Vector2(-480, 288)
-nodes/fragment/connections = PackedInt32Array(3, 0, 0, 1, 4, 0, 0, 3, 6, 0, 0, 0, 5, 0, 7, 0, 7, 0, 8, 0, 8, 0, 6, 1, 2, 0, 6, 0)
+nodes/fragment/9/node = SubResource("VisualShaderNodeProximityFade_sts0n")
+nodes/fragment/9/position = Vector2(256, 48)
+nodes/fragment/connections = PackedInt32Array(4, 0, 0, 3, 6, 0, 0, 0, 5, 0, 7, 0, 7, 0, 8, 0, 8, 0, 6, 1, 2, 0, 6, 0, 9, 0, 0, 1)

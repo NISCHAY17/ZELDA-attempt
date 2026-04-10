@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://v2j0tf83tupg"]
+
+[ext_resource type="ArrayMesh" uid="uid://k1syv00tyig8" path="res://graphics/vfx/grass_blade.obj" id="1_btdsr"]
+[ext_resource type="Shader" uid="uid://donaxv4qi4qxp" path="res://grass_blade.gdshader" id="1_w7x2m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_817ow"]
+render_priority = 0
+shader = ExtResource("1_w7x2m")
+shader_parameter/color = Color(0, 0.73333335, 0.39607844, 1)
+shader_parameter/shadow_color = Color(0.4, 0.4, 0.40392157, 1)
+
+[node name="GrassBlade" type="MeshInstance3D" unique_id=740429182]
+material_override = SubResource("ShaderMaterial_817ow")
+mesh = ExtResource("1_btdsr")
