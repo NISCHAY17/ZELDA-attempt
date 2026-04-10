@@ -86,7 +86,7 @@ func jump_logic(delta) -> void:
 	var gravity = jump_gravity if velocity.y > 0 else fall_gravity
 	velocity.y -= gravity * delta
 func _physics_process(delta: float) -> void:
-	
+	RenderingServer.global_shader_parameter_set("player_position", global_position)
 	# read input relative to camera
 	# old move code
 	# movement_input = Input.get_vector("left","right","forward","backward").rotated(-camera_3d.global_rotation.y)
