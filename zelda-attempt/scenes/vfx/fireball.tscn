@@ -1,23 +1,39 @@
 [gd_scene format=3 uid="uid://0exfhm8f65y5"]
 
 [ext_resource type="Script" uid="uid://dy11dkquh1wwi" path="res://scenes/vfx/fireball.gd" id="1_y0ij2"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0ij2"]
-albedo_color = Color(1, 0.16078432, 0.23921569, 1)
+[ext_resource type="Shader" uid="uid://lp73kuld5kj6" path="res://scenes/vfx/fireball.gdshader" id="2_070sd"]
+[ext_resource type="ArrayMesh" uid="uid://dbi85xwqaikhi" path="res://graphics/vfx/fireball_shell_mesh.obj" id="2_v6cm7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d8xov"]
+
+[sub_resource type="Gradient" id="Gradient_070sd"]
+colors = PackedColorArray(0.90588236, 0.11764706, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oce6j"]
+gradient = SubResource("Gradient_070sd")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_070sd"]
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oce6j"]
+noise = SubResource("FastNoiseLite_070sd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oce6j"]
+render_priority = 0
+shader = ExtResource("2_070sd")
+shader_parameter/noise_sampler = SubResource("NoiseTexture2D_oce6j")
+shader_parameter/gradient_sampler = SubResource("GradientTexture1D_oce6j")
 
 [node name="Fireball" type="Area3D" unique_id=2143711923]
 collision_layer = 8
 collision_mask = 7
 script = ExtResource("1_y0ij2")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=105717818]
-radial_segments = 24
-rings = 12
-material = SubResource("StandardMaterial3D_y0ij2")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=652603856]
 shape = SubResource("SphereShape3D_d8xov")
+
+[node name="FireballMesh" type="MeshInstance3D" parent="." unique_id=1060283953]
+material_override = SubResource("ShaderMaterial_oce6j")
+mesh = ExtResource("2_v6cm7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
