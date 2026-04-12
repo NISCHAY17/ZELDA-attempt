@@ -84,6 +84,8 @@ material = SubResource("StandardMaterial3D_3afjq")
 [sub_resource type="BoxShape3D" id="BoxShape3D_6nb7m"]
 size = Vector3(1.0922852, 1.2401123, 1.185669)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rfuge"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_un0b0"]
 resource_name = "texture"
 albedo_texture = ExtResource("15_6nb7m")
@@ -259,22 +261,33 @@ collision_mask = 2
 transform = Transform3D(1.0000005, 0, 0, 0, 1.0000088, 0, 0, 0, 1.0000088, -0.046142578, 0.12005639, 0.09283531)
 shape = SubResource("BoxShape3D_6nb7m")
 
-[node name="table2" parent="envrionment/stuff" index="17" unique_id=289812418 instance=ExtResource("4_ys5p8")]
+[node name="killzone" type="MeshInstance3D" parent="envrionment/stuff" index="17" unique_id=1374479104]
+transform = Transform3D(-1.1601987, 232.24083, 0, 5.6033716, 48.08633, 0, 0, 0, 152.95695, -52.505363, -19.027084, 13.365889)
+mesh = SubResource("BoxMesh_6nb7m")
+
+[node name="Area3D2" type="Area3D" parent="envrionment/stuff/killzone" index="0" unique_id=451450717]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="envrionment/stuff/killzone/Area3D2" index="0" unique_id=928413179]
+shape = SubResource("BoxShape3D_rfuge")
+
+[node name="table2" parent="envrionment/stuff" index="18" unique_id=289812418 instance=ExtResource("4_ys5p8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.09398, 1.050293, 72.84073)
 
-[node name="table3" parent="envrionment/stuff" index="18" unique_id=399316032 instance=ExtResource("4_ys5p8")]
+[node name="table3" parent="envrionment/stuff" index="19" unique_id=399316032 instance=ExtResource("4_ys5p8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.09398, 1.050293, 43.783775)
 
-[node name="pillar3" parent="envrionment/stuff" index="19" unique_id=1692458972 instance=ExtResource("6_etlrv")]
+[node name="pillar3" parent="envrionment/stuff" index="20" unique_id=1692458972 instance=ExtResource("6_etlrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.459145, 1.05, 15.634302)
 
-[node name="pillar4" parent="envrionment/stuff" index="20" unique_id=677970281 instance=ExtResource("6_etlrv")]
+[node name="pillar4" parent="envrionment/stuff" index="21" unique_id=677970281 instance=ExtResource("6_etlrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.74016, 1.0500002, 91.98155)
 
-[node name="pillar5" parent="envrionment/stuff" index="21" unique_id=716576649 instance=ExtResource("6_etlrv")]
+[node name="pillar5" parent="envrionment/stuff" index="22" unique_id=716576649 instance=ExtResource("6_etlrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.23666, 1.0500002, 15.547884)
 
-[node name="pillar6" parent="envrionment/stuff" index="22" unique_id=1428176192 instance=ExtResource("6_etlrv")]
+[node name="pillar6" parent="envrionment/stuff" index="23" unique_id=1428176192 instance=ExtResource("6_etlrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.371174, 1.0500002, 51.827152)
 
 [node name="GridMap" type="GridMap" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="3" unique_id=581365313]
@@ -321,3 +334,5 @@ size = Vector3(215.75854, 2, 174.30334)
 material = SubResource("FogMaterial_3afjq")
 
 [connection signal="body_entered" from="envrionment/stuff/door/doorarea" to="." method="_on_doorarea_body_entered"]
+[connection signal="area_entered" from="envrionment/stuff/killzone/Area3D2" to="." method="_on_area_3d_2_area_entered"]
+[connection signal="body_entered" from="envrionment/stuff/killzone/Area3D2" to="." method="_on_area_3d_2_body_entered"]
