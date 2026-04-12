@@ -187,6 +187,7 @@ func shoot_magic(pos: Vector3) -> void:
 		cast_spell.emit('fireball', pos,last_movement_input, 1.0)
 	if current_spell == spells.HEAL:
 		health += 1
+		skin.heal_tween()
 
 
 func _on_energy_recovery_timer_timeout() -> void:
