@@ -21,10 +21,15 @@ var jump_gravity : float = 0.0
 var fall_gravity : float = 0.0
 enum  spells {FIREBALL, HEAL}
 var current_spell = spells.FIREBALL
+@export var max_health := 5
+
 var health = 5:
 	set(value):
-		ui.update_health(value, value - health)
-		health = value
+		var old = health
+		health = clamp(value, 0, max_health)
+		
+		ui.update_health(health, health - old)
+
 		if health <= 0:
 			get_tree().quit()
 var energy = 100:
@@ -125,8 +130,8 @@ func move_logic(delta) -> void:
 
 		velocity.x = vel_2d.x
 		velocity.z = vel_2d.y
-		var target_angle = -movement_input.angle() * PI/2
-		$godetteSkin.rotation.y = rotate_toward($godetteSkin.rotation.y, target_angle, 6.0 * delta)
+		var target_angle = atan2(movement_input.x, movement_input.y)
+		$godetteSkin.rotation.y = lerp_angle($godetteSkin.rotation.y, target_angle, 10.0 * delta)
 		
 		
 	

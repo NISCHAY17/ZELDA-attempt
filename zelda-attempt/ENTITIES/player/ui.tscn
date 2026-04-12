@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3vh0pug1ilge" path="res://graphics/ui/fire.png" id="2_fbfej"]
 [ext_resource type="Texture2D" uid="uid://gi44t0kmhjr8" path="res://graphics/ui/bar_color.png" id="2_i0a2k"]
 [ext_resource type="Texture2D" uid="uid://ca408dm1c5imy" path="res://graphics/ui/circle.png" id="4_bca70"]
+[ext_resource type="Texture2D" uid="uid://b0qse8qs3m4gt" path="res://graphics/u win .png" id="5_y7l1b"]
 
 [node name="UI" type="Control" unique_id=847037512]
 layout_mode = 3
@@ -102,3 +103,24 @@ texture_under = ExtResource("4_bca70")
 texture_progress = ExtResource("4_bca70")
 tint_under = Color(0.14901961, 0.14901961, 0.14901961, 1)
 tint_progress = Color(0.38039216, 1, 0.2901961, 1)
+
+[node name="WINIMG" type="Control" parent="." unique_id=1066803409]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="WINIMG" unique_id=1012486091]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 421.0
+offset_top = 30.0
+offset_right = 1957.0
+offset_bottom = 1054.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.20000033, 0.20000033)
+texture = ExtResource("5_y7l1b")

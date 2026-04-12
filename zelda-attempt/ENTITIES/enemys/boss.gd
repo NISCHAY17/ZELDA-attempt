@@ -9,7 +9,8 @@ var spinning := false
 var can_damage_toggle := false
 
 func _ready() -> void:
-	health = 5
+	add_to_group("boss")
+	health = 1
 
 func _process(delta: float) -> void:
 	attack_logic()    
