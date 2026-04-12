@@ -7,7 +7,7 @@ extends Node3D
 var attacking := false
 var rng = RandomNumberGenerator.new()
 
-
+var effect_tween
 var squash_and_streach := 1.0:
 	
 	set(value):
@@ -27,13 +27,16 @@ func hit() -> void:
 	# Fix ExtraOneshot trigger: used "request" instead of invalid "active"
 	$AnimationTree.set("parameters/ExtraOneshot/request" , AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)  
 	$AnimationTree.set('parameters/AttackOneShot/request', AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
+	get_tree().call_group("effects", "stop")
+
 	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_LINEAR)
 	tween.tween_method(_hit_effect, 0.0, 0.6, 0.5)
 	tween.tween_method(_hit_effect, 0.6, 0.0, 0.2)
 	
 	
 func _hit_effect(value: float) -> void:
-	$Rig/Skeleton3D/Godette_Body.material_overlay.set_shader_parameter('cclor', Color.FIREBRICK)
+	$Rig/Skeleton3D/Godette_Body.material_overlay.set_shader_parameter('color', Color.FIREBRICK)
 	$Rig/Skeleton3D/Godette_Body.material_overlay.set_shader_parameter('alpha', value)
 
 func attack():
@@ -74,11 +77,13 @@ func _on_blink_timer_timeout() -> void:
 func can_damage(value: bool):
 	$Rig/Skeleton3D/RightHandSlot/Sword.can_damage = value
 func heal_tween() -> void:
+	get_tree().call_group("effects", "stop")
+
 	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_LINEAR)
 	tween.tween_method(_heal_effect, 0.0, 0.670, 0.5)
 	tween.tween_method(_heal_effect, 0.670, 0.0, 0.2)
-	
 func _heal_effect(value: float) -> void:
-	$Rig/Skeleton3D/Godette_Body.material_overlay.set_shader_parameter('cclor', Color.LIGHT_GREEN)
+	$Rig/Skeleton3D/Godette_Body.material_overlay.set_shader_parameter('color', Color.LIGHT_GREEN)
 	$Rig/Skeleton3D/Godette_Body.material_overlay.set_shader_parameter('alpha', value)
 	#$Rig/Skeleton3D/Godette_Body.material_overlay.set_shader_parameter('cclor', Color.GREEN_YELLOW)

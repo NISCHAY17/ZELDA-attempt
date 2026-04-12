@@ -148,28 +148,44 @@ func move_logic(delta) -> void:
 	else:
 		$sounds/stepsound.playing = false
 	#$sounds/stepsound.playing = is_on_floor() and movement_input
+var can_cast := true
+
 func ability_logic() -> void:
-	# worked on attack
-	if Input.is_action_just_pressed("ability"):
+	# attack / ability
+	if Input.is_action_pressed("ability") and can_cast:
 		if weapon_active:
+			can_cast = false
 			$godetteSkin.attack()
 			$sounds/swordsound.play()
+			
+			await get_tree().create_timer(0.25).timeout
+			can_cast = true
+			
 		else:
 			if energy >= 20:
+				can_cast = false
+				
 				$godetteSkin.cast_spell()
 				stop_movement(0.3, 0.67)
 				energy -= 20
+				
+				await get_tree().create_timer(0.2).timeout
+				can_cast = true
 			# didnt use () in cast spell
-			# fixed ability trigger was calling Skin.cast_spell instead of node instance $godetteSkin.
+			# i fixed ability trigger was calling Skin.cast_spell instead of node instance $godetteSkin
 	# defend = Input.is_action_just_pressed("block") 
 	# What i fixed  Fix: block animation flickering
 	# Cause: used is_action_just_pressed() so defend toggled true→false every frame; switched to is_action_pressed()
+	# defend (hold-based, correct)
 	defend = Input.is_action_pressed("block")
-	# switch between weapon and magic
+
+	# switch weapon
 	if Input.is_action_just_pressed("switch") and not skin.attacking:
 		weapon_active = not weapon_active
 		skin.switch_weapon(weapon_active)
-		do_squash_and_streach(1.2,0.16)
+		do_squash_and_streach(1.2, 0.16)
+
+	# switch spell
 	if Input.is_action_just_pressed("spell switch") and not skin.attacking:
 		current_spell = spells[spells.keys()[(int(current_spell) + 1) % len(spells)]]
 		ui.update_spell(spells, current_spell)
@@ -191,7 +207,13 @@ func do_squash_and_streach(value: float, duration: float = 0.1):
 	print("u just got squash_and_streached ")
 func shoot_magic(pos: Vector3) -> void:
 	if current_spell == spells.FIREBALL:
-		cast_spell.emit('fireball', pos,last_movement_input, 1.0)
+		var forward = -camera_3d.global_transform.basis.z
+		forward.y = 0
+		forward = forward.normalized()
+
+		var dir_2d = Vector2(forward.x, forward.z)
+		cast_spell.emit('fireball', pos, dir_2d, 1.0)
+
 	if current_spell == spells.HEAL:
 		health += 1
 		skin.heal_tween()
