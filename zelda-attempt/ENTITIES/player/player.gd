@@ -158,7 +158,7 @@ func ability_logic() -> void:
 			$godetteSkin.attack()
 			$sounds/swordsound.play()
 			
-			await get_tree().create_timer(0.25).timeout
+			await get_tree().create_timer(0.067).timeout
 			can_cast = true
 			
 		else:
