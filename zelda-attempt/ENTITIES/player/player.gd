@@ -142,11 +142,18 @@ func move_logic(delta) -> void:
 			last_movement_input = movement_input.normalized()
 		
 	run_particles.emitting = is_on_floor() and is_running and movement_input != Vector2.ZERO
+	if is_on_floor() and movement_input:
+		if not $sounds/stepsound.playing:
+			$sounds/stepsound.playing = true
+	else:
+		$sounds/stepsound.playing = false
+	#$sounds/stepsound.playing = is_on_floor() and movement_input
 func ability_logic() -> void:
 	# worked on attack
 	if Input.is_action_just_pressed("ability"):
 		if weapon_active:
 			$godetteSkin.attack()
+			$sounds/swordsound.play()
 		else:
 			if energy >= 20:
 				$godetteSkin.cast_spell()

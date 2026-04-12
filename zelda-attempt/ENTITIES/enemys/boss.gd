@@ -59,6 +59,13 @@ func hit():
 		#print(" boss was hit ") 
 		$Timers/InvulTimer.start()
 		health -= 1
+		var tween = create_tween()
+		tween.tween_method(_hit_effect, 0.0, 0.567, 0.3)
+		tween.tween_method(_hit_effect, 0.567, 0.0, 0.2)
+		
+func _hit_effect(value: float) -> void:
+	$skin/Rig/Skeleton3D/Nagonford_Body.material_overlay.set_shader_parameter('alpha', value)
+
 func can_damage(value: bool) -> void:
 	can_damage_toggle = value 
 func attack_logic() -> void:

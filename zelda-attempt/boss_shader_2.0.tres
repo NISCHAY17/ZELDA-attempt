@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cu738106dndhy"]
+
+[ext_resource type="Shader" uid="uid://d4b5cunxhljrs" path="res://ENTITIES/player/overlay.gdshader" id="1_k1a3w"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_k1a3w")
+shader_parameter/color = Color(0.8117647, 0.14117648, 0.16862746, 1)
+shader_parameter/energy = 1.0
+shader_parameter/alpha = 0.0

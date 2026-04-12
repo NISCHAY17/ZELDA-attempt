@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djiwkvp0jt3va" path="res://ENTITIES/player/player.tscn" id="1_2q6dc"]
 [ext_resource type="Script" uid="uid://mx8rwar4fyfn" path="res://scenes/level.gd" id="1_w8frs"]
+[ext_resource type="AudioStream" uid="uid://cm8ncbpf8wgf0" path="res://audio/music.ogg" id="3_w8frs"]
 
 [node name="level" type="Node3D" unique_id=44627815]
 script = ExtResource("1_w8frs")
@@ -15,3 +16,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009070873, 0, -0.435524)
 
 [node name="Projectiles" type="Node3D" parent="." unique_id=1513956382]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.016581, 0, -7.5039024)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=781876987]
+stream = ExtResource("3_w8frs")
+volume_db = -7.695
+autoplay = true
