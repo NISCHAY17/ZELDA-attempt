@@ -7,6 +7,10 @@ const simple_attacks = {
 @export var spin_speed = 6
 var spinning := false
 var can_damage_toggle := false
+
+func _ready() -> void:
+	health = 5
+
 func _process(delta: float) -> void:
 	attack_logic()    
 func  _physics_process(delta: float) -> void:

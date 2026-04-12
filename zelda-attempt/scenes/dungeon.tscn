@@ -76,7 +76,7 @@ vertex_color_use_as_albedo = true
 material = SubResource("StandardMaterial3D_1o5ds")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3afjq"]
-albedo_color = Color(0.100832276, 0.00072017853, 0, 1)
+albedo_color = Color(0.101960786, 0, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6nb7m"]
 material = SubResource("StandardMaterial3D_3afjq")
@@ -149,7 +149,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009070873, 1.0748427, -0.435524)
 
 [node name="Boss" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="1" unique_id=1098040870 instance=ExtResource("3_rfuge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.33011, 1.0517783, 66.99153)
+transform = Transform3D(0.99698967, 0, 0, 0, 0.99698967, 0, 0, 0, 0.99698967, -61.33011, 1.0517783, 66.99153)
 
 [node name="FloorGrid" type="GridMap" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="0" unique_id=792330359]
 mesh_library = ExtResource("3_fpimf")
@@ -262,7 +262,7 @@ transform = Transform3D(1.0000005, 0, 0, 0, 1.0000088, 0, 0, 0, 1.0000088, -0.04
 shape = SubResource("BoxShape3D_6nb7m")
 
 [node name="killzone" type="MeshInstance3D" parent="envrionment/stuff" index="17" unique_id=1374479104]
-transform = Transform3D(-1.1601987, 232.24083, 0, 5.6033716, 48.08633, 0, 0, 0, 152.95695, -52.505363, -19.027084, 13.365889)
+transform = Transform3D(-1.1601987, 232.24083, 0, 5.6033716, 48.08633, 0, 0, 0, 193.44936, -52.505363, -19.027084, 13.365889)
 mesh = SubResource("BoxMesh_6nb7m")
 
 [node name="Area3D2" type="Area3D" parent="envrionment/stuff/killzone" index="0" unique_id=451450717]
