@@ -31,7 +31,7 @@ var health = 5:
 		ui.update_health(health, health - old)
 
 		if health <= 0:
-			get_tree().quit()
+			get_tree().reload_current_scene()
 var energy = 100:
 	set(value):
 		energy = min(100,value)	

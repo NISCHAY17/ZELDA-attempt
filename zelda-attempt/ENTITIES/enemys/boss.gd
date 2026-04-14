@@ -10,7 +10,7 @@ var can_damage_toggle := false
 
 func _ready() -> void:
 	add_to_group("boss")
-	health = 5
+	health = 6
 
 func _process(delta: float) -> void:
 	attack_logic()    
