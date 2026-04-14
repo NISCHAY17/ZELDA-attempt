@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://doi62gu77lag" path="res://ENTITIES/enemys/skeleton_mage.tscn" id="4_8vjs8"]
 [ext_resource type="PackedScene" uid="uid://fxi3picm86d8" path="res://graphics/environment/objects/lantern.glb" id="5_3gvrs"]
 [ext_resource type="PackedScene" uid="uid://bkmfvv8om32xq" path="res://graphics/environment/objects/tree1.glb" id="5_fkyvp"]
+[ext_resource type="PackedScene" uid="uid://b3puaxwtgni40" path="res://ENTITIES/enemys/skeleton_warrior.tscn" id="5_tt152"]
 [ext_resource type="PackedScene" uid="uid://ddsvnkbeyypbu" path="res://graphics/environment/objects/tree2.glb" id="6_qjxaj"]
 [ext_resource type="PackedScene" uid="uid://dxvaiymlygd8b" path="res://graphics/environment/objects/camp.glb" id="7_e184d"]
 [ext_resource type="PackedScene" uid="uid://b4rhqen2u7u1d" path="res://graphics/environment/objects/campfire.glb" id="8_nesqq"]
@@ -168,7 +169,7 @@ environment = SubResource("Environment_cxwv3")
 camera_attributes = SubResource("CameraAttributesPractical_wf4j4")
 
 [node name="Player" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="0" unique_id=1080306268]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56768703, -32.24282, 351.40472)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5282745, 1.1791234, -169.92465)
 
 [node name="Path3D" type="Path3D" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="1" unique_id=1362696736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.106396, 0)
@@ -181,7 +182,151 @@ use_model_front = true
 [node name="Enemy" type="Node3D" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="2" unique_id=239012716]
 
 [node name="SkeletonMage" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="3" unique_id=1098040870 instance=ExtResource("4_8vjs8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.820396, -31.818668, 354.9259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.820396, -31.818668, 334.40222)
+
+[node name="SkeletonMage2" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="4" unique_id=716575803 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.20256515, 0, 0.9792688, 0, 1, 0, -0.9792688, 0, -0.20256515, 17.827316, -32.455856, 354.9259)
+
+[node name="SkeletonMage3" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="5" unique_id=179530095 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(0.20130034, 0, -0.97952956, 0, 1, 0, 0.97952956, 0, 0.20130034, 25.854305, -32.455856, 354.9259)
+
+[node name="SkeletonMage4" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="6" unique_id=593009432 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.20256515, 0, 0.9792688, 0, 1, 0, -0.9792688, 0, -0.20256515, 17.827316, -32.455856, 329.62552)
+
+[node name="SkeletonMage5" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="7" unique_id=1922446563 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(0.20130034, 0, -0.97952956, 0, 1, 0, 0.97952956, 0, 0.20130034, 25.854305, -32.455856, 329.62552)
+
+[node name="SkeletonMage6" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="8" unique_id=231179264 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.20256515, 0, 0.9792688, 0, 1, 0, -0.9792688, 0, -0.20256515, 17.827316, -32.455856, 310.14868)
+
+[node name="SkeletonMage7" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="9" unique_id=492674128 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(0.20130034, 0, -0.97952956, 0, 1, 0, 0.97952956, 0, 0.20130034, 25.854305, -32.455856, 310.14868)
+
+[node name="SkeletonWarrior" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="10" unique_id=518318399 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9995521, 0, 0.029927969, 0, 1, 0, -0.029927969, 0, -0.9995521, 22.764633, -32.375916, 349.60577)
+
+[node name="SkeletonWarrior2" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="11" unique_id=1551202394 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9995521, 0, 0.029927969, 0, 1, 0, -0.029927969, 0, -0.9995521, -9.711592, -41.949436, 232.98293)
+
+[node name="SkeletonWarrior3" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="12" unique_id=1105810359 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 100.178894, -14.228639, -5.0346985)
+
+[node name="SkeletonWarrior5" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="13" unique_id=1099512010 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 98.14503, -22.797365, 24.292942)
+
+[node name="SkeletonWarrior7" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="14" unique_id=1507315236 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 98.14503, -28.206856, 40.976364)
+
+[node name="SkeletonWarrior8" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="15" unique_id=1415284301 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 79.5323, -26.695719, 50.604145)
+
+[node name="SkeletonWarrior10" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="16" unique_id=1017132296 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 79.5323, -29.857828, 61.065727)
+
+[node name="SkeletonWarrior11" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="17" unique_id=785796859 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 71.17151, -30.829145, 81.592026)
+
+[node name="SkeletonWarrior12" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="18" unique_id=979742126 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 60.44168, -31.00492, 81.592026)
+
+[node name="SkeletonWarrior13" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="19" unique_id=1970419252 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 43.36064, -31.00492, 81.592026)
+
+[node name="SkeletonWarrior14" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="20" unique_id=84896839 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 40.024654, -30.986576, 96.78424)
+
+[node name="SkeletonWarrior15" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="21" unique_id=1848065595 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 33.87071, -32.844696, 109.036255)
+
+[node name="SkeletonWarrior16" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="22" unique_id=920147257 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 24.259563, -32.844696, 113.833)
+
+[node name="SkeletonWarrior17" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="23" unique_id=846029450 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 41.247463, -32.844696, 113.833)
+
+[node name="SkeletonWarrior18" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="24" unique_id=1963680336 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 41.247463, -33.844917, 133.20616)
+
+[node name="SkeletonWarrior19" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="25" unique_id=1911055529 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 41.247463, -35.130127, 157.90858)
+
+[node name="SkeletonWarrior20" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="26" unique_id=949507950 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 37.058178, -35.130127, 176.34038)
+
+[node name="SkeletonWarrior21" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="27" unique_id=523743863 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 37.058178, -35.130127, 176.34038)
+
+[node name="SkeletonWarrior22" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="28" unique_id=1571571954 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 21.414776, -37.929394, 176.34038)
+
+[node name="SkeletonWarrior23" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="29" unique_id=652692077 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 22.386818, -38.146454, 185.59894)
+
+[node name="SkeletonWarrior24" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="30" unique_id=578258142 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, -0.73446465, -35.83039, 185.59894)
+
+[node name="SkeletonWarrior25" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="31" unique_id=200093174 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, -0.73446465, -35.83039, 176.05133)
+
+[node name="SkeletonWarrior26" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="32" unique_id=1320571143 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, -22.011799, -35.324844, 189.93571)
+
+[node name="SkeletonWarrior27" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="33" unique_id=945133457 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, -13.807887, -36.797935, 199.54431)
+
+[node name="SkeletonWarrior28" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="34" unique_id=1302898528 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, -10.211492, -37.4596, 199.54431)
+
+[node name="SkeletonWarrior9" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="35" unique_id=2059168714 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 88.74901, -28.610079, 50.604145)
+
+[node name="SkeletonWarrior6" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="36" unique_id=167787442 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 106.18472, -17.142872, 5.9554443)
+
+[node name="SkeletonWarrior4" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="37" unique_id=2022443576 instance=ExtResource("5_tt152")]
+transform = Transform3D(-0.9933988, 0, -0.11471179, 0, 1, 0, 0.11471179, 0, -0.9933988, 91.73364, -10.018948, -14.387883)
+
+[node name="SkeletonMage8" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="38" unique_id=1238587981 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 112.60238, -16.29385, 17.849333)
+
+[node name="SkeletonMage9" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="39" unique_id=1672616014 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 104.332275, -24.181847, 27.560078)
+
+[node name="SkeletonMage10" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="40" unique_id=1754206464 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 94.47836, -26.397106, 35.308556)
+
+[node name="SkeletonMage11" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="41" unique_id=1994077167 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 94.47836, -28.077776, 46.046074)
+
+[node name="SkeletonMage12" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="42" unique_id=618386388 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 82.1115, -31.132734, 80.214066)
+
+[node name="SkeletonMage13" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="43" unique_id=859883260 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 73.08373, -32.697266, 93.810936)
+
+[node name="SkeletonMage14" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="44" unique_id=832377218 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 62.70192, -32.697266, 118.125984)
+
+[node name="SkeletonMage15" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="45" unique_id=1646017021 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 48.783836, -32.697266, 118.125984)
+
+[node name="SkeletonMage16" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="46" unique_id=1787231563 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 48.783836, -33.805813, 134.64319)
+
+[node name="SkeletonMage17" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="47" unique_id=926244659 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 32.481358, -33.805813, 171.21672)
+
+[node name="SkeletonMage18" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="48" unique_id=169866859 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 6.6892395, -35.74049, 180.70366)
+
+[node name="SkeletonMage19" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="49" unique_id=15454470 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, -1.5429754, -35.821693, 180.70366)
+
+[node name="SkeletonMage20" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="50" unique_id=575296708 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, -15.760965, -37.836838, 202.83394)
+
+[node name="SkeletonMage21" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="51" unique_id=703444175 instance=ExtResource("4_8vjs8")]
+transform = Transform3D(-0.99940956, 0, 0.034358803, 0, 1, 0, -0.034358803, 0, -0.99940956, 1.8325195, -40.339436, 222.544)
 
 [node name="overworld_environment" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="0" unique_id=1655881674 instance=ExtResource("2_16ktt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022201538, 0.03765297, 0.058948517)
