@@ -1,13 +1,11 @@
 extends Level
-@onready var ui = $UI
+#@onready var ui = $UI
+
+
 func _on_doorarea_body_entered(body: Node3D) -> void:
 	switch_level('overworld')
 
-func _process(delta):
-	var bosses = get_tree().get_nodes_in_group("boss")
 
-	if bosses.is_empty():
-		ui.show_win()
 
 
 

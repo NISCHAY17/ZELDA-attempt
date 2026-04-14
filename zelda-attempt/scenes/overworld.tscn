@@ -178,7 +178,9 @@ curve = SubResource("Curve3D_yqb1n")
 transform = Transform3D(0.93715304, 0.04613643, 0.34585258, -1.8626447e-09, 0.99121934, -0.13222696, -0.34891722, 0.12391735, 0.9289217, 124.66594, -0.3078308, 42.72711)
 use_model_front = true
 
-[node name="SkeletonMage" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="2" unique_id=1098040870 instance=ExtResource("4_8vjs8")]
+[node name="Enemy" type="Node3D" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="2" unique_id=239012716]
+
+[node name="SkeletonMage" parent="entity" parent_id_path=PackedInt32Array(2007095133) index="3" unique_id=1098040870 instance=ExtResource("4_8vjs8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.820396, -31.818668, 354.9259)
 
 [node name="overworld_environment" parent="envrionment" parent_id_path=PackedInt32Array(624035515) index="0" unique_id=1655881674 instance=ExtResource("2_16ktt")]

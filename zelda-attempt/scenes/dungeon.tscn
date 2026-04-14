@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://017tob8o06v3" path="res://graphics/environment/objects/log.glb" id="13_1o5ds"]
 [ext_resource type="PackedScene" uid="uid://bgkbet728sbnu" path="res://graphics/environment/objects/target.glb" id="14_ea5hl"]
 [ext_resource type="Texture2D" uid="uid://bksy1ohbw2c5b" path="res://graphics/objects/dungeon_texture.png" id="15_6nb7m"]
-[ext_resource type="PackedScene" uid="uid://dtnldvd6wf3v1" path="res://ENTITIES/player/ui.tscn" id="18_1o5ds"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3afjq"]
 sky_top_color = Color(0.25409985, 0.5937322, 0.70472217, 1)
@@ -333,8 +332,6 @@ transform = Transform3D(0.22228038, 0, 0.9749828, 0, 1, 0, -0.9749828, 0, 0.2222
 transform = Transform3D(1, 0, 0, 0, 1.7730614, 0, 0, 0, 1, -92.93091, 0, 33.799988)
 size = Vector3(215.75854, 2, 174.30334)
 material = SubResource("FogMaterial_3afjq")
-
-[node name="UI" parent="." index="8" unique_id=847037512 instance=ExtResource("18_1o5ds")]
 
 [connection signal="body_entered" from="envrionment/stuff/door/doorarea" to="." method="_on_doorarea_body_entered"]
 [connection signal="area_entered" from="envrionment/stuff/killzone/Area3D2" to="." method="_on_area_3d_2_area_entered"]

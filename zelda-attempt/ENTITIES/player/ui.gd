@@ -3,12 +3,11 @@ extends Control
 @onready var energy_bar = $EnergyBar/MarginContainer/TextureProgressBar
 @onready var spell_texture = $Spells/MarginContainer/TextureRect
 @onready var heart_container = $Hearts/MarginContainer/HBoxContainer
-@onready var winimg = $WINIMG
+#@onready var winimg = $WINIMG
 var heart_scene: PackedScene = preload('res://ENTITIES/player/heart.tscn')
 var fire_texture = preload("res://graphics/ui/fire.png")
 var heal_texture = preload("res://graphics/ui/heal.png")
-func _ready() -> void:
-	winimg.hide()
+
 func setup(value: int) -> void:
 	for i in value:
 		var heart = heart_scene.instantiate()
@@ -52,6 +51,3 @@ func change_stamina_alpha(value: float) -> void:
 	tween.tween_method(_change_alpha, 1.0 - value, value, 0.25)
 func _change_alpha(value: float) -> void:
 	stamina_bar.modulate.a = value
-func show_win():
-	winimg.show()
-	

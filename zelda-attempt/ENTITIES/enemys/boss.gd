@@ -10,14 +10,14 @@ var can_damage_toggle := false
 
 func _ready() -> void:
 	add_to_group("boss")
-	health = 1
+	health = 5
 
 func _process(delta: float) -> void:
 	attack_logic()    
 func  _physics_process(delta: float) -> void:
 	move_to_player(delta)
 func _on_attack_timer_timeout() -> void:
-	$Timers/AttackTimer.wait_time - rng.randf_range(1.0,5.6)
+	$Timers/AttackTimer.wait_time = rng.randf_range(1.0,5.6)
 	if position.distance_to(player.position) < 5.0:	
 		melee_attack_animation()
 	else:
@@ -64,10 +64,12 @@ func hit():
 		#print(" boss was hit ") 
 		$Timers/InvulTimer.start()
 		health -= 1
+
 		var tween = create_tween()
 		tween.tween_method(_hit_effect, 0.0, 0.567, 0.3)
 		tween.tween_method(_hit_effect, 0.567, 0.0, 0.2)
-		
+
+			
 func _hit_effect(value: float) -> void:
 	$skin/Rig/Skeleton3D/Nagonford_Body.material_overlay.set_shader_parameter('alpha', value)
 
